@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Küchenwoche — Rike & Papa</title>
+<style>
+  /* ====== PDF-STYLE DESIGN SYSTEM ====== */
+  :root {
+    --dark-green:     #4A7C59;
+    --teal:           #008080;
+    --dark-blue:      #1B4F72;
+    --dark-text:      #333333;
+    --light-text:     #666666;
+    --block-green:    #EFF5E8;
+    --block-header:   #D4E4C1;
+    --block-cream:    #FAFAF2;
+    --accent-gold:    #B8860B;
+    --accent-green:   #27AE60;
+    --accent-red:     #C0392B;
+    --color-green-bg: #E8F5E9;
+    --color-yellow-bg:#FFF9C4;
+    --color-blue-bg:  #E3F2FD;
+    --color-orange-bg:#FFF3E0;
+    --color-gray-bg:  #F5F5F5;
+    --color-green-bar:#4CAF50;
+    --color-yellow-bar:#FFC107;
+    --color-blue-bar: #2196F3;
+    --color-orange-bar:#FF9800;
+    --white:          #ffffff;
+    --border:         #D0DFC8;
+    --shadow:         0 2px 8px rgba(74,124,89,0.10);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: #F4F7F2;
+    color: var(--dark-text);
+    font-size: 14px;
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+
+  /* ====== HEADER ====== */
+  .site-header {
+    background: var(--dark-green);
+    color: white;
+    padding: 14px 16px 10px;
+    position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+  }
+  .header-top { display: flex; justify-content: space-between; align-items: center; }
+  .site-title { font-size: 18px; font-weight: 700; letter-spacing: 0.3px; }
+  .site-subtitle { font-size: 11px; opacity: 0.78; margin-top: 1px; }
+  .budget-badge {
+    background: var(--accent-gold);
+    color: white;
+    font-size: 11px; font-weight: 700;
+    padding: 3px 8px; border-radius: 12px;
+    white-space: nowrap;
+  }
+
+  /* ====== NAV TABS ====== */
+  .nav-tabs {
+    display: flex; gap: 2px;
+    background: var(--dark-green);
+    padding: 6px 16px 0;
+    overflow-x: auto; -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .nav-tabs::-webkit-scrollbar { display: none; }
+  .nav-tab {
+    background: rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.85);
+    border: none; cursor: pointer;
+    padding: 6px 14px; border-radius: 6px 6px 0 0;
+    font-size: 12px; font-weight: 600;
+    white-space: nowrap; transition: all 0.15s;
+  }
+  .nav-tab.active {
+    background: #F4F7F2;
+    color: var(--dark-green);
+  }
+  .nav-tab:hover:not(.active) { background: rgba(255,255,255,0.25); }
+
+  /* ====== MAIN CONTENT ====== */
+  .main { padding: 14px 12px; max-width: 680px; margin: 0 auto; }
+
+  /* ====== VIEW ====== */
+  .view { display: none; }
+  .view.active { display: block; }
+
+  /* ====== SECTION BLOCK (PDF-Style Kernbaustein) ====== */
+  .section-block {
+    background: var(--block-green);
+    border-radius: 6px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .section-block.cream { background: var(--block-cream); }
+
+  .section-title {
+    background: var(--block-header);
+    color: var(--dark-green);
+    font-size: 12px; font-weight: 700;
+    padding: 7px 12px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-body { padding: 10px 12px; }
+
+  /* ====== KV ROW ====== */
+  .kv-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(74,124,89,0.08);
+  }
+  .kv-row:last-child { border-bottom: none; }
+  .kv-label { color: var(--dark-text); font-size: 13px; }
+  .kv-value { color: var(--accent-gold); font-weight: 700; font-size: 13px; text-align: right; }
+  .kv-value.green { color: var(--accent-green); }
+  .kv-value.teal  { color: var(--teal); }
+  .kv-value.red   { color: var(--accent-red); }
+
+  /* ====== COLOR ROW (Farbbalken-Zeile) ====== */
+  .color-row {
+    display: flex; align-items: center;
+    margin-bottom: 5px; border-radius: 4px; overflow: hidden;
+    background: var(--color-green-bg);
+  }
+  .color-row.yellow { background: var(--color-yellow-bg); }
+  .color-row.blue   { background: var(--color-blue-bg); }
+  .color-row.orange { background: var(--color-orange-bg); }
+  .color-row.gray   { background: var(--color-gray-bg); }
+  .color-bar {
+    width: 4px; min-height: 36px; align-self: stretch;
+    background: var(--color-green-bar); flex-shrink: 0;
+  }
+  .color-row.yellow .color-bar { background: var(--color-yellow-bar); }
+  .color-row.blue   .color-bar { background: var(--color-blue-bar); }
+  .color-row.orange .color-bar { background: var(--color-orange-bar); }
+  .color-row.gray   .color-bar { background: #9E9E9E; }
+  .color-content { padding: 6px 10px; flex: 1; }
+  .color-label { font-weight: 700; font-size: 12px; color: var(--dark-text); }
+  .color-desc  { font-size: 12px; color: var(--light-text); }
+
+  /* ====== TABLE ====== */
+  .data-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .data-table th {
+    background: var(--block-header);
+    color: var(--dark-green); font-weight: 700;
+    padding: 6px 8px; text-align: left;
+    border-bottom: 2px solid var(--dark-green);
+  }
+  .data-table th.right, .data-table td.right { text-align: right; }
+  .data-table td { padding: 5px 8px; border-bottom: 1px solid var(--border); }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:nth-child(even) td { background: rgba(212,228,193,0.20); }
+
+  /* ====== WOCHENPLAN VIEW ====== */
+  .woche-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 10px;
+  }
+  .woche-title { font-size: 16px; font-weight: 700; color: var(--dark-green); }
+
+  .tag-block { margin-bottom: 10px; }
+  .tag-header {
+    background: var(--dark-green);
+    color: white; font-weight: 700; font-size: 13px;
+    padding: 6px 12px; border-radius: 6px 6px 0 0;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .tag-body { background: white; border: 1px solid var(--border); border-top: none;
+    border-radius: 0 0 6px 6px; overflow: hidden; }
+
+  .mahlzeit-row {
+    padding: 9px 12px;
+    border-bottom: 1px solid var(--border);
+    display: flex; flex-direction: column; gap: 3px;
+    cursor: pointer; transition: background 0.1s;
+  }
+  .mahlzeit-row:last-child { border-bottom: none; }
+  .mahlzeit-row:hover { background: var(--block-green); }
+  .mahlzeit-time {
+    font-size: 10px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .mahlzeit-time.mittag { color: var(--color-yellow-bar); }
+  .mahlzeit-time.abend  { color: var(--teal); }
+  .mahlzeit-name { font-size: 14px; font-weight: 600; color: var(--dark-text); }
+  .mahlzeit-meta {
+    display: flex; gap: 10px; font-size: 11px; color: var(--light-text);
+  }
+  .meta-pill {
+    background: var(--block-header);
+    color: var(--dark-green); font-size: 10px; font-weight: 700;
+    padding: 1px 6px; border-radius: 8px;
+  }
+
+  /* ====== REZEPT DETAIL MODAL ====== */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0;
+    background: rgba(0,0,0,0.55); z-index: 200;
+    align-items: flex-end; justify-content: center;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: white; width: 100%; max-width: 680px;
+    max-height: 88vh; border-radius: 14px 14px 0 0;
+    overflow-y: auto; -webkit-overflow-scrolling: touch;
+    padding-bottom: env(safe-area-inset-bottom, 16px);
+  }
+  .modal-handle {
+    width: 36px; height: 4px; background: #CCC;
+    border-radius: 2px; margin: 10px auto 0;
+  }
+  .modal-header {
+    padding: 12px 16px 10px;
+    border-bottom: 2px solid var(--block-header);
+    position: sticky; top: 0; background: white; z-index: 1;
+  }
+  .modal-title { font-size: 17px; font-weight: 700; color: var(--dark-green); }
+  .modal-meta  { font-size: 12px; color: var(--light-text); margin-top: 3px; }
+  .modal-close {
+    position: absolute; top: 12px; right: 14px;
+    background: var(--color-gray-bg); border: none; cursor: pointer;
+    width: 28px; height: 28px; border-radius: 50%;
+    font-size: 16px; color: var(--dark-text);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .modal-body { padding: 14px 16px; }
+
+  .rezept-section-title {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; color: var(--dark-green);
+    margin: 14px 0 6px; padding-bottom: 3px;
+    border-bottom: 1px solid var(--border);
+  }
+  .zutat-row { display: flex; justify-content: space-between; padding: 4px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.04); font-size: 13px; }
+  .zutat-menge { color: var(--accent-gold); font-weight: 700; text-align: right; min-width: 80px; }
+  .schritt-row { display: flex; gap: 10px; margin-bottom: 8px; font-size: 13px; }
+  .schritt-num {
+    background: var(--dark-green); color: white;
+    width: 22px; height: 22px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; flex-shrink: 0; margin-top: 1px;
+  }
+  .hinweis-box {
+    background: var(--color-blue-bg);
+    border-left: 4px solid var(--color-blue-bar);
+    padding: 8px 10px; border-radius: 0 4px 4px 0;
+    font-size: 12px; color: var(--dark-text); margin-top: 10px;
+  }
+
+  /* ====== ANGEBOTE VIEW ====== */
+  .markt-header {
+    background: var(--teal); color: white;
+    padding: 7px 12px; border-radius: 6px 6px 0 0;
+    font-size: 13px; font-weight: 700;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .markt-gueltig { font-size: 10px; opacity: 0.85; font-weight: 400; }
+  .app-badge {
+    background: white; color: var(--teal);
+    font-size: 10px; font-weight: 700;
+    padding: 2px 6px; border-radius: 8px;
+  }
+
+  /* ====== EINKAUFSLISTE VIEW ====== */
+  .einkauf-item {
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: 7px 0; border-bottom: 1px solid var(--border);
+  }
+  .einkauf-item:last-child { border-bottom: none; }
+  .einkauf-check {
+    width: 18px; height: 18px; border: 2px solid var(--dark-green);
+    border-radius: 4px; flex-shrink: 0; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    margin-top: 1px; transition: all 0.15s;
+  }
+  .einkauf-check.checked {
+    background: var(--dark-green); color: white;
+  }
+  .einkauf-check.checked::after { content: "✓"; font-size: 11px; font-weight: 700; }
+  .einkauf-info { flex: 1; }
+  .einkauf-name { font-size: 13px; font-weight: 600; }
+  .einkauf-detail { font-size: 11px; color: var(--light-text); }
+  .einkauf-preis { text-align: right; min-width: 60px; }
+  .preis-main { font-size: 13px; font-weight: 700; color: var(--accent-gold); }
+  .preis-app { font-size: 11px; color: var(--teal); font-weight: 700; }
+
+  .gesamt-row {
+    background: var(--block-header);
+    padding: 8px 12px; border-radius: 4px;
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 4px; font-weight: 700;
+  }
+  .gesamt-label { color: var(--dark-green); font-size: 13px; }
+  .gesamt-wert  { color: var(--accent-gold); font-size: 15px; }
+
+  /* ====== REZEPTBUCH VIEW ====== */
+  .filter-bar {
+    display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px;
+  }
+  .filter-btn {
+    background: white; border: 1.5px solid var(--border);
+    color: var(--dark-text); padding: 4px 10px;
+    border-radius: 14px; font-size: 12px; cursor: pointer;
+    transition: all 0.15s;
+  }
+  .filter-btn.active {
+    background: var(--dark-green); border-color: var(--dark-green);
+    color: white; font-weight: 700;
+  }
+
+  .rezept-card {
+    background: white; border: 1px solid var(--border);
+    border-radius: 8px; margin-bottom: 8px;
+    overflow: hidden; cursor: pointer; transition: box-shadow 0.15s;
+    box-shadow: var(--shadow);
+  }
+  .rezept-card:hover { box-shadow: 0 4px 14px rgba(74,124,89,0.18); }
+  .rezept-card-header {
+    background: var(--block-green);
+    padding: 9px 12px;
+    display: flex; justify-content: space-between; align-items: flex-start;
+  }
+  .rezept-card-name { font-size: 14px; font-weight: 700; color: var(--dark-green); }
+  .rezept-card-sub  { font-size: 11px; color: var(--light-text); margin-top: 2px; }
+  .rezept-card-meta {
+    display: flex; gap: 6px; padding: 6px 12px;
+    font-size: 11px; color: var(--light-text);
+    border-top: 1px solid var(--border);
+  }
+  .rezept-stat { display: flex; align-items: center; gap: 3px; }
+
+  /* ====== SLOTS BADGES ====== */
+  .slot-badge {
+    display: inline-block; font-size: 9px; font-weight: 700;
+    padding: 1px 5px; border-radius: 6px; text-transform: uppercase;
+    letter-spacing: 0.3px; margin-right: 3px;
+  }
+  .slot-it  { background: #E8F4E8; color: #2E7D32; }
+  .slot-de  { background: #E3F2FD; color: #1565C0; }
+  .slot-veg { background: #F3E5F5; color: #6A1B9A; }
+  .slot-bur { background: #FFF3E0; color: #E65100; }
+
+  /* ====== LOADING ====== */
+  .loading {
+    text-align: center; padding: 40px 20px;
+    color: var(--light-text); font-size: 14px;
+  }
+  .loading-spinner {
+    width: 32px; height: 32px; border: 3px solid var(--block-header);
+    border-top-color: var(--dark-green); border-radius: 50%;
+    animation: spin 0.8s linear infinite; margin: 0 auto 12px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ====== EMPTY STATE ====== */
+  .empty { text-align: center; padding: 30px 20px; color: var(--light-text); }
+  .empty-icon { font-size: 36px; margin-bottom: 8px; }
+
+  /* ====== RESPONSIVE ====== */
+  @media (min-width: 480px) {
+    .main { padding: 16px; }
+    .site-title { font-size: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-top">
+    <div>
+      <div class="site-title">🍽 Küchenwoche</div>
+      <div class="site-subtitle">Rike & Papa — Wochenplaner</div>
+    </div>
+    <div class="budget-badge">💰 8,50 €/Tag</div>
+  </div>
+</header>
+
+<nav class="nav-tabs">
+  <button class="nav-tab active" onclick="showView('wochenplan')">📅 Wochenplan</button>
+  <button class="nav-tab" onclick="showView('einkaufen')">🛒 Einkaufen</button>
+  <button class="nav-tab" onclick="showView('angebote')">🏷 Angebote</button>
+  <button class="nav-tab" onclick="showView('rezepte')">📖 Rezepte</button>
+</nav>
+
+<main class="main">
+
+  <!-- ====== VIEW: WOCHENPLAN ====== -->
+  <div id="view-wochenplan" class="view active">
+    <div id="wochenplan-loading" class="loading">
+      <div class="loading-spinner"></div>Wochenplan wird geladen…
+    </div>
+    <div id="wochenplan-content" style="display:none"></div>
+  </div>
+
+  <!-- ====== VIEW: EINKAUFEN ====== -->
+  <div id="view-einkaufen" class="view">
+    <div id="einkaufen-loading" class="loading">
+      <div class="loading-spinner"></div>Einkaufsliste wird erstellt…
+    </div>
+    <div id="einkaufen-content" style="display:none"></div>
+  </div>
+
+  <!-- ====== VIEW: ANGEBOTE ====== -->
+  <div id="view-angebote" class="view">
+    <div id="angebote-loading" class="loading">
+      <div class="loading-spinner"></div>Angebote werden geladen…
+    </div>
+    <div id="angebote-content" style="display:none"></div>
+  </div>
+
+  <!-- ====== VIEW: REZEPTE ====== -->
+  <div id="view-rezepte" class="view">
+    <div id="rezepte-loading" class="loading">
+      <div class="loading-spinner"></div>Rezepte werden geladen…
+    </div>
+    <div id="rezepte-content" style="display:none"></div>
+  </div>
+
+</main>
+
+<!-- ====== REZEPT MODAL ====== -->
+<div class="modal-overlay" id="rezept-modal" onclick="closeModal(event)">
+  <div class="modal" id="modal-inner">
+    <div class="modal-handle"></div>
+    <div class="modal-header">
+      <div class="modal-title" id="modal-title">Rezept</div>
+      <div class="modal-meta" id="modal-meta"></div>
+      <button class="modal-close" onclick="closeModalDirect()">✕</button>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<script>
+// ====== DATEN LADEN ======
+let APP_DATA = null;
+let checked = {};
+
+async function loadData() {
+  try {
+    const r = await fetch('data.json?v=' + Date.now(), { cache: 'no-store' });
+    APP_DATA = await r.json();
+    renderAll();
+  } catch(e) {
+    document.querySelectorAll('.loading').forEach(el => {
+      el.innerHTML = '⚠️ data.json nicht gefunden.<br><small>Bitte data.json ins gleiche Verzeichnis legen.</small>';
+    });
+  }
+}
+
+function renderAll() {
+  renderWochenplan();
+  renderAngebote();
+  renderEinkaufsliste();
+  renderRezepte();
+}
+
+// ====== VIEW-SWITCHING ======
+function showView(name) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('view-' + name).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// ====== HELPER ======
+const TAGE = { mo:'Montag', di:'Dienstag', mi:'Mittwoch', do:'Donnerstag', fr:'Freitag', sa:'Samstag', so:'Sonntag' };
+const TAGE_ORDER = ['mo','di','mi','do','fr','sa','so'];
+
+function fmt(val, suffix='') {
+  if (val === null || val === undefined) return '—';
+  return typeof val === 'number' ? val.toFixed(2).replace('.',',') + suffix : val + suffix;
+}
+
+function getTagSlots(tags) {
+  const t = Array.isArray(tags) ? tags : (tags||'').split(',');
+  const slots = [];
+  if (t.some(x => ['pasta','pizza','risotto','italienisch'].includes(x.trim()))) slots.push({cls:'slot-it', label:'🇮🇹 IT'});
+  if (t.some(x => ['deutsch','schnitzel','gulasch','frikadelle','eintopf','braten'].includes(x.trim()))) slots.push({cls:'slot-de', label:'🇩🇪 DE'});
+  if (t.some(x => x.trim() === 'vegetarisch')) slots.push({cls:'slot-veg', label:'🌿 VEG'});
+  if (t.some(x => ['burger','hot-dog','hotdog'].includes(x.trim()))) slots.push({cls:'slot-bur', label:'🍔 Burger'});
+  return slots;
+}
+
+// ====== WOCHENPLAN ======
+function renderWochenplan() {
+  if (!APP_DATA) return;
+  const { wochenplan, rezepte } = APP_DATA;
+  const rezeptMap = {};
+  rezepte.forEach(r => rezeptMap[r.id] = r);
+
+  // Gruppieren nach Woche + Tag
+  const wochen = {};
+  wochenplan.forEach(wp => {
+    const k = wp.woche;
+    if (!wochen[k]) wochen[k] = {};
+    if (!wochen[k][wp.tag]) wochen[k][wp.tag] = [];
+    wochen[k][wp.tag].push(wp);
+  });
+
+  let html = '';
+
+  if (Object.keys(wochen).length === 0) {
+    html = `<div class="empty"><div class="empty-icon">📅</div>Noch kein Wochenplan in der Datenbank.<br><small>Wochenplan über den Skill generieren lassen.</small></div>`;
+  } else {
+    Object.keys(wochen).sort().forEach(woche => {
+      html += `<div class="section-block"><div class="section-title">Woche ${woche}</div><div class="section-body" style="padding:0">`;
+      const tagsInWoche = TAGE_ORDER.filter(t => wochen[woche][t]);
+      tagsInWoche.forEach(tag => {
+        const mahlzeiten = wochen[woche][tag].sort((a,b) => a.mahlzeit < b.mahlzeit ? -1 : 1);
+        const tageskosten = mahlzeiten.reduce((s, m) => s + (parseFloat(m.kosten) || 0), 0);
+        html += `<div class="tag-block" style="margin:0">
+          <div class="tag-header">
+            <span>${TAGE[tag] || tag}</span>
+            <span style="font-size:11px;opacity:0.85">${tageskosten > 0 ? '~' + tageskosten.toFixed(2).replace('.',',') + ' €' : ''}</span>
+          </div>
+          <div class="tag-body">`;
+        mahlzeiten.forEach(wp => {
+          const r = rezeptMap[wp.rezept_id] || {};
+          const isMittag = wp.mahlzeit === 'mittag';
+          const slots = getTagSlots(r.tags || []);
+          const slotHtml = slots.map(s => `<span class="slot-badge ${s.cls}">${s.label}</span>`).join('');
+          html += `<div class="mahlzeit-row" onclick="openRezept(${r.id})">
+            <div class="mahlzeit-time ${isMittag ? 'mittag' : 'abend'}">${isMittag ? '14:30 · Kleines Mittag' : '18:00 · Großes Abend'}</div>
+            <div class="mahlzeit-name">${r.name || wp.rezept_name || '—'}</div>
+            <div class="mahlzeit-meta">
+              ${r.zeit ? `<span>⏱ ${r.zeit} Min</span>` : ''}
+              ${r.kcal ? `<span>🔥 ${r.kcal} kcal</span>` : ''}
+              ${r.kosten ? `<span>💰 ${fmt(r.kosten,'€')}</span>` : ''}
+              ${slotHtml}
+            </div>
+          </div>`;
+        });
+        html += `</div></div>`;
+      });
+      html += `</div></div>`;
+    });
+  }
+
+  document.getElementById('wochenplan-loading').style.display = 'none';
+  const c = document.getElementById('wochenplan-content');
+  c.style.display = 'block';
+  c.innerHTML = html;
+}
+
+// ====== ANGEBOTE ======
+function renderAngebote() {
+  if (!APP_DATA) return;
+  const { angebote } = APP_DATA;
+  const heute = new Date().toISOString().slice(0,10);
+
+  // Nur gültige
+  const gueltige = angebote.filter(a => a.bis >= heute);
+
+  if (gueltige.length === 0) {
+    document.getElementById('angebote-loading').style.display = 'none';
+    document.getElementById('angebote-content').style.display = 'block';
+    document.getElementById('angebote-content').innerHTML = `<div class="empty"><div class="empty-icon">🏷</div>Keine aktuellen Angebote.<br><small>Neuen Prospekt über den Skill einlesen lassen.</small></div>`;
+    return;
+  }
+
+  // Nach Markt gruppieren
+  const maerkte = {};
+  gueltige.forEach(a => {
+    if (!maerkte[a.markt]) maerkte[a.markt] = [];
+    maerkte[a.markt].push(a);
+  });
+
+  // Kategorien-Reihenfolge
+  const KAT_ORDER = ['geflügel','fleisch','fisch','gemüse-tk','gemüse-frisch','milch','tiefkühl','stärke','staerke','konserve','sonstige'];
+  const KAT_ICONS = { 'geflügel':'🍗', 'fleisch':'🥩', 'fisch':'🐟', 'gemüse-tk':'🥦', 'gemüse-frisch':'🥕', 'milch':'🧀', 'tiefkühl':'❄️', 'stärke':'🍝', 'staerke':'🍝', 'konserve':'🥫', 'sonstige':'📦' };
+
+  let html = `<div class="section-block cream"><div class="section-title">📱 App-Preise aktiv</div><div class="section-body">
+    <div class="color-row blue"><div class="color-bar"></div><div class="color-content">
+      <div class="color-label">📱 = App-Preis</div>
+      <div class="color-desc">EDEKA App · Penny App · vor dem Einkauf aktivieren!</div>
+    </div></div>
+  </div></div>`;
+
+  Object.keys(maerkte).sort().forEach(markt => {
+    const items = maerkte[markt];
+    const vonBis = items[0];
+    const hatApp = items.some(a => a.preis_app);
+
+    // Nach Kategorie gruppieren
+    const byKat = {};
+    items.forEach(a => {
+      const kat = a.kat || 'sonstige';
+      if (!byKat[kat]) byKat[kat] = [];
+      byKat[kat].push(a);
+    });
+
+    html += `<div class="section-block" style="margin-bottom:14px">
+      <div class="markt-header">
+        <span>${markt}</span>
+        <span class="markt-gueltig">gültig bis ${vonBis.bis.slice(5).replace('-','.')}.</span>
+        ${hatApp ? '<span class="app-badge">📱 App</span>' : ''}
+      </div>`;
+
+    const sortedKats = Object.keys(byKat).sort((a,b) => {
+      const ia = KAT_ORDER.indexOf(a), ib = KAT_ORDER.indexOf(b);
+      return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
+    });
+
+    sortedKats.forEach(kat => {
+      html += `<div style="padding:8px 12px 4px; border-bottom: 1px solid var(--border)">
+        <div style="font-size:11px;font-weight:700;color:var(--dark-green);margin-bottom:4px;text-transform:uppercase;letter-spacing:0.4px">
+          ${KAT_ICONS[kat]||'📦'} ${kat}
+        </div>`;
+      byKat[kat].forEach(a => {
+        const bestPreis = a.preis_app || a.preis;
+        const isApp = !!(a.preis_app && a.preis_app < a.preis);
+        html += `<div class="kv-row">
+          <div>
+            <div class="kv-label">${a.produkt}</div>
+            <div style="font-size:11px;color:var(--light-text)">${a.einheit}${a.notiz ? ' · ' + a.notiz : ''}</div>
+          </div>
+          <div style="text-align:right;min-width:70px">
+            <div class="kv-value">${bestPreis ? fmt(parseFloat(bestPreis),'€') : '—'}${isApp ? ' 📱' : ''}</div>
+            ${isApp ? `<div style="font-size:10px;color:var(--light-text);text-decoration:line-through">${fmt(parseFloat(a.preis),'€')}</div>` : ''}
+            ${a.kg_preis ? `<div style="font-size:10px;color:var(--light-text)">${fmt(parseFloat(a.kg_preis),'€')}/kg</div>` : ''}
+          </div>
+        </div>`;
+      });
+      html += `</div>`;
+    });
+    html += `</div>`;
+  });
+
+  document.getElementById('angebote-loading').style.display = 'none';
+  const c = document.getElementById('angebote-content');
+  c.style.display = 'block';
+  c.innerHTML = html;
+}
+
+// ====== EINKAUFSLISTE ======
+function renderEinkaufsliste() {
+  if (!APP_DATA) return;
+  const { wochenplan, rezepte, angebote } = APP_DATA;
+  const heute = new Date().toISOString().slice(0,10);
+  const gueltigeAngebote = angebote.filter(a => a.bis >= heute);
+  const rezeptMap = {};
+  rezepte.forEach(r => rezeptMap[r.id] = r);
+
+  // Zutaten aus Wochenplan sammeln
+  const zutatenMap = {};
+  wochenplan.forEach(wp => {
+    const r = rezeptMap[wp.rezept_id];
+    if (!r || !r.zutaten) return;
+    r.zutaten.forEach(z => {
+      if (!Array.isArray(z) || z.length < 2) return;
+      const key = z[1].toLowerCase().replace(/[^a-zäöü\s]/g,'').trim();
+      if (!key || key.length < 3) return;
+      if (!zutatenMap[key]) zutatenMap[key] = { name: z[1], menge: z[0], rezepte: [] };
+      zutatenMap[key].rezepte.push(r.name);
+    });
+  });
+
+  // Angebots-Match
+  function findAngebot(zutatName) {
+    const n = zutatName.toLowerCase();
+    return gueltigeAngebote.find(a => {
+      const p = a.produkt.toLowerCase();
+      return p.includes(n.split(' ')[0]) || n.includes(p.split(' ')[0]);
+    });
+  }
+
+  // Einkaufsliste mit Markt-Zuordnung
+  const marktListen = {};
+  const ohneAngebot = [];
+
+  Object.values(zutatenMap).forEach(z => {
+    const ang = findAngebot(z.name);
+    if (ang) {
+      const m = ang.markt;
+      if (!marktListen[m]) marktListen[m] = [];
+      marktListen[m].push({ ...z, angebot: ang });
+    } else {
+      ohneAngebot.push(z);
+    }
+  });
+
+  const GRUNDVORRAT = ['olivenoel','salz','pfeffer','knoblauch','zwiebeln','tomatenmark','curry','paprika','kurkuma','oregano','pasta','reis','kokosmilch','honig','senf','worcester','mehl'];
+
+  let html = `<div class="section-block cream"><div class="section-title">ℹ️ Hinweise</div><div class="section-body">
+    <div class="color-row blue"><div class="color-bar"></div><div class="color-content">
+      <div class="color-label">📱 App-Preis</div>
+      <div class="color-desc">App aktivieren vor dem Einkauf!</div>
+    </div></div>
+    <div class="color-row gray" style="margin-top:5px"><div class="color-bar"></div><div class="color-content">
+      <div class="color-label">Grundvorrat</div>
+      <div class="color-desc">Olivenöl · Salz · Gewürze · Pasta · Reis · Kokosmilch — nicht auf Liste</div>
+    </div></div>
+  </div></div>`;
+
+  let gesamtApp = 0;
+  let gesamtNormal = 0;
+
+  // Pro Markt
+  Object.keys(marktListen).sort().forEach(markt => {
+    const items = marktListen[markt];
+    html += `<div class="section-block">
+      <div class="section-title" style="background:var(--teal);color:white">${markt}</div>
+      <div class="section-body" style="padding:8px 12px">`;
+
+    items.forEach((item, i) => {
+      const a = item.angebot;
+      const bestPreis = parseFloat(a.preis_app || a.preis) || 0;
+      const isApp = !!(a.preis_app && parseFloat(a.preis_app) < parseFloat(a.preis));
+      gesamtApp += bestPreis;
+      gesamtNormal += parseFloat(a.preis) || bestPreis;
+      const id = `chk-${markt}-${i}`;
+      html += `<div class="einkauf-item">
+        <div class="einkauf-check" id="${id}" onclick="toggleCheck('${id}')"></div>
+        <div class="einkauf-info">
+          <div class="einkauf-name">${a.produkt}</div>
+          <div class="einkauf-detail">${a.einheit} · für: ${[...new Set(item.rezepte)].slice(0,2).join(', ')}</div>
+        </div>
+        <div class="einkauf-preis">
+          <div class="preis-main">${fmt(bestPreis,'€')}${isApp ? ' 📱' : ''}</div>
+          ${isApp ? `<div style="font-size:10px;color:var(--light-text);text-decoration:line-through">${fmt(parseFloat(a.preis),'€')}</div>` : ''}
+        </div>
+      </div>`;
+    });
+
+    const marktGesamt = items.reduce((s,it) => s + parseFloat(it.angebot.preis_app || it.angebot.preis || 0), 0);
+    html += `<div class="gesamt-row"><span class="gesamt-label">Gesamt ${markt}</span><span class="gesamt-wert">${fmt(marktGesamt,'€')}</span></div>`;
+    html += `</div></div>`;
+  });
+
+  // Restliches ohne Angebot
+  const sinnvoll = ohneAngebot.filter(z => !GRUNDVORRAT.some(g => z.name.toLowerCase().includes(g)));
+  if (sinnvoll.length > 0) {
+    html += `<div class="section-block cream"><div class="section-title">🛒 Sonstiges (kein Angebot)</div><div class="section-body" style="padding:8px 12px">`;
+    sinnvoll.forEach((item, i) => {
+      const id = `chk-rest-${i}`;
+      html += `<div class="einkauf-item">
+        <div class="einkauf-check" id="${id}" onclick="toggleCheck('${id}')"></div>
+        <div class="einkauf-info">
+          <div class="einkauf-name">${item.name}</div>
+          <div class="einkauf-detail">${item.menge} · ${[...new Set(item.rezepte)].slice(0,2).join(', ')}</div>
+        </div>
+        <div class="einkauf-preis"><div class="preis-main">—</div></div>
+      </div>`;
+    });
+    html += `</div></div>`;
+  }
+
+  // Ersparnis durch Apps
+  const ersparnis = gesamtNormal - gesamtApp;
+  if (ersparnis > 0.01) {
+    html += `<div class="section-block"><div class="section-title">💰 App-Ersparnis diese Woche</div><div class="section-body">
+      <div class="kv-row"><div class="kv-label">Ohne App</div><div class="kv-value red">${fmt(gesamtNormal,'€')}</div></div>
+      <div class="kv-row"><div class="kv-label">Mit App</div><div class="kv-value green">${fmt(gesamtApp,'€')}</div></div>
+      <div class="kv-row"><div class="kv-label">Ersparnis 📱</div><div class="kv-value teal">${fmt(ersparnis,'€')}</div></div>
+    </div></div>`;
+  }
+
+  document.getElementById('einkaufen-loading').style.display = 'none';
+  const c = document.getElementById('einkaufen-content');
+  c.style.display = 'block';
+  c.innerHTML = html;
+}
+
+function toggleCheck(id) {
+  const el = document.getElementById(id);
+  el.classList.toggle('checked');
+}
+
+// ====== REZEPTE ======
+let aktFilter = 'alle';
+function renderRezepte(filter) {
+  if (!APP_DATA) return;
+  aktFilter = filter || 'alle';
+  const { rezepte } = APP_DATA;
+
+  const filters = [
+    { key:'alle', label:'Alle' },
+    { key:'mittag', label:'🌞 Mittag' },
+    { key:'abend', label:'🌙 Abend' },
+    { key:'günstig', label:'💰 Günstig' },
+    { key:'schnell', label:'⚡ Schnell' },
+    { key:'vegetarisch', label:'🌿 Veg' },
+  ];
+
+  let filtered = rezepte.filter(r => r.kategorie !== 'schulbrot' && r.kategorie !== 'smoothie');
+  if (aktFilter === 'mittag') filtered = filtered.filter(r => r.kategorie === 'mittag');
+  else if (aktFilter === 'abend') filtered = filtered.filter(r => r.kategorie === 'abend');
+  else if (aktFilter === 'günstig') filtered = filtered.filter(r => r.kosten && parseFloat(r.kosten) < 2.0);
+  else if (aktFilter === 'schnell') filtered = filtered.filter(r => r.zeit && r.zeit <= 20);
+  else if (aktFilter === 'vegetarisch') filtered = filtered.filter(r => r.sub === 'vegetarisch' || (r.tags||[]).includes('vegetarisch'));
+
+  const filterHtml = `<div class="filter-bar">${filters.map(f =>
+    `<button class="filter-btn ${aktFilter===f.key?'active':''}" onclick="renderRezepte('${f.key}')">${f.label}</button>`
+  ).join('')}</div>`;
+
+  let cardsHtml = '';
+  if (filtered.length === 0) {
+    cardsHtml = `<div class="empty"><div class="empty-icon">🍽</div>Keine Rezepte gefunden.</div>`;
+  } else {
+    filtered.forEach(r => {
+      const slots = getTagSlots(r.tags);
+      const slotHtml = slots.map(s => `<span class="slot-badge ${s.cls}">${s.label}</span>`).join('');
+      cardsHtml += `<div class="rezept-card" onclick="openRezept(${r.id})">
+        <div class="rezept-card-header">
+          <div>
+            <div class="rezept-card-name">${r.name}</div>
+            <div class="rezept-card-sub">${r.sub || r.kategorie} ${slotHtml}</div>
+          </div>
+          ${r.kosten ? `<div style="text-align:right"><div style="font-weight:700;color:var(--accent-gold);font-size:14px">${fmt(parseFloat(r.kosten),'€')}</div><div style="font-size:10px;color:var(--light-text)">2 Pers.</div></div>` : ''}
+        </div>
+        <div class="rezept-card-meta">
+          ${r.zeit ? `<span class="rezept-stat">⏱ ${r.zeit} Min</span>` : ''}
+          ${r.kcal ? `<span class="rezept-stat">🔥 ${r.kcal} kcal</span>` : ''}
+          ${r.protein ? `<span class="rezept-stat">💪 ${r.protein}g Protein</span>` : ''}
+        </div>
+      </div>`;
+    });
+  }
+
+  document.getElementById('rezepte-loading').style.display = 'none';
+  const c = document.getElementById('rezepte-content');
+  c.style.display = 'block';
+  c.innerHTML = filterHtml + cardsHtml;
+}
+
+// ====== REZEPT MODAL ======
+function openRezept(id) {
+  if (!APP_DATA) return;
+  const r = APP_DATA.rezepte.find(x => x.id === id);
+  if (!r) return;
+
+  document.getElementById('modal-title').textContent = r.name;
+  document.getElementById('modal-meta').innerHTML =
+    `${r.kategorie} · ${r.sub || ''} · ${r.zeit ? r.zeit + ' Min' : ''} · ${r.kcal ? r.kcal + ' kcal' : ''} · ${r.kosten ? fmt(parseFloat(r.kosten),'€') + ' (2 Pers.)' : ''}`;
+
+  let body = '';
+
+  // Käse-Hinweis
+  const tags = r.tags || [];
+  if (tags.includes('käse-trennbar') || (r.name && r.name.toLowerCase().includes('käse'))) {
+    body += `<div class="color-row orange"><div class="color-bar"></div><div class="color-content">
+      <div class="color-label">🧀 Käse separat</div>
+      <div class="color-desc">Rike mit Käse · Papa ohne — immer getrennt auflegen</div>
+    </div></div>`;
+  }
+
+  // Zutaten
+  if (r.zutaten && r.zutaten.length > 0) {
+    body += `<div class="rezept-section-title">Zutaten (2 Personen)</div>`;
+    r.zutaten.forEach(z => {
+      if (!Array.isArray(z)) return;
+      const isKaese = z[1] && z[1].toLowerCase().includes('käse');
+      body += `<div class="zutat-row">
+        <div>${z[1] || ''}${isKaese ? ' <span style="color:var(--teal);font-size:10px">* Rike</span>' : ''}</div>
+        <div class="zutat-menge">${z[0] || ''}</div>
+      </div>`;
+    });
+  }
+
+  // Schritte
+  if (r.schritte && r.schritte.length > 0) {
+    body += `<div class="rezept-section-title">Zubereitung</div>`;
+    r.schritte.forEach((s, i) => {
+      const text = Array.isArray(s) ? s.join(' ') : s;
+      body += `<div class="schritt-row">
+        <div class="schritt-num">${i+1}</div>
+        <div>${text}</div>
+      </div>`;
+    });
+  }
+
+  // Hinweis
+  if (r.hinweis) {
+    body += `<div class="hinweis-box">💡 ${r.hinweis}</div>`;
+  }
+
+  document.getElementById('modal-body').innerHTML = body;
+  document.getElementById('rezept-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(e) {
+  if (e.target === document.getElementById('rezept-modal')) closeModalDirect();
+}
+function closeModalDirect() {
+  document.getElementById('rezept-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// URL-Parameter für direkten View-Aufruf (wie Papa-Kalender)
+function initFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  const view = params.get('view');
+  if (view && ['wochenplan','einkaufen','angebote','rezepte'].includes(view)) {
+    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('view-' + view).classList.add('active');
+    const tabs = document.querySelectorAll('.nav-tab');
+    const order = ['wochenplan','einkaufen','angebote','rezepte'];
+    const idx = order.indexOf(view);
+    if (tabs[idx]) tabs[idx].classList.add('active');
+  }
+}
+
+// ====== START ======
+initFromURL();
+loadData();
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js')
+      .then(reg => {
+        // Beim Aktivieren neuer SW: Seite neu laden damit frische Daten kommen
+        reg.addEventListener('updatefound', () => {
+          const w = reg.installing;
+          w.addEventListener('statechange', () => {
+            if (w.state === 'activated') window.location.reload();
+          });
+        });
+      });
+  });
+}
+</script>
+
+</body>
+</html>

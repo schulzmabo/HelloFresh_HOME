@@ -1,0 +1,4665 @@
+{
+  "rezepte": [
+    {
+      "id": 27,
+      "name": "Linsen-Eintopf mit Karotte & Kartoffel",
+      "kategorie": "abend",
+      "sub": "eintopf",
+      "kcal": 500,
+      "protein": 24.0,
+      "kosten": 1.5,
+      "zeit": 25,
+      "zutaten": [
+        [
+          "200g",
+          "Rote oder braune Linsen"
+        ],
+        [
+          "300g",
+          "Kartoffeln (grob gewürfelt)"
+        ],
+        [
+          "2",
+          "Karotten TK (oder frisch)"
+        ],
+        [
+          "1 Zwiebel",
+          "Knoblauch"
+        ],
+        [
+          "600ml",
+          "Gemüsebrühe (Pulver ok)"
+        ],
+        [
+          "1 TL",
+          "Curry oder Kurkuma, Salz, Pfeffer"
+        ],
+        [
+          "1 EL",
+          "Öl"
+        ]
+      ],
+      "schritte": [
+        "Zwiebel + Knoblauch andünsten.",
+        "Linsen + Kartoffeln + Karotten TK dazu.",
+        "Brühe aufgießen, Gewürze rein.",
+        "20 Min köcheln bis alles weich.",
+        "Etwas pürieren für cremige Konsistenz."
+      ],
+      "hinweis": "Günstigstes Abendessen im Plan — top Nährstoffe.",
+      "tags": [
+        "eintopf",
+        "günstig",
+        "linsen",
+        "tk-freundlich",
+        "tryptophan"
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Linsen-Curry mit Kokosreis (klein)",
+      "kategorie": "abend",
+      "sub": "vegetarisch",
+      "kcal": 540,
+      "protein": 24.0,
+      "kosten": 1.6,
+      "zeit": 25,
+      "zutaten": [
+        [
+          "200g",
+          "Rote Linsen (TK: aus Dose möglich)"
+        ],
+        [
+          "1 Dose",
+          "Tomaten gewürfelt"
+        ],
+        [
+          "100ml",
+          "Kokosmilch (Rest vom Mittag)"
+        ],
+        [
+          "80g",
+          "Basmati-Reis"
+        ],
+        [
+          "100ml",
+          "Kokosmilch für Reis"
+        ],
+        [
+          "1 Zwiebel",
+          "Knoblauch"
+        ],
+        [
+          "1 TL",
+          "Curry, Kurkuma, Salz, Pfeffer"
+        ],
+        [
+          "1 EL",
+          "Öl"
+        ]
+      ],
+      "schritte": [
+        "Kleinen Kokos-Reis aufsetzen (80g Reis, 100ml Kokos, 100ml Wasser).",
+        "Zwiebel + Knoblauch andünsten.",
+        "Linsen + Tomaten + Kokosmilch-Rest rein.",
+        "Curry + Kurkuma, 15 Min köcheln bis Linsen weich.",
+        "Auf kleiner Portion Kokos-Reis servieren."
+      ],
+      "hinweis": "Kokosmilch-Rest vom Mittag nutzen = Zero Waste.",
+      "tags": [
+        "vegetarisch",
+        "günstig",
+        "linsen",
+        "zero-waste",
+        "tk-freundlich"
+      ]
+    },
+    {
+      "id": 28,
+      "name": "Magerquark-Bowl herzhaft",
+      "kategorie": "abend",
+      "sub": "bowl",
+      "kcal": 420,
+      "protein": 38.0,
+      "kosten": 1.6,
+      "zeit": 5,
+      "zutaten": [
+        [
+          "500g",
+          "Magerquark (2 Pers)"
+        ],
+        [
+          "1/3",
+          "Salatgurke (gewürfelt)"
+        ],
+        [
+          "3",
+          "Radieschen (in Scheiben)"
+        ],
+        [
+          "TK-Schnittlauch",
+          "Petersilie"
+        ],
+        [
+          "2 Scheiben",
+          "Vollkornbrot"
+        ],
+        [
+          "Salz, Pfeffer, Paprika"
+        ]
+      ],
+      "schritte": [
+        "Quark mit Salz, Pfeffer, Paprika, Schnittlauch verrühren.",
+        "Gurke + Radieschen unterheben oder als Topping.",
+        "Mit Vollkornbrot servieren.",
+        "Fertig in 5 Minuten."
+      ],
+      "hinweis": "Schnellstes Abendessen im Plan.",
+      "tags": [
+        "magerquark",
+        "no-cook",
+        "schnell",
+        "günstig",
+        "herzhaft"
+      ]
+    },
+    {
+      "id": 35,
+      "name": "Kartoffelpüree Duo — klassisch & New Style",
+      "kategorie": "abend",
+      "sub": "beilage-klassiker",
+      "kcal": 580,
+      "protein": 12.0,
+      "kosten": 1.6,
+      "zeit": 30,
+      "zutaten": [
+        [
+          "800g",
+          "Kartoffeln (mehligkochend)"
+        ],
+        [
+          "Salz",
+          "fürs Kochwasser"
+        ],
+        [
+          "--- Klassisch (für beide) ---",
+          ""
+        ],
+        [
+          "2 EL",
+          "Butter"
+        ],
+        [
+          "100ml",
+          "Milch (warm)"
+        ],
+        [
+          "Muskatnuss",
+          "frisch gerieben"
+        ],
+        [
+          "--- New Style (für Papa) ---",
+          ""
+        ],
+        [
+          "2 EL",
+          "Crème fraîche oder Joghurt"
+        ],
+        [
+          "TK-Schnittlauch",
+          "Schnittlauch"
+        ],
+        [
+          "Schwarzer Pfeffer",
+          ""
+        ]
+      ],
+      "schritte": [
+        "Kartoffeln kalt in Salzwasser aufsetzen, zum Kochen bringen, 20 Min.",
+        "Abgießen, kurz ausdampfen lassen — wichtig für fluffiges Püree.",
+        "Durch Kartoffelpresse drücken (NICHT Mixer — wird klebrig!).",
+        "Butter + warme Milch unterheben bis cremig.",
+        "Salzen, Muskatnuss drüber.",
+        "PAPAS Portion: Crème fraîche + Schnittlauch + Pfeffer — eigener Stil.",
+        "RIKES Portion: klassisch oder mit Käse überbacken."
+      ],
+      "hinweis": "Kartoffelpresse statt Mixer = fluffig, nicht klebrig.",
+      "tags": [
+        "kartoffel",
+        "beilage",
+        "käse-trennbar",
+        "günstig",
+        "wochenende"
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Bohnen-Chili vegetarisch",
+      "kategorie": "abend",
+      "sub": "vegetarisch",
+      "kcal": 490,
+      "protein": 22.0,
+      "kosten": 1.7,
+      "zeit": 25,
+      "zutaten": [
+        [
+          "1 Dose",
+          "Kidneybohnen (400g)"
+        ],
+        [
+          "1 Dose",
+          "Mais (oder TK-Mais)"
+        ],
+        [
+          "1 Dose",
+          "Tomaten gewürfelt"
+        ],
+        [
+          "1",
+          "Paprika TK"
+        ],
+        [
+          "1 Zwiebel",
+          "Knoblauch"
+        ],
+        [
+          "1 TL",
+          "Chili, Kreuzkümmel, Salz, Pfeffer"
+        ],
+        [
+          "Sauerrahm oder Magerquark",
+          "als Topping für Rike"
+        ],
+        [
+          "Gouda gerieben",
+          "für Rike"
+        ]
+      ],
+      "schritte": [
+        "Zwiebel + Knoblauch andünsten.",
+        "Paprika TK dazu, kurz anbraten.",
+        "Bohnen + Mais + Tomaten rein.",
+        "Chili + Kreuzkümmel, 15-20 Min köcheln.",
+        "Rike bekommt Käse + Quark obendrauf."
+      ],
+      "hinweis": "Vegane Basis — Rike toppen mit Käse, Papa pur.",
+      "tags": [
+        "vegetarisch",
+        "günstig",
+        "bohnen",
+        "käse-trennbar",
+        "tk-freundlich"
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Magerquark-Bowl süß (Beeren, Nüsse, Honig)",
+      "kategorie": "abend",
+      "sub": "bowl",
+      "kcal": 480,
+      "protein": 42.0,
+      "kosten": 1.8,
+      "zeit": 3,
+      "zutaten": [
+        [
+          "500g",
+          "Magerquark (2 Pers)"
+        ],
+        [
+          "100g",
+          "Beerenmix TK (aufgetaut)"
+        ],
+        [
+          "2 EL",
+          "Haferflocken"
+        ],
+        [
+          "1 EL",
+          "Erdnussmus oder Walnüsse gehackt"
+        ],
+        [
+          "1 TL",
+          "Honig"
+        ],
+        [
+          "1 Prise",
+          "Zimt"
+        ]
+      ],
+      "schritte": [
+        "Beeren TK morgens aus Tiefkühler — abends aufgetaut.",
+        "Quark in Schüsseln füllen.",
+        "Beeren + Haferflocken + Nuss/Erdnussmus + Honig + Zimt drüber.",
+        "Fertig in 3 Minuten."
+      ],
+      "hinweis": "Beeren morgens aus TK nehmen = abends aufgetaut.",
+      "tags": [
+        "magerquark",
+        "tryptophan",
+        "schnell",
+        "günstig",
+        "no-cook"
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Überbackene Fusilli mit Hack & Käse (Rike Vorkoch)",
+      "kategorie": "abend",
+      "sub": "donnerstag-vorkoch",
+      "kcal": 680,
+      "protein": 36.0,
+      "kosten": 2.8,
+      "zeit": 35,
+      "zutaten": [
+        [
+          "200g",
+          "Fusilli (oder Penne)"
+        ],
+        [
+          "200g",
+          "Rinderhack oder Putenhack"
+        ],
+        [
+          "1 Dose",
+          "Tomaten passiert"
+        ],
+        [
+          "1 Zwiebel",
+          "Knoblauch"
+        ],
+        [
+          "100g",
+          "Gouda gerieben"
+        ],
+        [
+          "Oregano, Salz, Pfeffer"
+        ]
+      ],
+      "schritte": [
+        "MITTWOCHABEND zubereiten!",
+        "Fusilli kochen. Hack-Sauce wie Bolognese (10 Min).",
+        "Fusilli + Sauce in Auflaufform mischen.",
+        "Gouda drüber streuen, abdecken + im Kühlschrank.",
+        "DONNERSTAG: Rike 3-4 Min Mikrowelle, fertig."
+      ],
+      "hinweis": "Mikrowellen-tauglich: Fusilli/Penne, KEIN Spaghetti.",
+      "tags": [
+        "donnerstag",
+        "vorkoch",
+        "mikrowelle",
+        "kaese",
+        "rike"
+      ]
+    },
+    {
+      "id": 38,
+      "name": "Rinder-Frikadellen",
+      "kategorie": "abend",
+      "sub": "protein-klassiker",
+      "kcal": 540,
+      "protein": 38.0,
+      "kosten": 2.8,
+      "zeit": 25,
+      "zutaten": [
+        [
+          "400g",
+          "Rinderhack (oder 50/50 Rind+Pute)"
+        ],
+        [
+          "1",
+          "Zwiebel (fein gewürfelt)"
+        ],
+        [
+          "1",
+          "Ei"
+        ],
+        [
+          "2 EL",
+          "Paniermehl oder altes Brot (eingeweicht)"
+        ],
+        [
+          "1 TL",
+          "Senf"
+        ],
+        [
+          "Salz, Pfeffer, Paprika, Petersilie TK",
+          ""
+        ],
+        [
+          "2 EL",
+          "Öl zum Braten"
+        ]
+      ],
+      "schritte": [
+        "Zwiebel sehr fein würfeln, kurz andünsten, abkühlen lassen.",
+        "Hack + Ei + Paniermehl + Senf + Zwiebeln + Gewürze verkneten.",
+        "Mit nassen Händen zu 6-8 Frikadellen formen.",
+        "In Öl bei mittlerer Hitze 5-6 Min pro Seite braten.",
+        "Innen durch prüfen (kein Rosa mehr).",
+        "Passt zu: Kartoffelpüree + Rotkohl, Salat, Kartoffelspalten."
+      ],
+      "hinweis": "Rind statt gemischtem Hack = kein Schwein.",
+      "tags": [
+        "rind",
+        "high-protein",
+        "klassiker",
+        "günstig",
+        "meal-prep"
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Putenbrust Ofengemüse & Kräuterquark-Dip",
+      "kategorie": "abend",
+      "sub": "protein-klassiker",
+      "kcal": 520,
+      "protein": 48.0,
+      "kosten": 3.0,
+      "zeit": 30,
+      "zutaten": [
+        [
+          "300g",
+          "Putenbrust (Scheiben oder Filet)"
+        ],
+        [
+          "300g",
+          "Ofengemüse TK (Zucchini, Paprika, Karotte)"
+        ],
+        [
+          "125g",
+          "Magerquark (Papas Tagesration)"
+        ],
+        [
+          "2 EL",
+          "Joghurt"
+        ],
+        [
+          "Kräuter TK",
+          "Schnittlauch, Petersilie"
+        ],
+        [
+          "1 EL",
+          "Öl, Salz, Pfeffer, Paprika"
+        ]
+      ],
+      "schritte": [
+        "Ofen 200°C. Gemüse TK auf Blech, Öl + Salz, 20-25 Min.",
+        "Pute in Pfanne 6-8 Min von jeder Seite braten.",
+        "Quark + Joghurt + Kräuter + Salz verrühren = Dip.",
+        "Pute aufschneiden, mit Gemüse und Quark-Dip servieren."
+      ],
+      "hinweis": "Papas 125g Magerquark = direkt in Dip integriert. Zero Waste.",
+      "tags": [
+        "tryptophan",
+        "magerquark",
+        "high-protein",
+        "schlaf-fördernd"
+      ]
+    },
+    {
+      "id": 53,
+      "name": "Hackbällchen mit Senf-Frühlingszwiebel-Soße",
+      "kategorie": "abend",
+      "sub": "protein-klassiker",
+      "kcal": 767,
+      "protein": 28.0,
+      "kosten": 3.0,
+      "zeit": 25,
+      "zutaten": [
+        [
+          "300g (1,5x)",
+          "Rinderhack"
+        ],
+        [
+          "3",
+          "Kartoffeln (festkochend)"
+        ],
+        [
+          "Frühlingszwiebeln",
+          "3-4 Stück, in Ringe"
+        ],
+        [
+          "Soße:",
+          "150ml Brühe + 2 TL Senf + 1 EL Joghurt + Prise Zucker"
+        ],
+        [
+          "25g",
+          "Semmelbrösel"
+        ],
+        [
+          "Gewürze:",
+          "Paprika+Salz+Pfeffer"
+        ],
+        [
+          "Salatbeilage:",
+          "Blattsalat + Dressing nach Wahl"
+        ],
+        [
+          "Butter",
+          "Öl"
+        ]
+      ],
+      "schritte": [
+        "Kartoffeln in Salzwasser kochen (20 Min), mit Butter schwenken.",
+        "Hack + Semmelbrösel + Gewürze + Salz zu 6 Bällchen formen.",
+        "In Pfanne ohne Fett 4-5 Min rundum anbraten.",
+        "Frühlingszwiebeln in Butter 1 Min andünsten.",
+        "Brühe + Senf + Joghurt + Zucker einrühren, 3 Min einkochen.",
+        "Bällchen in Soße, Salat dazu, Kartoffeln daneben."
+      ],
+      "hinweis": "Schnellste Abendmahlzeit mit Hackbällchen — 25 Min.",
+      "tags": [
+        "rind",
+        "hackbällchen",
+        "schnell",
+        "hellofresh",
+        "käse-nicht-nötig",
+        "günstig"
+      ]
+    },
+    {
+      "id": 49,
+      "name": "Backfisch mit Kartoffelstampf & Salat",
+      "kategorie": "abend",
+      "sub": "fisch",
+      "kcal": 782,
+      "protein": 33.0,
+      "kosten": 3.2,
+      "zeit": 30,
+      "zutaten": [
+        [
+          "360g (1,5x)",
+          "Pangasius oder Seelachs TK (aufgetaut, abgetrocknet)"
+        ],
+        [
+          "600g",
+          "mehligkochende Kartoffeln"
+        ],
+        [
+          "150g",
+          "Romana-Salat"
+        ],
+        [
+          "2",
+          "Tomaten"
+        ],
+        [
+          "2 Zehen",
+          "Knoblauch"
+        ],
+        [
+          "35g",
+          "Kapern (Glas)"
+        ],
+        [
+          "2 EL",
+          "Butter"
+        ],
+        [
+          "Dill TK",
+          "Schnittlauch TK"
+        ],
+        [
+          "Dressing:",
+          "2 EL Joghurt + 1 TL Senf + Zitronensaft + Salz"
+        ],
+        [
+          "Paprika edelsüß",
+          "Öl, Salz, Pfeffer"
+        ]
+      ],
+      "schritte": [
+        "Kartoffeln kochen (20 Min Salzwasser).",
+        "Fisch mit Paprika + Salz + Pfeffer würzen.",
+        "In Pfanne mit Butter 4-5 Min pro Seite goldbraun braten.",
+        "Knoblauch + Kapern hacken, in letzten 2 Min mit in die Pfanne.",
+        "Kartoffeln stampfen mit Butter + Dill + Salz.",
+        "Salat + Tomaten + Joghurt-Senf-Dressing vermengen.",
+        "Backfisch + Stampf + Salat servieren."
+      ],
+      "hinweis": "Fisch TK aufgetaut + gut abgetrocknet = knusprigeres Ergebnis.",
+      "tags": [
+        "fisch",
+        "pangasius",
+        "kartoffel",
+        "hellofresh",
+        "günstig",
+        "tryptophan"
+      ]
+    },
+    {
+      "id": 51,
+      "name": "Rinder-Kotleti mit Dill-Joghurt-Dip",
+      "kategorie": "abend",
+      "sub": "protein-klassiker",
+      "kcal": 803,
+      "protein": 30.0,
+      "kosten": 3.2,
+      "zeit": 30,
+      "zutaten": [
+        [
+          "300g (1,5x)",
+          "Rinderhack vom Weiderind"
+        ],
+        [
+          "3",
+          "Ofenkartoffeln (festkochend)"
+        ],
+        [
+          "3",
+          "Karotten TK"
+        ],
+        [
+          "Dill TK",
+          "Schnittlauch TK"
+        ],
+        [
+          "1 EL",
+          "Knoblauch+Zwiebel gehackt"
+        ],
+        [
+          "25g",
+          "Semmelbrösel"
+        ],
+        [
+          "Gewürze:",
+          "Paprika+Oregano+Salz+Pfeffer"
+        ],
+        [
+          "Dip:",
+          "150g Joghurt oder Magerquark + Dill + Salz + Pfeffer"
+        ],
+        [
+          "Karottensalat:",
+          "Karotten TK geraspelt + Olivenöl + Zitronensaft"
+        ]
+      ],
+      "schritte": [
+        "Ofen 220°C. Kartoffeln halbieren, mit Öl+Salz auf Blech, 25-30 Min.",
+        "Hack + Knoblauch/Zwiebel + Semmelbrösel + Gewürze zu gleichmäßigen Bällchen formen.",
+        "In Pfanne ohne Fett 3-4 Min rundum anbraten.",
+        "Dill-Dip: Joghurt/Quark + Dill + Salz + Pfeffer verrühren.",
+        "Karottensalat: Karotten TK antauen lassen, mit Öl+Zitrone+Salz mischen.",
+        "Kotleti + Röstkartoffeln + Karottensalat + Dip servieren."
+      ],
+      "hinweis": "Kotleti = osteuropäische Frikadelle — flacher als deutsche Variante.",
+      "tags": [
+        "rind",
+        "frikadelle",
+        "dip",
+        "hellofresh",
+        "käse-nicht-nötig",
+        "tk-freundlich"
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Hähnchen-Schnitzel mit Salzkartoffeln & Salat",
+      "kategorie": "abend",
+      "sub": "klassiker",
+      "kcal": 580,
+      "protein": 44.0,
+      "kosten": 3.5,
+      "zeit": 35,
+      "zutaten": [
+        [
+          "2",
+          "Hähnchenbrustfilets (flach klopfen)"
+        ],
+        [
+          "400g",
+          "Kartoffeln (festkochend)"
+        ],
+        [
+          "2 EL",
+          "Mehl, 1 Ei, Paniermehl"
+        ],
+        [
+          "Salatmix TK oder frisch",
+          "Gurke, Tomate"
+        ],
+        [
+          "2 EL",
+          "Öl zum Braten"
+        ],
+        [
+          "Salz, Pfeffer, Zitrone"
+        ]
+      ],
+      "schritte": [
+        "Kartoffeln kochen (20 Min Salzwasser).",
+        "Hähnchen flach klopfen, salzen, pfeffern.",
+        "Mehl → Ei → Paniermehl — panieren.",
+        "In Öl 4-5 Min pro Seite goldbraun braten.",
+        "Mit Kartoffeln und Salat servieren, Zitrone drüber."
+      ],
+      "hinweis": "Hähnchen flach klopfen = gleichmäßig gar, kürzer braten.",
+      "tags": [
+        "hähnchen",
+        "klassiker",
+        "freitag-optional"
+      ]
+    },
+    {
+      "id": 46,
+      "name": "Würzige Fischboulette in Kräuterpanade",
+      "kategorie": "abend",
+      "sub": "fisch",
+      "kcal": 528,
+      "protein": 33.0,
+      "kosten": 3.5,
+      "zeit": 20,
+      "zutaten": [
+        [
+          "375g (1,5x)",
+          "Seelachs (TK aufgetaut) — oder Pangasius"
+        ],
+        [
+          "400g",
+          "Kartoffeln (Drillinge oder festkochend)"
+        ],
+        [
+          "1",
+          "Romana-Salat oder Salatmix"
+        ],
+        [
+          "1",
+          "Salatgurke"
+        ],
+        [
+          "1",
+          "Zitrone"
+        ],
+        [
+          "Dill+Schnittlauch TK",
+          ""
+        ],
+        [
+          "25g",
+          "Semmelbrösel"
+        ],
+        [
+          "2 TL",
+          "Mehl"
+        ],
+        [
+          "75g",
+          "Naturjoghurt (Dip + Salatdressing)"
+        ],
+        [
+          "10ml",
+          "mittelscharfer Senf"
+        ],
+        [
+          "Butter, Öl, Salz",
+          ""
+        ]
+      ],
+      "schritte": [
+        "Kräuter fein hacken. Gurke in Halbmonde. Salat in Streifen.",
+        "Kartoffeln halbieren, in Salzwasser 12-15 Min kochen.",
+        "Fisch in 1cm Würfel schneiden, mit Mehl+Salz+Kräuter+Senf+Semmelbröseln verkneten.",
+        "Zu 3 flachen Bouletten formen, in restl. Semmelbröseln wälzen.",
+        "In Öl bei mittlerer Hitze 4-5 Min pro Seite goldbraun braten.",
+        "Joghurt-Dip: Hälfte Joghurt + Kräuter + Salz + Pfeffer.",
+        "Kartoffeln abgießen, mit Butter+Kräutern schwenken.",
+        "Salat: restl. Joghurt + Zitronensaft + Salz als Dressing.",
+        "Servieren: Bouletten + Kartoffeln + Salat + Dip."
+      ],
+      "hinweis": "Seelachs TK: aufgetaut und gut abgetrocknet vor dem Verarbeiten.",
+      "tags": [
+        "fisch",
+        "seelachs",
+        "gesund",
+        "hellofresh",
+        "schnell",
+        "tryptophan"
+      ]
+    },
+    {
+      "id": 52,
+      "name": "Schwedische Rinder-Frikadellen mit Stampf",
+      "kategorie": "abend",
+      "sub": "klassiker",
+      "kcal": 905,
+      "protein": 35.0,
+      "kosten": 3.5,
+      "zeit": 35,
+      "zutaten": [
+        [
+          "300g (1,5x)",
+          "Rinderhack (Weiderind)"
+        ],
+        [
+          "600g",
+          "mehligkochende Kartoffeln"
+        ],
+        [
+          "3",
+          "Karotten TK (Ofen)"
+        ],
+        [
+          "25g",
+          "Semmelbrösel"
+        ],
+        [
+          "1 Ei",
+          "Paniermehl"
+        ],
+        [
+          "Sahnésoße:",
+          "100ml Sahne oder Saure Sahne + Brühe + 1 TL Sojasoße + Salz"
+        ],
+        [
+          "2 EL",
+          "Butter + warme Milch für Stampf"
+        ],
+        [
+          "Muskatnuss",
+          "Salz, Pfeffer, Öl"
+        ]
+      ],
+      "schritte": [
+        "Ofen 220°C. Karotten TK auf Blech mit Öl+Salz, 20-25 Min.",
+        "Hack + Semmelbrösel + Ei + Salz + Pfeffer gut verkneten.",
+        "Zu 6-8 Bällchen formen, in Pfanne 5-6 Min rundum braten.",
+        "Kartoffeln kochen. In gleicher Pfanne: Sahne+Brühe+Sojasoße aufkochen, Bällchen rein.",
+        "Kartoffeln stampfen mit Butter + warmer Milch + Muskat.",
+        "Frikadellen in Sahnesoße + Stampf + Ofen-Karotten servieren."
+      ],
+      "hinweis": "Freitagsklassiker oder Wochenende — etwas aufwändiger, lohnt sich.",
+      "tags": [
+        "rind",
+        "frikadelle",
+        "schwedisch",
+        "hellofresh",
+        "wochenende",
+        "tryptophan"
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Kartoffelpüree, Schnitzel & Rotkohl",
+      "kategorie": "abend",
+      "sub": "familienessen",
+      "kcal": 750,
+      "protein": 40.0,
+      "kosten": 3.8,
+      "zeit": 40,
+      "zutaten": [
+        [
+          "500g",
+          "Kartoffeln (mehligkochend)"
+        ],
+        [
+          "2",
+          "Hähnchen- oder Putenfilet (dünn klopfen)"
+        ],
+        [
+          "300g",
+          "Rotkohl TK (oder Glas)"
+        ],
+        [
+          "1 EL",
+          "Butter, 100ml Milch warm"
+        ],
+        [
+          "Mehl, Ei, Paniermehl",
+          "zum Panieren"
+        ],
+        [
+          "1 Päckchen",
+          "Bratensauce (Pulver, günstig ok)"
+        ],
+        [
+          "Salz, Pfeffer, Muskat"
+        ]
+      ],
+      "schritte": [
+        "Kartoffeln kochen. Rotkohl TK in Topf aufwärmen.",
+        "Bratensauce nach Packung zubereiten.",
+        "Schnitzel panieren, in Öl goldbraun braten.",
+        "Kartoffeln stampfen mit Butter, Milch, Salz, Muskat.",
+        "Alles zusammen anrichten — Familienessen-Freitag!"
+      ],
+      "hinweis": "Freitags-Highlight — etwas mehr kcal okay (kein Sport danach).",
+      "tags": [
+        "familienessen",
+        "freitag",
+        "klassiker",
+        "schnitzel"
+      ]
+    },
+    {
+      "id": 41,
+      "name": "Hot Honey Hot Dog mit Karotten-Pommes",
+      "kategorie": "abend",
+      "sub": "wochenende",
+      "kcal": 730,
+      "protein": 29.0,
+      "kosten": 3.8,
+      "zeit": 35,
+      "zutaten": [
+        [
+          "--- Für 1,5 Portionen (Papa + Rike) ---",
+          ""
+        ],
+        [
+          "3 Stück",
+          "Hähnchenbratwurst / Geflügelwurst (KEIN Schwein — Thüringer Original enthält Schwein!)"
+        ],
+        [
+          "3 Stück",
+          "Hot-Dog-Brötchen"
+        ],
+        [
+          "4-5 Stück",
+          "Karotten (in 1 cm Stifte)"
+        ],
+        [
+          "350g",
+          "Kartoffeln (in 1 cm Stifte — Karotten-Pommes-Mix)"
+        ],
+        [
+          "1",
+          "rote Zwiebel (halbiert, in 2 cm Spalten)"
+        ],
+        [
+          "75ml",
+          "Buttermilch-Zitronen-Dressing (oder: Joghurt + Zitronensaft + Prise Salz)"
+        ],
+        [
+          "24ml",
+          "Sriracha-Sauce (ca. 1,5 EL)"
+        ],
+        [
+          "1,5 TL",
+          "Paprika edelsüß + Rauchpaprika gemischt (statt Hello Smoky Paprika)"
+        ],
+        [
+          "37g",
+          "Ketchup (ca. 1,5 EL)"
+        ],
+        [
+          "1,5 EL",
+          "Honig"
+        ],
+        [
+          "1,5 EL",
+          "Öl"
+        ],
+        [
+          "Salz, Pfeffer",
+          "nach Geschmack"
+        ],
+        [
+          "1,5 TL",
+          "Wasser (für Hot Honey)"
+        ]
+      ],
+      "schritte": [
+        "Ofen vorheizen 220°C Ober-/Unterhitze (200°C Umluft).",
+        "Kartoffeln + Karotten in 1 cm Stifte schneiden.",
+        "Zwiebel halbieren, in 2 cm Spalten schneiden.",
+        "Alles auf Backblech mit Backpapier, 1,5 EL Öl + Paprika-Rauchpaprika-Mix + Salz + Pfeffer vermengen.",
+        "25-30 Min im Ofen backen.",
+        "Hähnchenbratwurst mit etwas Öl einreiben — letzte 15 Min mit aufs Blech.",
+        "HOT HONEY mischen: Sriracha + 1,5 EL Honig + 1,5 TL Wasser + Prise Salz + Pfeffer.",
+        "Hot-Dog-Brötchen waagerecht einschneiden, letzte 3 Min im Ofen toasten.",
+        "Würstchen in Brötchen, Buttermilch-Dressing drüber, Hot Honey drüber.",
+        "Karotten-Pommes + Zwiebeln daneben, Ketchup dazu. Fertig!"
+      ],
+      "hinweis": "WICHTIG: Original Thüringer = Schweinefleisch! Immer Hähnchenbratwurst/Geflügelwurst kaufen. Sriracha für Rike nach Geschmack dosieren (schärfer für Papa). | Buttermilch-Dressing Alternative: 3 EL Joghurt + 1 TL Zitronensaft + Prise Salz + Prise Zucker + 1 TL Senf (mild) = fast identisch, günstiger",
+      "tags": [
+        "wochenende",
+        "hähnchen",
+        "hot-dog",
+        "sriracha",
+        "ofen",
+        "schnell",
+        "käse-nicht-nötig",
+        "hellofresh"
+      ]
+    },
+    {
+      "id": 37,
+      "name": "Standard-Kombination: Püree + Rotkohl",
+      "kategorie": "abend",
+      "sub": "familienessen",
+      "kcal": 720,
+      "protein": 42.0,
+      "kosten": 4.0,
+      "zeit": 40,
+      "zutaten": [
+        [
+          "600g",
+          "Kartoffeln (mehligkochend)"
+        ],
+        [
+          "300g",
+          "Rotkohl TK (oder Glas — günstig!)"
+        ],
+        [
+          "1 Päckchen",
+          "Bratensauce Pulver (braune Sauce, schnell)"
+        ],
+        [
+          "2 EL",
+          "Butter, 100ml Milch warm"
+        ],
+        [
+          "Muskatnuss, Salz",
+          ""
+        ],
+        [
+          "--- Protein-Variante wählen ---",
+          ""
+        ],
+        [
+          "Option A",
+          "2 Hähnchenschnitzel paniert (günstig)"
+        ],
+        [
+          "Option B",
+          "2 Putenfilets dünn + Bratensauce"
+        ],
+        [
+          "Option C",
+          "4 Frikadellen aus Rinderhack"
+        ],
+        [
+          "Option D",
+          "Roulade (wenn Angebot)"
+        ]
+      ],
+      "schritte": [
+        "Rotkohl TK aufwärmen (oder Glas öffnen und erwärmen).",
+        "Kartoffeln kochen, stampfen mit Butter + warmer Milch + Muskat.",
+        "Bratensauce nach Packung zubereiten.",
+        "Protein-Variante zubereiten (A-D nach Wahl und Angebot).",
+        "Anrichten: Püree, Rotkohl, Protein, Sauce drüber."
+      ],
+      "hinweis": "Rotkohl TK = günstig + genauso gut wie frisch.",
+      "tags": [
+        "familienessen",
+        "freitag",
+        "klassiker",
+        "käse-trennbar",
+        "modular"
+      ]
+    },
+    {
+      "id": 40,
+      "name": "Hähnchen-Burger (Papa plain / Rike Cheese)",
+      "kategorie": "abend",
+      "sub": "wochenende",
+      "kcal": 680,
+      "protein": 44.0,
+      "kosten": 4.2,
+      "zeit": 40,
+      "zutaten": [
+        [
+          "2",
+          "Burger-Buns (oder Ciabatta-Brötchen)"
+        ],
+        [
+          "2",
+          "Hähnchenbrustfilets (platt klopfen)"
+        ],
+        [
+          "Mehl, 1 Ei, Paniermehl",
+          "zum Panieren"
+        ],
+        [
+          "2 EL",
+          "Öl zum Braten"
+        ],
+        [
+          "--- Sauce (beide) ---",
+          ""
+        ],
+        [
+          "3 EL",
+          "Joghurt oder Magerquark"
+        ],
+        [
+          "1 TL",
+          "mittelscharfer Senf"
+        ],
+        [
+          "1/2 TL",
+          "Honig, Salz, Pfeffer"
+        ],
+        [
+          "--- Belag ---",
+          ""
+        ],
+        [
+          "2 Blätter",
+          "Salat"
+        ],
+        [
+          "2 Scheiben",
+          "Tomate (abgetupft!)"
+        ],
+        [
+          "Gurke",
+          "in Scheiben"
+        ],
+        [
+          "--- NUR FÜR RIKE ---",
+          ""
+        ],
+        [
+          "2 Scheiben",
+          "Gouda oder Cheddar (schmelzen!)"
+        ],
+        [
+          "--- Beilage ---",
+          ""
+        ],
+        [
+          "400g",
+          "Kartoffeln als Ofenpommes oder Spalten"
+        ]
+      ],
+      "schritte": [
+        "Kartoffeln als Spalten mit Öl + Salz in Ofen (200°C, 25 Min).",
+        "Hähnchen flach klopfen, salzen, pfeffern.",
+        "Mehl → Ei → Paniermehl — panieren.",
+        "In Öl 4-5 Min pro Seite goldbraun braten.",
+        "Sauce: Joghurt + Senf + Honig + Salz + Pfeffer verrühren.",
+        "RIKES Cheeseburger: Käse letzte Minute aufs Hähnchen in Pfanne.",
+        "Buns aufschneiden, Sauce drauf, Salat → Tomate → Hähnchen.",
+        "Papa: plain ohne Käse. Rike: mit geschmolzenem Gouda."
+      ],
+      "hinweis": "Burger-Prinzip: gleiche Basis, Käse für Rike, kein Käse für Papa.",
+      "tags": [
+        "wochenende",
+        "hähnchen",
+        "burger",
+        "käse-trennbar",
+        "familienessen",
+        "highlight"
+      ]
+    },
+    {
+      "id": 45,
+      "name": "Paniertes Rinderschnitzel mit Aioli",
+      "kategorie": "abend",
+      "sub": "klassiker",
+      "kcal": 750,
+      "protein": 30.0,
+      "kosten": 4.5,
+      "zeit": 30,
+      "zutaten": [
+        [
+          "300g",
+          "Rinderhüftsteak (dünn klopfen) — 1,5 Portionen"
+        ],
+        [
+          "600g",
+          "festkochende Kartoffeln"
+        ],
+        [
+          "Salatmix",
+          "Blattsalat oder Gurke+Tomate"
+        ],
+        [
+          "1",
+          "Karotte (grob geraspelt für Salat)"
+        ],
+        [
+          "25g",
+          "Semmelbrösel"
+        ],
+        [
+          "1 Ei",
+          "Mehl"
+        ],
+        [
+          "Aioli-Alternative:",
+          "3 EL Joghurt + 1 Zehe Knoblauch gepresst + Prise Salz"
+        ],
+        [
+          "1 TL",
+          "Senf (für Salatdressing)"
+        ],
+        [
+          "Paprika edelsüß",
+          "Öl, Essig, Salz, Pfeffer"
+        ]
+      ],
+      "schritte": [
+        "Ofen 220°C. Kartoffeln in 1cm Spalten, mit Öl+Paprika+Salz aufs Blech, 25-30 Min.",
+        "Joghurt-Aioli: Joghurt + Knoblauch gepresst + Salz verrühren.",
+        "Salatdressing: Senf + Olivenöl + Essig + Salz + Prise Zucker.",
+        "Karotte raspeln, mit Salat vermengen.",
+        "Rind flach klopfen, salzen, pfeffern.",
+        "Mehl → Ei → Semmelbrösel — panieren.",
+        "In Pfanne mit reichlich Öl 2-3 Min pro Seite goldbraun braten.",
+        "Mit Kartoffelspalten, Salat und Joghurt-Aioli servieren."
+      ],
+      "hinweis": "HF verwendet Aioli aus Tube — Joghurt+Knoblauch ist günstiger+frischer.",
+      "tags": [
+        "rind",
+        "schnitzel",
+        "paniert",
+        "hellofresh",
+        "käse-nicht-nötig",
+        "ofen"
+      ]
+    },
+    {
+      "id": 36,
+      "name": "Rindergulasch butterzart",
+      "kategorie": "abend",
+      "sub": "wochenende",
+      "kcal": 620,
+      "protein": 45.0,
+      "kosten": 5.5,
+      "zeit": 130,
+      "zutaten": [
+        [
+          "500g",
+          "Rinderbrust oder Rinderschulter (Gulasch-Stücke)"
+        ],
+        [
+          "4 große",
+          "Zwiebeln (viel = wichtig für Bindung!)"
+        ],
+        [
+          "1 EL",
+          "Tomatenmark"
+        ],
+        [
+          "1 TL",
+          "Paprika edelsüß + scharf"
+        ],
+        [
+          "1 TL",
+          "Majoran + Kümmel"
+        ],
+        [
+          "400ml",
+          "Rinderbrühe (Pulver ok)"
+        ],
+        [
+          "2 EL",
+          "Öl oder Butterschmalz"
+        ],
+        [
+          "Salz, Pfeffer",
+          ""
+        ],
+        [
+          "optional",
+          "100ml Sahne für Rahmgulasch (Rikes Portion)"
+        ]
+      ],
+      "schritte": [
+        "Zwiebeln in feine Ringe schneiden — VIEL Zwiebel ist das Geheimnis.",
+        "Rinderstücke mit Salz + Pfeffer würzen.",
+        "Öl in Topf sehr heiß, Fleisch portionsweise scharf anbraten.",
+        "Zwiebeln in den gleichen Topf, 10-15 Min bei mittlerer Hitze karamellisieren.",
+        "Tomatenmark + Paprika kurz mitrösten.",
+        "Fleisch zurück, Brühe angießen — Fleisch soll knapp bedeckt sein.",
+        "Zugedeckt 90-120 Min bei sehr kleiner Hitze schmoren.",
+        "RIKES Portion: am Ende 50ml Sahne einrühren = Rahmgulasch.",
+        "Mit Kartoffelpüree oder Nudeln servieren."
+      ],
+      "hinweis": "Nur Rind — kein Schwein. Günstige Cuts (Brust/Schulter) = beste Ergebnis.",
+      "tags": [
+        "wochenende",
+        "sonntag",
+        "rind",
+        "tryptophan",
+        "käse-trennbar",
+        "slow-cook"
+      ]
+    },
+    {
+      "id": 32,
+      "name": "Pfannkuchen-Bar (Wochenende)",
+      "kategorie": "mittag",
+      "sub": "wochenende",
+      "kcal": 540,
+      "protein": 22.0,
+      "kosten": 1.4,
+      "zeit": 60,
+      "zutaten": [
+        [
+          "150g",
+          "Mehl"
+        ],
+        [
+          "125ml",
+          "Milch (1/8 Liter)"
+        ],
+        [
+          "4",
+          "Eier"
+        ],
+        [
+          "1 Prise",
+          "Salz"
+        ],
+        [
+          "2 EL",
+          "Butterschmalz oder Öl"
+        ],
+        [
+          "--- Süße Toppings ---",
+          ""
+        ],
+        [
+          "nach Wahl",
+          "Erdbeermarmelade, Apfelmus, Honig, Banane + Nutella"
+        ],
+        [
+          "--- Herzhafte Toppings (Papa)---",
+          ""
+        ],
+        [
+          "nach Wahl",
+          "Hähnchen-Streifen, Salat, Kräuterquark"
+        ],
+        [
+          "--- Käse-Topping (Rike)---",
+          ""
+        ],
+        [
+          "nach Wahl",
+          "Gouda gerieben zum Aufschmelzen"
+        ]
+      ],
+      "schritte": [
+        "Mehl in Schüssel geben. Milch, Eier, Salz mit Schneebesen einrühren bis glatt.",
+        "Teig 20 Min quellen lassen — wichtig für gutes Ergebnis.",
+        "Pfanne hauchdünn einfetten, heiß werden lassen, dann Hitze reduzieren.",
+        "Kleine Portion Teig rein, Pfanne drehen bis Teig dünn verteilt.",
+        "Backen bis Unterseite knusprig, dann wenden, fertigbacken.",
+        "Vor jedem neuen Pfannkuchen wieder hauchdünn einfetten.",
+        "RIKES Variante: Gouda drauf, aufrollen, kurz in Pfanne schmelzen lassen.",
+        "PAPAS Variante: herzhaft mit Kräuterquark oder Salat."
+      ],
+      "hinweis": "Wochenend-Tradition — jeder füllt seinen Pfannkuchen selbst.",
+      "tags": [
+        "wochenende",
+        "familienessen",
+        "käse-trennbar",
+        "günstig",
+        "klassiker"
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Kartoffelspalten mit Kräuterquark",
+      "kategorie": "mittag",
+      "sub": "kartoffel",
+      "kcal": 620,
+      "protein": 28.0,
+      "kosten": 1.8,
+      "zeit": 30,
+      "zutaten": [
+        [
+          "500g",
+          "Kartoffeln (festkochend)"
+        ],
+        [
+          "250g",
+          "Magerquark (auch Papas Tagesration nutzbar)"
+        ],
+        [
+          "3 EL",
+          "Joghurt oder Sahne (für Cremigkeit)"
+        ],
+        [
+          "TK-Schnittlauch",
+          "Schnittlauch, Salz, Pfeffer, Paprika"
+        ],
+        [
+          "1 EL",
+          "Olivenöl"
+        ]
+      ],
+      "schritte": [
+        "Ofen vorheizen 200°C. Kartoffeln halbieren, mit Öl + Salz mischen.",
+        "20-25 Min backen bis goldbraun.",
+        "Quark mit Joghurt, Schnittlauch, Salz, Pfeffer, Paprika verrühren.",
+        "Spalten mit Kräuterquark servieren."
+      ],
+      "hinweis": "Papas Magerquark (125g) fließt direkt in den Kräuterquark ein = Zero Waste.",
+      "tags": [
+        "kartoffel",
+        "magerquark",
+        "günstig",
+        "zero-waste"
+      ]
+    },
+    {
+      "id": 39,
+      "name": "Herzhafte Erbsensuppe",
+      "kategorie": "mittag",
+      "sub": "eintopf",
+      "kcal": 580,
+      "protein": 28.0,
+      "kosten": 1.8,
+      "zeit": 100,
+      "zutaten": [
+        [
+          "400g",
+          "getrocknete grüne Schälerbsen"
+        ],
+        [
+          "2",
+          "Zwiebeln (gewürfelt)"
+        ],
+        [
+          "3 große",
+          "Kartoffeln (Bindung!)"
+        ],
+        [
+          "3",
+          "Möhren TK (oder frisch)"
+        ],
+        [
+          "1/4",
+          "Sellerieknolle (optional)"
+        ],
+        [
+          "1 Stange",
+          "Lauch TK"
+        ],
+        [
+          "1.5 Liter",
+          "Gemüsebrühe (Pulver ok)"
+        ],
+        [
+          "2",
+          "Lorbeerblätter"
+        ],
+        [
+          "1 TL",
+          "Majoran"
+        ],
+        [
+          "optional",
+          "geräucherte Putenmettwurst (kein Schwein!)"
+        ],
+        [
+          "Salz, Pfeffer",
+          ""
+        ]
+      ],
+      "schritte": [
+        "Erbsen in Sieb abspülen. Optional 2h einweichen (kürzt Kochzeit).",
+        "Zwiebeln in etwas Öl glasig dünsten.",
+        "Erbsen, Kartoffeln, Möhren TK, Sellerie in Topf.",
+        "Brühe aufgießen, Lorbeer + Majoran.",
+        "Aufkochen, dann 60-90 Min sanft köcheln (Deckel drauf).",
+        "Lauch TK letzte 15 Min dazu.",
+        "Lorbeer raus. Mit Kartoffelstampfer teilweise zerdrücken = cremig.",
+        "Abschmecken. Optional: Putenwurst in Scheiben erwärmen."
+      ],
+      "hinweis": "Kocht sich fast von selbst. TK-Möhren + TK-Lauch = kein Schneiden.",
+      "tags": [
+        "eintopf",
+        "günstig",
+        "meal-prep",
+        "tk-freundlich",
+        "hülsenfrüchte",
+        "wochenende"
+      ]
+    },
+    {
+      "id": 48,
+      "name": "One-Pot Spaghetti al Pomodoro",
+      "kategorie": "mittag",
+      "sub": "pasta",
+      "kcal": 883,
+      "protein": 34.0,
+      "kosten": 1.8,
+      "zeit": 25,
+      "zutaten": [
+        [
+          "270g",
+          "Spaghetti"
+        ],
+        [
+          "300g",
+          "Tomatensugo"
+        ],
+        [
+          "2",
+          "Roma-Tomaten (frisch oder TK-Alternative: Dosentomaten)"
+        ],
+        [
+          "2 Zehen",
+          "Knoblauch"
+        ],
+        [
+          "1",
+          "Zwiebel"
+        ],
+        [
+          "50g",
+          "schwarze Oliven (Glas)"
+        ],
+        [
+          "Basilikum/Oregano TK",
+          ""
+        ],
+        [
+          "400ml",
+          "Wasser"
+        ],
+        [
+          "Gemüsebrühe Pulver",
+          "Öl, Salz, Pfeffer"
+        ],
+        [
+          "Frischecreme-Alternative:",
+          "3 EL Magerquark + 1 EL Joghurt — cremig, günstiger"
+        ],
+        [
+          "Parmesan oder Hartkäse",
+          "nur für Rikes Portion"
+        ],
+        [
+          "Pinienkerne 20g",
+          "optional, rösten — weglassbar zum Sparen"
+        ]
+      ],
+      "schritte": [
+        "Knoblauch + Zwiebel fein hacken, in Öl andünsten.",
+        "Spaghetti REIN IN DEN TOPF (nicht vorkochen!).",
+        "Tomatensugo + Tomaten + Wasser + Brühe + Kräuter + Oliven dazu.",
+        "Aufkochen, dann bei mittlerer Hitze 10-12 Min köcheln, gelegentlich rühren.",
+        "Wenn Pasta gar und Soße cremig — Magerquark-Mix einrühren.",
+        "Abschmecken. Rikes Portion: Parmesan drüber."
+      ],
+      "hinweis": "One-Pot = 1 Topf, kein Abgießen nötig. Günstigstes Pasta-Gericht.",
+      "tags": [
+        "pasta",
+        "vegetarisch",
+        "one-pot",
+        "hellofresh",
+        "günstig",
+        "käse-trennbar",
+        "schnell"
+      ]
+    },
+    {
+      "id": 50,
+      "name": "Linseneintopf mit Geflügelwürstchen",
+      "kategorie": "mittag",
+      "sub": "eintopf",
+      "kcal": 802,
+      "protein": 32.0,
+      "kosten": 2.4,
+      "zeit": 25,
+      "zutaten": [
+        [
+          "3-4",
+          "Geflügelwürstchen (KEIN Schwein — Wiener Original = Schwein!)"
+        ],
+        [
+          "1 Pckg",
+          "braune Linsen (vorgekocht aus Dose) oder 200g getrocknete"
+        ],
+        [
+          "1",
+          "Porree TK (nur weißer Teil)"
+        ],
+        [
+          "2",
+          "Karotten TK"
+        ],
+        [
+          "1",
+          "Kartoffel (festkochend, Würfel)"
+        ],
+        [
+          "8g",
+          "Hühnerbrühe Pulver"
+        ],
+        [
+          "400ml",
+          "Wasser"
+        ],
+        [
+          "150g",
+          "Schmand oder Saure Sahne (oder Joghurt)"
+        ],
+        [
+          "Petersilie TK",
+          "Schnittlauch TK"
+        ],
+        [
+          "1",
+          "Zwiebel"
+        ],
+        [
+          "Öl, Salz, Pfeffer",
+          ""
+        ]
+      ],
+      "schritte": [
+        "Porree TK + Zwiebel in Öl 1-2 Min andünsten.",
+        "Karotten TK + Kartoffelwürfel dazu, kurz mitbraten.",
+        "Brühe + Wasser rein, aufkochen, 12-15 Min zugedeckt köcheln.",
+        "Linsen abspülen, Würstchen in 2cm Scheiben — letzte 5 Min rein.",
+        "Petersilie unterheben, abschmecken.",
+        "Schmand-Schnittlauch-Mix als Topping servieren."
+      ],
+      "hinweis": "ACHTUNG: Wiener Würstchen = Schwein! Immer Geflügelwürstchen kaufen.",
+      "tags": [
+        "linsen",
+        "eintopf",
+        "geflügel",
+        "hellofresh-adaptiert",
+        "günstig",
+        "tk-freundlich",
+        "schnell"
+      ]
+    },
+    {
+      "id": 54,
+      "name": "Mediterraner Ofenkartoffelsalat mit Caprese",
+      "kategorie": "mittag",
+      "sub": "salat-warm",
+      "kcal": 550,
+      "protein": 23.0,
+      "kosten": 2.5,
+      "zeit": 35,
+      "zutaten": [
+        [
+          "400g",
+          "Kartoffeln (Drillinge, halbiert)"
+        ],
+        [
+          "2",
+          "Zucchini TK (oder frisch in Scheiben)"
+        ],
+        [
+          "125g",
+          "Kirschtomaten"
+        ],
+        [
+          "1",
+          "rote Zwiebel (Spalten)"
+        ],
+        [
+          "Mozzarella",
+          "nur für Rikes Portion"
+        ],
+        [
+          "Pflücksalat",
+          "Handvoll"
+        ],
+        [
+          "Basilikum TK",
+          ""
+        ],
+        [
+          "Paprika edelsüß",
+          "Öl, Salz, Pfeffer"
+        ],
+        [
+          "2 EL",
+          "Balsamico-Creme oder normaler Balsamico"
+        ]
+      ],
+      "schritte": [
+        "Ofen 220°C. Kartoffeln + Zucchini + Zwiebel auf Blech, Öl+Paprika+Salz.",
+        "25-30 Min backen bis goldbraun.",
+        "Kirschtomaten die letzten 10 Min mit aufs Blech.",
+        "Salat-Basis: Pflücksalat mit Basilikum + Balsamico + Olivenöl + Salz.",
+        "Ofengemüse auf Salat anrichten.",
+        "RIKES Portion: Mozzarella in Scheiben dazulegen (Caprese-Stil).",
+        "Balsamico-Creme drüberträufeln."
+      ],
+      "hinweis": "Vegetarisch — leichtes Mittag, Rike liebt Mozzarella drauf.",
+      "tags": [
+        "vegetarisch",
+        "salat-warm",
+        "kartoffel",
+        "hellofresh",
+        "käse-trennbar",
+        "leicht",
+        "tk-freundlich"
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Vollkorn-Fusilli mit Tomaten-Hack-Sauce",
+      "kategorie": "mittag",
+      "sub": "pasta",
+      "kcal": 660,
+      "protein": 36.0,
+      "kosten": 2.6,
+      "zeit": 25,
+      "zutaten": [
+        [
+          "200g",
+          "Vollkorn-Fusilli"
+        ],
+        [
+          "250g",
+          "Rinderhack oder Putenhack"
+        ],
+        [
+          "1 Dose",
+          "Tomaten passiert (400g)"
+        ],
+        [
+          "1",
+          "Zwiebel"
+        ],
+        [
+          "1 TL",
+          "Basilikum TK oder getrocknet"
+        ],
+        [
+          "Salz, Pfeffer",
+          "nach Geschmack"
+        ],
+        [
+          "Gouda gerieben",
+          "für Rikes Portion"
+        ]
+      ],
+      "schritte": [
+        "Fusilli kochen (Salzwasser).",
+        "Zwiebel andünsten, Hack braun anbraten.",
+        "Tomaten rein, Basilikum, 10 Min köcheln.",
+        "Pasta abgießen, untermischen.",
+        "Rikes Portion mit Käse — Papas Portion ohne."
+      ],
+      "hinweis": "Basis-Wechsel zur Bolognese: Fusilli statt Penne, passiert statt gewürfelt.",
+      "tags": [
+        "pasta",
+        "hack",
+        "käse-trennbar",
+        "günstig"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Vollkorn-Penne Hack-Bolognese",
+      "kategorie": "mittag",
+      "sub": "pasta",
+      "kcal": 680,
+      "protein": 38.0,
+      "kosten": 2.8,
+      "zeit": 30,
+      "zutaten": [
+        [
+          "200g",
+          "Vollkorn-Penne"
+        ],
+        [
+          "250g",
+          "Rinderhack (oder Putenhack)"
+        ],
+        [
+          "1 Dose",
+          "Tomaten gewürfelt (400g)"
+        ],
+        [
+          "1",
+          "Zwiebel"
+        ],
+        [
+          "2 Zehen",
+          "Knoblauch"
+        ],
+        [
+          "1 EL",
+          "Olivenöl"
+        ],
+        [
+          "1 TL",
+          "Oregano, Salz, Pfeffer"
+        ],
+        [
+          "optional",
+          "Parmesan oder Gouda gerieben (für Rike)"
+        ]
+      ],
+      "schritte": [
+        "Penne nach Packung kochen (Salzwasser).",
+        "Zwiebel + Knoblauch fein hacken, in Öl andünsten.",
+        "Hack dazu, krümelig anbraten bis braun.",
+        "Tomaten rein, Oregano, Salz, Pfeffer — 10 Min köcheln.",
+        "Penne abgießen, mit Sauce mischen.",
+        "Rikes Portion mit geriebenem Käse toppen."
+      ],
+      "hinweis": "Sauce am Vorabend kochen = Mittagessen in 15 Min ready.",
+      "tags": [
+        "pasta",
+        "hack",
+        "zero-waste",
+        "donnerstag-kompatibel"
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Vollkorn-Tagliatelle Pute-Tomaten",
+      "kategorie": "mittag",
+      "sub": "pasta",
+      "kcal": 650,
+      "protein": 40.0,
+      "kosten": 2.8,
+      "zeit": 25,
+      "zutaten": [
+        [
+          "200g",
+          "Tagliatelle (Vollkorn wenn verfügbar)"
+        ],
+        [
+          "300g",
+          "Putenbrust (Streifen)"
+        ],
+        [
+          "1 Dose",
+          "Tomaten gewürfelt"
+        ],
+        [
+          "1",
+          "Paprika TK (rot oder gelb)"
+        ],
+        [
+          "1 Zwiebel",
+          "Knoblauch"
+        ],
+        [
+          "1 TL",
+          "Oregano, Salz, Pfeffer"
+        ],
+        [
+          "Parmesan oder Gouda",
+          "für Rike"
+        ]
+      ],
+      "schritte": [
+        "Tagliatelle kochen.",
+        "Zwiebel + Knoblauch andünsten.",
+        "Pute anbraten, Paprika TK dazu.",
+        "Tomaten + Oregano rein, 8 Min köcheln.",
+        "Pasta unterheben, Rikes Portion käsen."
+      ],
+      "hinweis": "Pute magerer als Hähnchen — gut für leichtere Mittagsoption.",
+      "tags": [
+        "pasta",
+        "pute",
+        "tk-freundlich",
+        "günstig"
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Kokos-Reis mit Pute & Brokkoli TK",
+      "kategorie": "mittag",
+      "sub": "reis",
+      "kcal": 700,
+      "protein": 45.0,
+      "kosten": 2.9,
+      "zeit": 25,
+      "zutaten": [
+        [
+          "160g",
+          "Basmati-Reis"
+        ],
+        [
+          "200ml",
+          "Kokosmilch"
+        ],
+        [
+          "200ml",
+          "Wasser"
+        ],
+        [
+          "300g",
+          "Putenbrust"
+        ],
+        [
+          "300g",
+          "Brokkoli TK"
+        ],
+        [
+          "1 EL",
+          "Sojasoße"
+        ],
+        [
+          "1 TL",
+          "Currypulver oder Kurkuma"
+        ],
+        [
+          "1 EL",
+          "Öl, Salz, Pfeffer"
+        ]
+      ],
+      "schritte": [
+        "Kokos-Reis aufsetzen (Kokosmilch + Wasser + Salz, 15 Min).",
+        "Pute in Stücke schneiden, würzen.",
+        "Brokkoli TK direkt in Pfanne mit Öl, 5 Min.",
+        "Pute dazu, anbraten.",
+        "Sojasoße + Curry drüber, 3 Min fertig ziehen.",
+        "Auf Kokos-Reis servieren."
+      ],
+      "hinweis": "TK-Brokkoli = genauso viele Vitamine wie frisch, günstiger.",
+      "tags": [
+        "kokosreis",
+        "pute",
+        "brokkoli",
+        "tk-freundlich"
+      ]
+    },
+    {
+      "id": 34,
+      "name": "Schnelle Bolognese 10 Min",
+      "kategorie": "mittag",
+      "sub": "pasta",
+      "kcal": 680,
+      "protein": 40.0,
+      "kosten": 2.9,
+      "zeit": 15,
+      "zutaten": [
+        [
+          "400g",
+          "Rinderhack (oder Putenhack)"
+        ],
+        [
+          "1 Zehe",
+          "Knoblauch"
+        ],
+        [
+          "1",
+          "weiße Zwiebel"
+        ],
+        [
+          "1/2",
+          "Karotte (fein gerieben)"
+        ],
+        [
+          "1 EL",
+          "Tomatenmark"
+        ],
+        [
+          "300ml",
+          "passierte Tomaten"
+        ],
+        [
+          "1 EL",
+          "Sojasoße (Umami-Boost)"
+        ],
+        [
+          "Schuss",
+          "Brühe oder Wasser"
+        ],
+        [
+          "1 TL",
+          "Italienische Kräuter"
+        ],
+        [
+          "1 Prise",
+          "Zucker"
+        ],
+        [
+          "Olivenöl, Salz, Pfeffer",
+          ""
+        ],
+        [
+          "500g",
+          "Spaghetti oder Fusilli"
+        ],
+        [
+          "Parmesan",
+          "für Rike — Papa ohne"
+        ]
+      ],
+      "schritte": [
+        "Pasta aufsetzen (Salzwasser, parallel zur Sauce).",
+        "Hack scharf anbraten bis braun und krümelig.",
+        "Karotte fein reiben und mit Knoblauch/Zwiebeln zum Hack.",
+        "Tomatenmark 1 Min mitrösten.",
+        "Brühe/Wasser angießen, passierte Tomaten + Sojasoße + Kräuter + Zucker.",
+        "5-8 Min einkochen lassen.",
+        "Pasta abgießen, in Sauce schwenken, Rikes Portion käsen."
+      ],
+      "hinweis": "Sojasoße gibt tiefen Umami ohne Wein — perfekt für Kinder.",
+      "tags": [
+        "pasta",
+        "schnell",
+        "rind",
+        "käse-trennbar",
+        "alltagsheld"
+      ]
+    },
+    {
+      "id": 44,
+      "name": "Rheinischer Rinderhack-Eintopf",
+      "kategorie": "mittag",
+      "sub": "eintopf",
+      "kcal": 760,
+      "protein": 31.0,
+      "kosten": 2.9,
+      "zeit": 35,
+      "zutaten": [
+        [
+          "300g",
+          "Rinderhack"
+        ],
+        [
+          "600g",
+          "festkochende Kartoffeln"
+        ],
+        [
+          "3",
+          "Karotten TK"
+        ],
+        [
+          "1",
+          "Zwiebel"
+        ],
+        [
+          "6g",
+          "Hühnerbrühe Pulver"
+        ],
+        [
+          "400ml",
+          "Wasser"
+        ],
+        [
+          "Petersilie TK",
+          "Schnittlauch TK"
+        ],
+        [
+          "50g",
+          "Crème fraîche ODER Magerquark+Joghurt (günstigere Variante)"
+        ],
+        [
+          "10g",
+          "Kürbiskerne (optional, rösten)"
+        ],
+        [
+          "Öl, Salz, Pfeffer",
+          ""
+        ]
+      ],
+      "schritte": [
+        "Kartoffeln schälen, 2cm Würfel. Karotten TK grob. Zwiebel würfeln.",
+        "Kürbiskerne ohne Fett 1-2 Min rösten, beiseite stellen.",
+        "Hack in Öl krümelig anbraten, Zwiebel dazu.",
+        "Kartoffeln + Karotten TK + Brühe + Wasser rein.",
+        "Aufkochen, zugedeckt 15-20 Min köcheln bis weich.",
+        "Petersilie + Schnittlauch unterheben, abschmecken.",
+        "Crème fraîche oder Quark-Joghurt-Mix als Klecks drüber, Kürbiskerne."
+      ],
+      "hinweis": "Crème fraîche → Magerquark+Joghurt: günstiger, mehr Protein.",
+      "tags": [
+        "rind",
+        "eintopf",
+        "rheinisch",
+        "hellofresh",
+        "günstig",
+        "meal-prep",
+        "tk-freundlich"
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Kartoffelpüree mit Hähnchen-Geschnetzeltem",
+      "kategorie": "mittag",
+      "sub": "kartoffel",
+      "kcal": 710,
+      "protein": 44.0,
+      "kosten": 3.0,
+      "zeit": 30,
+      "zutaten": [
+        [
+          "500g",
+          "Kartoffeln (mehligkochend)"
+        ],
+        [
+          "300g",
+          "Hähnchenbrust"
+        ],
+        [
+          "1 EL",
+          "Butter"
+        ],
+        [
+          "100ml",
+          "Milch warm"
+        ],
+        [
+          "1 Zwiebel",
+          "in Ringe"
+        ],
+        [
+          "100ml",
+          "Brühe (Pulver ok)"
+        ],
+        [
+          "1 TL",
+          "Paprika, Salz, Pfeffer, Senf (1/2 TL)"
+        ],
+        [
+          "1 EL",
+          "Öl"
+        ]
+      ],
+      "schritte": [
+        "Kartoffeln schälen, kochen bis weich (~20 Min).",
+        "Hähnchen in Streifen schneiden, würzen.",
+        "Zwiebel in Öl glasig, Hähnchen dazu, anbraten.",
+        "Brühe + Senf angießen, 5 Min köcheln.",
+        "Kartoffeln stampfen mit Butter + warmer Milch.",
+        "Geschnetzeltes auf Püree servieren."
+      ],
+      "hinweis": "Püree frisch am besten — Reste werden gummig.",
+      "tags": [
+        "kartoffel",
+        "hähnchen",
+        "sättigend"
+      ]
+    },
+    {
+      "id": 43,
+      "name": "Stifado-Eintopf mit Rinderhackbällchen",
+      "kategorie": "mittag",
+      "sub": "eintopf",
+      "kcal": 533,
+      "protein": 28.0,
+      "kosten": 3.0,
+      "zeit": 25,
+      "zutaten": [
+        [
+          "300g (1,5x)",
+          "Rinderhack (Weiderind)"
+        ],
+        [
+          "3",
+          "Ofenkartoffeln"
+        ],
+        [
+          "1",
+          "Zucchini"
+        ],
+        [
+          "3",
+          "Karotten TK"
+        ],
+        [
+          "1 Zehe",
+          "Knoblauch"
+        ],
+        [
+          "35g",
+          "Kapern (Glas — günstig)"
+        ],
+        [
+          "25g",
+          "Semmelbrösel"
+        ],
+        [
+          "1 EL",
+          "Tomatenmark"
+        ],
+        [
+          "400ml",
+          "Rinderbrühe (Pulver ok)"
+        ],
+        [
+          "Petersilie TK",
+          "Olivenöl, Salz, Pfeffer"
+        ],
+        [
+          "1 TL",
+          "Oregano + Kreuzkümmel + Paprika (statt Souflaki-Gewürz)"
+        ]
+      ],
+      "schritte": [
+        "Kartoffeln in 1,5cm Stücke, Karotten TK, Zucchini in Halbmonde.",
+        "Knoblauch hacken. Hack + Knoblauch + Gewürze + Paniermehl + Salz zu Bällchen (je 30g) formen.",
+        "In Topf 300ml Wasser + Brühe + Tomatenmark + Gewürze aufkochen.",
+        "Kartoffeln + Karotten rein, zugedeckt 12 Min köcheln.",
+        "Hackbällchen in Pfanne ohne Fett 3-4 Min rundum anbraten.",
+        "Bällchen + Zucchini in den Topf, 4-5 Min fertigköcheln.",
+        "Kapern hacken + Petersilie, mit Olivenöl vermengen — als Topping drüber."
+      ],
+      "hinweis": "Kapern sind das Geheimnis — kein Original-Souflaki-Gewürz nötig.",
+      "tags": [
+        "rind",
+        "eintopf",
+        "griechisch",
+        "hellofresh",
+        "günstig",
+        "tk-freundlich"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Kokos-Reis mit Hähnchen-Curry",
+      "kategorie": "mittag",
+      "sub": "reis",
+      "kcal": 720,
+      "protein": 42.0,
+      "kosten": 3.1,
+      "zeit": 25,
+      "zutaten": [
+        [
+          "160g",
+          "Basmati-Reis"
+        ],
+        [
+          "200ml",
+          "Kokosmilch (aus Dose, Rest für Abend/nächster Tag)"
+        ],
+        [
+          "200ml",
+          "Wasser"
+        ],
+        [
+          "300g",
+          "Hähnchenbrust (TK oder frisch)"
+        ],
+        [
+          "200g",
+          "Paprika TK (gemischt)"
+        ],
+        [
+          "1",
+          "Zwiebel"
+        ],
+        [
+          "1 TL",
+          "Currypulver, Salz, Pfeffer"
+        ],
+        [
+          "1 EL",
+          "Öl"
+        ]
+      ],
+      "schritte": [
+        "Reis mit Kokosmilch + Wasser + Prise Salz aufsetzen (15 Min köcheln).",
+        "Hähnchen in Streifen schneiden, würzen.",
+        "Zwiebel + Paprika (TK direkt!) in Öl andünsten.",
+        "Hähnchen dazu, 8 Min durchbraten.",
+        "Curry drüber, kurz rösten — auf Kokos-Reis servieren."
+      ],
+      "hinweis": "TK-Paprika direkt in die Pfanne — kein Auftauen nötig.",
+      "tags": [
+        "kokosreis",
+        "hähnchen",
+        "tk-freundlich"
+      ]
+    },
+    {
+      "id": 47,
+      "name": "Linguine mit Hähnchen in Kapern-Tomatensoße",
+      "kategorie": "mittag",
+      "sub": "pasta",
+      "kcal": 632,
+      "protein": 49.0,
+      "kosten": 3.1,
+      "zeit": 15,
+      "zutaten": [
+        [
+          "375g (1,5x)",
+          "Hähnchengeschnetzeltes"
+        ],
+        [
+          "250g",
+          "Linguine oder Spaghetti"
+        ],
+        [
+          "1",
+          "Porree (nur weißer Teil)"
+        ],
+        [
+          "390g",
+          "stückige Tomaten (Dose)"
+        ],
+        [
+          "35g",
+          "Kapern (Glas)"
+        ],
+        [
+          "1 TL",
+          "Honig"
+        ],
+        [
+          "6g",
+          "Hühnerbrühe Pulver"
+        ],
+        [
+          "Butter, Salz, Pfeffer",
+          ""
+        ],
+        [
+          "Hartkäse gerieben",
+          "nur für Rikes Portion"
+        ]
+      ],
+      "schritte": [
+        "Porree waschen, in Ringe schneiden.",
+        "Hähnchen in Pfanne anbraten bis durchgegart, rausnehmen.",
+        "Porree im gleichen Topf mit Butter andünsten.",
+        "Tomaten + Brühepulver + Honig + Kapern rein, 5 Min köcheln.",
+        "Pasta parallel kochen. Hähnchen zurück in Soße.",
+        "Pasta abgießen, in Soße schwenken.",
+        "Rikes Portion käsen."
+      ],
+      "hinweis": "10-Min-Gericht wenn Pasta schon kocht. Kapern geben tollen Umami.",
+      "tags": [
+        "pasta",
+        "hähnchen",
+        "schnell",
+        "hellofresh",
+        "käse-trennbar",
+        "kapern"
+      ]
+    },
+    {
+      "id": 33,
+      "name": "Bolognese klassisch (Vorkoch Donnerstag)",
+      "kategorie": "mittag",
+      "sub": "donnerstag-vorkoch",
+      "kcal": 720,
+      "protein": 38.0,
+      "kosten": 3.2,
+      "zeit": 40,
+      "zutaten": [
+        [
+          "1",
+          "Zwiebel (fein gewürfelt)"
+        ],
+        [
+          "1",
+          "Möhre (fein gewürfelt)"
+        ],
+        [
+          "2 Stangen",
+          "Sellerie (fein gewürfelt) — oder weglassen"
+        ],
+        [
+          "300g",
+          "Rinderhack (KEIN gemischtes — kein Schwein!)"
+        ],
+        [
+          "125ml",
+          "Brühe (statt Rotwein — für Rike ok)"
+        ],
+        [
+          "1 Dose",
+          "Tomaten geschält oder gewürfelt (400g)"
+        ],
+        [
+          "1 Prise",
+          "Chili getrocknet (nach Geschmack)"
+        ],
+        [
+          "Salz, Pfeffer",
+          "nach Geschmack"
+        ],
+        [
+          "500g",
+          "Spaghetti (oder Fusilli für Mikrowelle!)"
+        ],
+        [
+          "Parmesan gerieben",
+          "für Rikes Portion — Papa ohne"
+        ]
+      ],
+      "schritte": [
+        "MITTWOCHABEND zubereiten!",
+        "Zwiebel, Möhre (+ Sellerie optional) fein würfeln.",
+        "Rinderhack in großer Pfanne ohne Fett scharf anbraten bis krümelig + braun.",
+        "Gemüse dazu, 3 Min mitrösten.",
+        "Mit Brühe ablöschen, Tomaten + Chili + Salz + Pfeffer rein.",
+        "15-30 Min köcheln bei niedriger Hitze (länger = besser).",
+        "PASTA: Fusilli/Penne kochen (KEIN Spaghetti — Mikrowelle!), abgießen.",
+        "Sauce + Pasta mischen, in Auflaufform oder Tupperware.",
+        "DONNERSTAG: Rike 3-4 Min Mikrowelle, Parmesan drauf. Fertig!"
+      ],
+      "hinweis": "KEIN Speck — reines Rinderhack. Parmesan nur für Rike.",
+      "tags": [
+        "donnerstag",
+        "vorkoch",
+        "mikrowelle",
+        "rind",
+        "käse-trennbar",
+        "klassiker"
+      ]
+    },
+    {
+      "id": 42,
+      "name": "Hähnchen Ofen in Paprika-Tomaten-Soße",
+      "kategorie": "mittag",
+      "sub": "ofen",
+      "kcal": 838,
+      "protein": 50.0,
+      "kosten": 3.2,
+      "zeit": 35,
+      "zutaten": [
+        [
+          "375g (1,5x)",
+          "Hähnchenbrustfilet"
+        ],
+        [
+          "1",
+          "rote Zwiebel"
+        ],
+        [
+          "450g",
+          "Tomatensugo"
+        ],
+        [
+          "1",
+          "rote Paprika TK (oder frisch)"
+        ],
+        [
+          "1 Zehe",
+          "Knoblauch"
+        ],
+        [
+          "200g",
+          "Spaghetti oder Penne"
+        ],
+        [
+          "Chiliflocken",
+          "mild, nach Geschmack"
+        ],
+        [
+          "Petersilie TK",
+          "Öl, Salz, Pfeffer"
+        ],
+        [
+          "Parmesan gerieben",
+          "nur für Rikes Portion"
+        ]
+      ],
+      "schritte": [
+        "Ofen 220°C vorheizen.",
+        "Paprika + Zwiebel in Streifen, Knoblauch hacken.",
+        "Hähnchen würzen, in Pfanne 1-2 Min pro Seite anbraten.",
+        "Zwiebel+Paprika in gleicher Pfanne andünsten.",
+        "Tomatensugo + Chili + Salz + Pfeffer dazu, 5 Min köcheln.",
+        "Hähnchen in Auflaufform, Soße drumherum — 20 Min im Ofen.",
+        "Pasta kochen. Petersilie+Chiliflocken in Öl andünsten, Pasta schwenken.",
+        "Aglio-e-Olio-Pasta anrichten, Hähnchen + Soße daneben.",
+        "Rikes Portion: Parmesan drüber."
+      ],
+      "hinweis": "HF-Rezept für 2, wir machen 1,5x für euch beide.",
+      "tags": [
+        "hähnchen",
+        "pasta",
+        "ofen",
+        "tomaten",
+        "hellofresh",
+        "käse-trennbar"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Brain Booster",
+      "kategorie": "schulbrot",
+      "sub": "herzhaft",
+      "kcal": 420,
+      "protein": 15.0,
+      "kosten": null,
+      "zeit": 7,
+      "zutaten": [
+        [
+          "1/2",
+          "reife Avocado"
+        ],
+        [
+          "1",
+          "hartgekochtes Ei (Vorabend!)"
+        ],
+        [
+          "1 TL",
+          "Zitronensaft"
+        ],
+        [
+          "1 Prise",
+          "Salz, Pfeffer"
+        ],
+        [
+          "2 Scheiben",
+          "Brioche-Toast"
+        ]
+      ],
+      "schritte": [
+        "Avocado zerdrücken mit Zitronensaft, salzen, pfeffern.",
+        "Beide Scheiben mit Avocado-Mus bestreichen (Sperre gegen Nässe).",
+        "Ei in Scheiben schneiden, auf untere Scheibe legen.",
+        "Diagonal halbieren, fest einpacken."
+      ],
+      "hinweis": "Ei unbedingt Vorabend kochen — morgens nur schälen.",
+      "tags": [
+        "cholin",
+        "gesunde-fette",
+        "herzhaft"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Caprese-Special",
+      "kategorie": "schulbrot",
+      "sub": "herzhaft",
+      "kcal": 410,
+      "protein": 16.0,
+      "kosten": null,
+      "zeit": 5,
+      "zutaten": [
+        [
+          "2 Scheiben",
+          "Brioche-Toast"
+        ],
+        [
+          "1 EL",
+          "Butter (zimmerwarm)"
+        ],
+        [
+          "1 Scheibe",
+          "junger Gouda"
+        ],
+        [
+          "3 Scheiben",
+          "Tomate (fest, gut abgetupft!)"
+        ],
+        [
+          "etwas",
+          "Salz, Pfeffer"
+        ]
+      ],
+      "schritte": [
+        "Tomatenscheiben auf Küchenpapier abtupfen — sehr wichtig!",
+        "Beide Scheiben mit Butter bestreichen.",
+        "Gouda drauf, dann Tomate, würzen.",
+        "Zweite Scheibe drauf, diagonal halbieren."
+      ],
+      "hinweis": "Butter zimmerwarm (5 Min vorher raus) — sonst reißt Brioche.",
+      "tags": [
+        "kaese",
+        "rike-liebt-kaese",
+        "herzhaft"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Gurken-Klassiker",
+      "kategorie": "schulbrot",
+      "sub": "herzhaft",
+      "kcal": 380,
+      "protein": 14.0,
+      "kosten": null,
+      "zeit": 5,
+      "zutaten": [
+        [
+          "2 Scheiben",
+          "Brioche-Toast"
+        ],
+        [
+          "2 EL",
+          "Frischkäse (Doppelrahm)"
+        ],
+        [
+          "1/3",
+          "Salatgurke (dünne Scheiben)"
+        ],
+        [
+          "1 Prise",
+          "Schnittlauch (TK)"
+        ],
+        [
+          "etwas",
+          "Salz, Pfeffer"
+        ]
+      ],
+      "schritte": [
+        "Gurke in dünne Scheiben, salzen, 2 Min stehen lassen, abtupfen.",
+        "Beide Scheiben mit Frischkäse bestreichen.",
+        "Gurke + Schnittlauch auf untere Scheibe.",
+        "Zweite Scheibe drauf, diagonal halbieren."
+      ],
+      "hinweis": "Gurke vorher salzen + abtupfen = bleibt knackig, kein Wasser.",
+      "tags": [
+        "leicht",
+        "herzhaft",
+        "günstig"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "HGT Design",
+      "kategorie": "schulbrot",
+      "sub": "herzhaft",
+      "kcal": 390,
+      "protein": 13.0,
+      "kosten": null,
+      "zeit": 5,
+      "zutaten": [
+        [
+          "2 Scheiben",
+          "Brot nach Wahl"
+        ],
+        [
+          "2 EL",
+          "Hummus (klassisch oder Paprika)"
+        ],
+        [
+          "3 Scheiben",
+          "Salatgurke"
+        ],
+        [
+          "3 Scheiben",
+          "Strauchtomate (fest, abgetupft)"
+        ],
+        [
+          "etwas",
+          "Salz, Pfeffer"
+        ]
+      ],
+      "schritte": [
+        "Tomaten auf Küchenpapier abtupfen.",
+        "Beide Scheiben dick mit Hummus bestreichen.",
+        "Gurke + Tomate schichten, leicht würzen.",
+        "Zweite Scheibe drauf, diagonal halbieren."
+      ],
+      "hinweis": "Passt auf alle Brotsorten — gut für Vollkorn-Tage.",
+      "tags": [
+        "vegan",
+        "eisen",
+        "herzhaft",
+        "vollkorn-kompatibel"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Sunshine Crunch",
+      "kategorie": "schulbrot",
+      "sub": "herzhaft",
+      "kcal": 370,
+      "protein": 12.0,
+      "kosten": null,
+      "zeit": 5,
+      "zutaten": [
+        [
+          "2 Scheiben",
+          "Brot nach Wahl"
+        ],
+        [
+          "2 EL",
+          "Frischkäse"
+        ],
+        [
+          "1/2",
+          "rote oder gelbe Paprika (dünne Streifen)"
+        ],
+        [
+          "1 Prise",
+          "Paprika edelsüß"
+        ],
+        [
+          "etwas",
+          "Salz, Pfeffer"
+        ]
+      ],
+      "schritte": [
+        "Paprika in sehr dünne Streifen schneiden.",
+        "Frischkäse mit Paprika edelsüß verrühren.",
+        "Beide Scheiben bestreichen, Paprikastreifen drauf.",
+        "Zweite Scheibe drauf, diagonal halbieren."
+      ],
+      "hinweis": "Paprika in DÜNNE Streifen — sonst rutscht sie raus.",
+      "tags": [
+        "vitamin-c",
+        "herzhaft",
+        "vollkorn-kompatibel"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Honey Crunch",
+      "kategorie": "schulbrot",
+      "sub": "herzhaft",
+      "kcal": 400,
+      "protein": 12.0,
+      "kosten": null,
+      "zeit": 4,
+      "zutaten": [
+        [
+          "2 Scheiben",
+          "Brioche-Toast"
+        ],
+        [
+          "2 EL",
+          "Frischkäse"
+        ],
+        [
+          "1 TL",
+          "flüssiger Honig"
+        ],
+        [
+          "1/3",
+          "Salatgurke (Scheiben)"
+        ],
+        [
+          "1 Prise",
+          "schwarzer Pfeffer"
+        ]
+      ],
+      "schritte": [
+        "Frischkäse mit Honig + Pfeffer verrühren.",
+        "Beide Scheiben bestreichen.",
+        "Gurke dazwischen, zweite Scheibe drauf.",
+        "Diagonal halbieren, verpacken."
+      ],
+      "hinweis": "Süß-salzig-Kombi — freitagswürdig.",
+      "tags": [
+        "süß-salzig",
+        "herzhaft"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Puten-Senf-Schnitte",
+      "kategorie": "schulbrot",
+      "sub": "herzhaft",
+      "kcal": 360,
+      "protein": 18.0,
+      "kosten": null,
+      "zeit": 5,
+      "zutaten": [
+        [
+          "2 Scheiben",
+          "rustikales Brot (Körner/Bauernbrot)"
+        ],
+        [
+          "1 TL",
+          "mittelscharfer Senf"
+        ],
+        [
+          "1 EL",
+          "Frischkäse oder Butter"
+        ],
+        [
+          "2 Scheiben",
+          "Putenbrust (Aufschnitt)"
+        ],
+        [
+          "2-3",
+          "Gurkenscheiben"
+        ],
+        [
+          "etwas",
+          "Salz, Pfeffer"
+        ]
+      ],
+      "schritte": [
+        "Beide Scheiben mit Frischkäse/Butter bestreichen.",
+        "Untere Scheibe dünn mit Senf bestreichen.",
+        "Pute drauf, dann Gurke, leicht würzen.",
+        "Zweite Scheibe drauf, halbieren, fest einpacken."
+      ],
+      "hinweis": "Rustikales Brot = stabil, kein Durchweichen.",
+      "tags": [
+        "protein-hoch",
+        "herzhaft",
+        "rustikal",
+        "günstig"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Vollkorn-Power mit Ei & Käse",
+      "kategorie": "schulbrot",
+      "sub": "herzhaft",
+      "kcal": 400,
+      "protein": 19.0,
+      "kosten": null,
+      "zeit": 5,
+      "zutaten": [
+        [
+          "2 Scheiben",
+          "Vollkornbrot"
+        ],
+        [
+          "1 EL",
+          "Butter oder Frischkäse"
+        ],
+        [
+          "1",
+          "hartgekochtes Ei"
+        ],
+        [
+          "1 Scheibe",
+          "Gouda oder Emmentaler"
+        ],
+        [
+          "etwas",
+          "Schnittlauch TK, Salz, Pfeffer"
+        ]
+      ],
+      "schritte": [
+        "Ei in Scheiben schneiden (Vorabend kochen!).",
+        "Beide Scheiben Vollkornbrot mit Frischkäse bestreichen.",
+        "Käse + Ei auf untere Scheibe, würzen.",
+        "Zweite Scheibe drauf, halbieren, verpacken."
+      ],
+      "hinweis": "Vollkorn hält länger satt als Toast.",
+      "tags": [
+        "protein-hoch",
+        "kaese",
+        "vollkorn",
+        "herzhaft"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Elvis Special",
+      "kategorie": "schulbrot",
+      "sub": "suess",
+      "kcal": 510,
+      "protein": 13.0,
+      "kosten": null,
+      "zeit": 4,
+      "zutaten": [
+        [
+          "2 Scheiben",
+          "Brioche-Toast"
+        ],
+        [
+          "2 EL",
+          "Erdnussmus (cremig, ohne Zucker)"
+        ],
+        [
+          "1",
+          "Banane (in Scheiben)"
+        ],
+        [
+          "1 TL",
+          "Honig"
+        ]
+      ],
+      "schritte": [
+        "Beide Scheiben mit Erdnussmus bestreichen.",
+        "Banane in Scheiben, auf untere Scheibe legen.",
+        "Honig dünn drüber träufeln.",
+        "Zweite Scheibe drauf, diagonal halbieren, sofort verpacken."
+      ],
+      "hinweis": "Banane oxidiert — sofort nach dem Schneiden einpacken.",
+      "tags": [
+        "süß",
+        "energie",
+        "sport-tage"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Choco-Banana-Express",
+      "kategorie": "schulbrot",
+      "sub": "suess",
+      "kcal": 480,
+      "protein": 8.0,
+      "kosten": null,
+      "zeit": 4,
+      "zutaten": [
+        [
+          "2 Scheiben",
+          "Brioche-Toast"
+        ],
+        [
+          "2 EL",
+          "Nutella"
+        ],
+        [
+          "1",
+          "Banane (in Scheiben)"
+        ],
+        [
+          "1 Prise",
+          "Zimt"
+        ]
+      ],
+      "schritte": [
+        "Beide Scheiben mit Nutella bestreichen.",
+        "Banane in Scheiben, leicht mit Zitronensaft beträufeln (optional).",
+        "Auf untere Scheibe legen, Zimt drüber.",
+        "Zweite Scheibe drauf, diagonal halbieren."
+      ],
+      "hinweis": "Klassenarbeits-Tag: gibt schnelle Energie.",
+      "tags": [
+        "süß",
+        "schnell",
+        "energie"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Apfel-Zimt-Wolke",
+      "kategorie": "schulbrot",
+      "sub": "suess",
+      "kcal": 400,
+      "protein": 11.0,
+      "kosten": null,
+      "zeit": 6,
+      "zutaten": [
+        [
+          "2 Scheiben",
+          "Brioche-Toast"
+        ],
+        [
+          "2 EL",
+          "Frischkäse"
+        ],
+        [
+          "1 TL",
+          "Honig"
+        ],
+        [
+          "1/2",
+          "Apfel (Boskoop oder Elstar, dünne Scheiben)"
+        ],
+        [
+          "1 Prise",
+          "Zimt"
+        ],
+        [
+          "1 Spritzer",
+          "Zitronensaft"
+        ]
+      ],
+      "schritte": [
+        "Apfel waschen, in sehr dünne Scheiben, Zitronensaft drüber.",
+        "Frischkäse mit Honig verrühren.",
+        "Beide Scheiben bestreichen.",
+        "Apfelscheiben + Zimt auf untere Scheibe, zweite drauf."
+      ],
+      "hinweis": "Zitronensaft = Apfel bleibt weiß bis zur großen Pause.",
+      "tags": [
+        "süß",
+        "herbst-winter",
+        "frischkäse"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Erdbeer-Wolke",
+      "kategorie": "schulbrot",
+      "sub": "suess",
+      "kcal": 410,
+      "protein": 11.0,
+      "kosten": null,
+      "zeit": 4,
+      "zutaten": [
+        [
+          "2 Scheiben",
+          "Brioche-Toast"
+        ],
+        [
+          "2 EL",
+          "Frischkäse"
+        ],
+        [
+          "2 TL",
+          "Erdbeermarmelade"
+        ],
+        [
+          "optional",
+          "2-3 frische Erdbeerscheiben (sehr gut abgetupft)"
+        ]
+      ],
+      "schritte": [
+        "Eine Scheibe mit Frischkäse, andere mit Marmelade bestreichen.",
+        "Optional: frische Erdbeeren gut abtupfen und dazwischen.",
+        "Zusammensetzen, halbieren, einpacken."
+      ],
+      "hinweis": "Frische Erdbeeren: Saisonal Mai–Aug. Sonst nur Marmelade.",
+      "tags": [
+        "süß",
+        "saisonal",
+        "frischkäse"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Erdnuss-Bananen-Vollkorn",
+      "kategorie": "schulbrot",
+      "sub": "suess",
+      "kcal": 490,
+      "protein": 14.0,
+      "kosten": null,
+      "zeit": 4,
+      "zutaten": [
+        [
+          "2 Scheiben",
+          "Vollkornbrot"
+        ],
+        [
+          "2 EL",
+          "Erdnussmus (cremig)"
+        ],
+        [
+          "1",
+          "Banane (in Scheiben)"
+        ],
+        [
+          "1 TL",
+          "Honig"
+        ],
+        [
+          "1 Prise",
+          "Zimt"
+        ]
+      ],
+      "schritte": [
+        "Beide Scheiben dick mit Erdnussmus bestreichen.",
+        "Banane in Scheiben, Honig und Zimt drüber.",
+        "Zweite Scheibe drauf, halbieren, fest einpacken."
+      ],
+      "hinweis": "Vollkorn + Erdnussmus = hält deutlich länger satt als Brioche-Version.",
+      "tags": [
+        "süß",
+        "vollkorn",
+        "günstig",
+        "protein"
+      ]
+    },
+    {
+      "id": 30,
+      "name": "Schoko-Bananen-Power",
+      "kategorie": "smoothie",
+      "sub": "rike-schule",
+      "kcal": 380,
+      "protein": 12.0,
+      "kosten": null,
+      "zeit": 5,
+      "zutaten": [
+        [
+          "1",
+          "reife Banane"
+        ],
+        [
+          "2 EL",
+          "Haferflocken"
+        ],
+        [
+          "1 EL",
+          "Kakao roh (ungesüßt)"
+        ],
+        [
+          "1 EL",
+          "Erdnussmus"
+        ],
+        [
+          "1",
+          "Dattel (entsteint, 5 Min eingeweicht)"
+        ],
+        [
+          "1 Prise",
+          "Zimt"
+        ],
+        [
+          "200ml",
+          "Hafermilch (mit Calcium)"
+        ]
+      ],
+      "schritte": [
+        "Dattel 5 Min in heißem Wasser einweichen.",
+        "Alles in Mixer, 45 Sek bis cremig.",
+        "In Glasflasche füllen, mitnehmen."
+      ],
+      "hinweis": "Schmeckt wie flüssiger Schokopudding.",
+      "tags": [
+        "rike",
+        "magnesium",
+        "calcium",
+        "schule"
+      ]
+    },
+    {
+      "id": 31,
+      "name": "Pre-Session Nutty Pudding",
+      "kategorie": "smoothie",
+      "sub": "papa-pre-session",
+      "kcal": 550,
+      "protein": 52.0,
+      "kosten": null,
+      "zeit": 5,
+      "zutaten": [
+        [
+          "200g",
+          "Skyr (alternativ Magerquark)"
+        ],
+        [
+          "30g",
+          "Vanille-Whey Protein"
+        ],
+        [
+          "2 EL",
+          "Walnüsse (gemahlen)"
+        ],
+        [
+          "1 EL",
+          "Macadamia-Nüsse (gemahlen)"
+        ],
+        [
+          "1 EL",
+          "Chiasamen"
+        ],
+        [
+          "1 EL",
+          "Leinsamen (frisch geschrotet)"
+        ],
+        [
+          "1/4",
+          "Paranuss (fein gehackt)"
+        ],
+        [
+          "1 TL",
+          "Kakao roh"
+        ],
+        [
+          "1/2 TL",
+          "Ceylon-Zimt"
+        ],
+        [
+          "50-80ml",
+          "Hafermilch (ungesüßt)"
+        ],
+        [
+          "75g",
+          "Beerenmix TK (Heidelbeere, Himbeere, Brombeere)"
+        ],
+        [
+          "1 TL",
+          "Olivenöl extra vergine (Topping)"
+        ]
+      ],
+      "schritte": [
+        "OVERNIGHT (empfohlen): Vorabend alle Zutaten außer Topping mischen.",
+        "TK-Beeren dazu — tauen über Nacht auf.",
+        "Abdecken, Kühlschrank. Morgens fertig.",
+        "MORGENS: Olivenöl drüber träufeln, fertig.",
+        "Oder SOFORT: 20 Min stehen lassen, dann essen."
+      ],
+      "hinweis": "Overnight-Variante: Chia + Leinsamen quellen voll auf = cremiger.",
+      "tags": [
+        "papa",
+        "high-protein",
+        "brain-food",
+        "brian-johnson-inspired",
+        "tryptophan",
+        "overnight"
+      ]
+    }
+  ],
+  "angebote": [
+    {
+      "markt": "ALDI Süd",
+      "produkt": "Lachsfiletportionen Golden Seafood TK",
+      "preis": 6.99,
+      "preis_app": null,
+      "einheit": "500g",
+      "kg_preis": 13.98,
+      "kat": "fisch",
+      "von": "2026-05-29",
+      "bis": "2026-05-30",
+      "notiz": "TK-Lachs portionsweise — für Fisch-Tage",
+      "relevant": "ok"
+    },
+    {
+      "markt": "ALDI Süd",
+      "produkt": "Norwegische Lachsfiletportionen Golden Seafood",
+      "preis": 15.99,
+      "preis_app": null,
+      "einheit": "1kg",
+      "kg_preis": 15.99,
+      "kat": "fisch",
+      "von": "2026-05-29",
+      "bis": "2026-05-30",
+      "notiz": "XXL TK-Lachs — für mehrere Wochen einfrieren",
+      "relevant": "ok"
+    },
+    {
+      "markt": "ALDI Süd",
+      "produkt": "Iglo Schlemmerfilet TK",
+      "preis": 2.49,
+      "preis_app": null,
+      "einheit": "380g",
+      "kg_preis": 6.55,
+      "kat": "fisch",
+      "von": "2026-05-26",
+      "bis": "2026-05-30",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "ALDI Süd",
+      "produkt": "Fischstäbchen Golden Seafood XXL",
+      "preis": 3.69,
+      "preis_app": null,
+      "einheit": "900g",
+      "kg_preis": 4.1,
+      "kat": "fisch",
+      "von": "2026-05-26",
+      "bis": "2026-05-30",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "ALDI Süd",
+      "produkt": "Doradenfilets mit Zitronen-Marinade",
+      "preis": 4.79,
+      "preis_app": null,
+      "einheit": "220g",
+      "kg_preis": 21.77,
+      "kat": "fisch",
+      "von": "2026-05-26",
+      "bis": "2026-05-30",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "ALDI Süd",
+      "produkt": "Räucherlachs Almare",
+      "preis": 1.99,
+      "preis_app": null,
+      "einheit": "100g",
+      "kg_preis": 19.9,
+      "kat": "fisch",
+      "von": "2026-05-26",
+      "bis": "2026-05-30",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "ALDI Süd",
+      "produkt": "Hähnchen-Brustfiletteilstücke Meine Metzgerei",
+      "preis": 12.99,
+      "preis_app": null,
+      "einheit": "1.5kg",
+      "kg_preis": 8.66,
+      "kat": "fleisch",
+      "von": "2026-05-29",
+      "bis": "2026-05-30",
+      "notiz": "Großpackung Hähnchenbrust — für 3-4 Mahlzeiten",
+      "relevant": "ok"
+    },
+    {
+      "markt": "ALDI Süd",
+      "produkt": "Hackfleisch vom Rind Meine Metzgerei",
+      "preis": 10.49,
+      "preis_app": null,
+      "einheit": "1kg",
+      "kg_preis": 10.49,
+      "kat": "fleisch",
+      "von": "2026-05-29",
+      "bis": "2026-05-30",
+      "notiz": "-15% 1kg Rinderhack — für Bolognese+Frikadellen+Auflauf",
+      "relevant": "ok"
+    },
+    {
+      "markt": "ALDI Süd",
+      "produkt": "Hähnchen-Steaks mariniert BBQ",
+      "preis": 8.99,
+      "preis_app": null,
+      "einheit": "1kg",
+      "kg_preis": 8.99,
+      "kat": "fleisch",
+      "von": "2026-05-29",
+      "bis": "2026-05-30",
+      "notiz": "Fertig mariniert — direkt in Pfanne/Ofen, für Hähnchen-Abende",
+      "relevant": "ok"
+    },
+    {
+      "markt": "ALDI Süd",
+      "produkt": "Plant-&-Meat-Combo-Burger Rind",
+      "preis": 3.79,
+      "preis_app": null,
+      "einheit": "400g",
+      "kg_preis": 9.48,
+      "kat": "fleisch",
+      "von": "2026-05-26",
+      "bis": "2026-05-30",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "ALDI Süd",
+      "produkt": "Steak irisches Weiderind",
+      "preis": 6.99,
+      "preis_app": null,
+      "einheit": "241g",
+      "kg_preis": 28.99,
+      "kat": "fleisch",
+      "von": "2026-05-26",
+      "bis": "2026-05-30",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "ALDI Süd",
+      "produkt": "Lammrücken Kräutermarinade",
+      "preis": 6.99,
+      "preis_app": null,
+      "einheit": "233g",
+      "kg_preis": 29.99,
+      "kat": "fleisch",
+      "von": "2026-05-26",
+      "bis": "2026-05-30",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "ALDI Süd",
+      "produkt": "Halbes Hähnchen gewürzt (Paprika)",
+      "preis": 3.79,
+      "preis_app": null,
+      "einheit": "750g",
+      "kg_preis": 5.05,
+      "kat": "geflügel",
+      "von": "2026-05-26",
+      "bis": "2026-05-30",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "ALDI Süd",
+      "produkt": "Hähnchen-Schenkel XXL",
+      "preis": 6.99,
+      "preis_app": null,
+      "einheit": "2kg",
+      "kg_preis": 3.5,
+      "kat": "geflügel",
+      "von": "2026-05-26",
+      "bis": "2026-05-30",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "ALDI Süd",
+      "produkt": "Bio-Bratwurst Hähnchen",
+      "preis": 3.29,
+      "preis_app": null,
+      "einheit": "220g",
+      "kg_preis": 14.95,
+      "kat": "geflügel",
+      "von": "2026-05-26",
+      "bis": "2026-05-30",
+      "notiz": "Achtung: auch Schwein-Variante — nur Hähnchenbratwurst nehmen!",
+      "relevant": "ok"
+    },
+    {
+      "markt": "ALDI Süd",
+      "produkt": "Chicken Nuggets Jacks Farm TK",
+      "preis": 4.99,
+      "preis_app": null,
+      "einheit": "1kg",
+      "kg_preis": 4.99,
+      "kat": "geflügel",
+      "von": "2026-05-26",
+      "bis": "2026-05-30",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "ALDI Süd",
+      "produkt": "Rahm-Spinat All Seasons TK",
+      "preis": 1.49,
+      "preis_app": null,
+      "einheit": "800g",
+      "kg_preis": 1.86,
+      "kat": "gemüse-tk",
+      "von": "2026-05-26",
+      "bis": "2026-05-30",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "ALDI Süd",
+      "produkt": "Kidneybohnen Kings Crown",
+      "preis": 0.55,
+      "preis_app": null,
+      "einheit": "400ml",
+      "kg_preis": 2.16,
+      "kat": "konserve",
+      "von": "2026-05-26",
+      "bis": "2026-05-30",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "ALDI Süd",
+      "produkt": "Gehackte Tomaten Kings Crown",
+      "preis": 0.49,
+      "preis_app": null,
+      "einheit": "400g",
+      "kg_preis": 1.23,
+      "kat": "konserve",
+      "von": "2026-05-26",
+      "bis": "2026-05-30",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "ALDI Süd",
+      "produkt": "GAZI Grill- und Pfannenkäse",
+      "preis": 3.99,
+      "preis_app": null,
+      "einheit": "400g",
+      "kg_preis": 9.98,
+      "kat": "milch",
+      "von": "2026-05-29",
+      "bis": "2026-05-30",
+      "notiz": "Für Rike — Grillkäse als Beilage, Papa ohne",
+      "relevant": "ok"
+    },
+    {
+      "markt": "ALDI Süd",
+      "produkt": "Arla Buko Frischkäse",
+      "preis": 1.49,
+      "preis_app": null,
+      "einheit": "300g",
+      "kg_preis": 4.97,
+      "kat": "milch",
+      "von": "2026-05-29",
+      "bis": "2026-05-30",
+      "notiz": "Für Schulbrot (Gurken-Klassiker, Honey Crunch etc.)",
+      "relevant": "ok"
+    },
+    {
+      "markt": "ALDI Süd",
+      "produkt": "Landliebe Frische Weidemilch",
+      "preis": 1.49,
+      "preis_app": null,
+      "einheit": "1.5l",
+      "kg_preis": 0.99,
+      "kat": "milch",
+      "von": "2026-05-29",
+      "bis": "2026-05-30",
+      "notiz": "Für Kartoffelpüree und Pfannkuchen",
+      "relevant": "ok"
+    },
+    {
+      "markt": "ALDI Süd",
+      "produkt": "Président Meersalz-Butter",
+      "preis": 2.49,
+      "preis_app": null,
+      "einheit": "250g",
+      "kg_preis": 9.96,
+      "kat": "milch",
+      "von": "2026-05-29",
+      "bis": "2026-05-30",
+      "notiz": "Für Kartoffelpüree, Pfannkuchen, Schulbrot",
+      "relevant": "ok"
+    },
+    {
+      "markt": "ALDI Süd",
+      "produkt": "Patros Hirtenkäse",
+      "preis": 1.99,
+      "preis_app": null,
+      "einheit": "180g",
+      "kg_preis": 11.06,
+      "kat": "milch",
+      "von": "2026-05-26",
+      "bis": "2026-05-30",
+      "notiz": "für Rike",
+      "relevant": "ok"
+    },
+    {
+      "markt": "ALDI Süd",
+      "produkt": "Barilla Pesto",
+      "preis": 1.79,
+      "preis_app": null,
+      "einheit": "190g",
+      "kg_preis": 9.42,
+      "kat": "sonstige",
+      "von": "2026-05-26",
+      "bis": "2026-05-30",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "ALDI Süd",
+      "produkt": "Himbeeren All Seasons TK",
+      "preis": 6.99,
+      "preis_app": null,
+      "einheit": "1kg",
+      "kg_preis": 6.99,
+      "kat": "sonstige",
+      "von": "2026-05-26",
+      "bis": "2026-05-30",
+      "notiz": "für Smoothies / Nachtisch",
+      "relevant": "ok"
+    },
+    {
+      "markt": "ALDI Süd",
+      "produkt": "Pommes frites Speise Zeit TK",
+      "preis": 1.11,
+      "preis_app": null,
+      "einheit": "1kg",
+      "kg_preis": 1.11,
+      "kat": "stärke",
+      "von": "2026-05-26",
+      "bis": "2026-05-30",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "ALDI Süd",
+      "produkt": "Weizenmehl Type 405 Back Family",
+      "preis": 0.89,
+      "preis_app": null,
+      "einheit": "2kg",
+      "kg_preis": 0.45,
+      "kat": "stärke",
+      "von": "2026-05-26",
+      "bis": "2026-05-30",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "ALDI Süd",
+      "produkt": "Medjoul-Datteln Farmer Naturals",
+      "preis": 9.99,
+      "preis_app": null,
+      "einheit": "1kg",
+      "kg_preis": 9.99,
+      "kat": "trocken",
+      "von": "2026-05-29",
+      "bis": "2026-05-30",
+      "notiz": "Für Smoothies (Rike + Papa Nutty Pudding) — Vorrat",
+      "relevant": "ok"
+    },
+    {
+      "markt": "ALDI Süd",
+      "produkt": "Ganze Mandeln Farmer Naturals",
+      "preis": 5.49,
+      "preis_app": null,
+      "einheit": "500g",
+      "kg_preis": 10.98,
+      "kat": "trocken",
+      "von": "2026-05-29",
+      "bis": "2026-05-30",
+      "notiz": "Für Nutty Pudding und Snacks",
+      "relevant": "ok"
+    },
+    {
+      "markt": "EDEKA",
+      "produkt": "Jungbullen-Gulasch aus der Keule",
+      "preis": 7.99,
+      "preis_app": null,
+      "einheit": "1kg",
+      "kg_preis": 7.99,
+      "kat": "fleisch",
+      "von": "2026-05-26",
+      "bis": "2026-05-30",
+      "notiz": "Pflicht-Slot Deutsch: Gulasch+Kartoffeln",
+      "relevant": "ok"
+    },
+    {
+      "markt": "EDEKA",
+      "produkt": "Rindergulasch in Sauce EDEKA Küche",
+      "preis": 6.99,
+      "preis_app": null,
+      "einheit": "550g",
+      "kg_preis": 12.71,
+      "kat": "fleisch",
+      "von": "2026-05-26",
+      "bis": "2026-05-30",
+      "notiz": "Schnell-Option Abend",
+      "relevant": "ok"
+    },
+    {
+      "markt": "EDEKA",
+      "produkt": "Hähnchenminutenschnitzel pikant mariniert",
+      "preis": 4.49,
+      "preis_app": null,
+      "einheit": "400g",
+      "kg_preis": 11.23,
+      "kat": "geflügel",
+      "von": "2026-05-26",
+      "bis": "2026-05-30",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "EDEKA",
+      "produkt": "Speisekartoffeln festkochend deutsch",
+      "preis": 1.66,
+      "preis_app": null,
+      "einheit": "2500g",
+      "kg_preis": 0.66,
+      "kat": "gemüse-frisch",
+      "von": "2026-05-26",
+      "bis": "2026-05-30",
+      "notiz": "= 0,66€/kg — günstigste Option",
+      "relevant": "ok"
+    },
+    {
+      "markt": "EDEKA",
+      "produkt": "Zwiebeln deutsch",
+      "preis": 1.29,
+      "preis_app": null,
+      "einheit": "2000g",
+      "kg_preis": 0.65,
+      "kat": "gemüse-frisch",
+      "von": "2026-05-26",
+      "bis": "2026-05-30",
+      "notiz": "Grundvorrat",
+      "relevant": "ok"
+    },
+    {
+      "markt": "EDEKA",
+      "produkt": "Eisbergsalat deutsch",
+      "preis": 1.0,
+      "preis_app": null,
+      "einheit": "Stk",
+      "kg_preis": null,
+      "kat": "gemüse-frisch",
+      "von": "2026-05-26",
+      "bis": "2026-05-30",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "EDEKA",
+      "produkt": "Bio Cherrytomaten Spanien",
+      "preis": 1.49,
+      "preis_app": null,
+      "einheit": "250g",
+      "kg_preis": 5.96,
+      "kat": "gemüse-frisch",
+      "von": "2026-05-26",
+      "bis": "2026-05-30",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "EDEKA",
+      "produkt": "Kohlrabi deutsch",
+      "preis": 0.44,
+      "preis_app": null,
+      "einheit": "Stk",
+      "kg_preis": null,
+      "kat": "gemüse-frisch",
+      "von": "2026-05-26",
+      "bis": "2026-05-30",
+      "notiz": "sehr günstig",
+      "relevant": "ok"
+    },
+    {
+      "markt": "EDEKA",
+      "produkt": "Feldsalat oder Rucola Italien",
+      "preis": 1.29,
+      "preis_app": null,
+      "einheit": "100g",
+      "kg_preis": 12.9,
+      "kat": "gemüse-frisch",
+      "von": "2026-05-26",
+      "bis": "2026-05-30",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "EDEKA",
+      "produkt": "Kerrygold Butter ungesalzen",
+      "preis": 1.39,
+      "preis_app": 1.11,
+      "einheit": "250g",
+      "kg_preis": 5.56,
+      "kat": "milch",
+      "von": "2026-05-26",
+      "bis": "2026-05-30",
+      "notiz": "mit App 1,11€",
+      "relevant": "ok"
+    },
+    {
+      "markt": "EDEKA",
+      "produkt": "Bärenmarke H-Milch 3,5%",
+      "preis": 0.88,
+      "preis_app": 0.77,
+      "einheit": "1l",
+      "kg_preis": 0.88,
+      "kat": "milch",
+      "von": "2026-05-26",
+      "bis": "2026-05-30",
+      "notiz": "mit App 0,77€",
+      "relevant": "ok"
+    },
+    {
+      "markt": "EDEKA",
+      "produkt": "Grana Padano Riserva gerieben Giovanni Ferrari",
+      "preis": 3.99,
+      "preis_app": null,
+      "einheit": "150g",
+      "kg_preis": 26.6,
+      "kat": "milch",
+      "von": "2026-05-26",
+      "bis": "2026-05-30",
+      "notiz": "für Rike — Pasta-Käse",
+      "relevant": "ok"
+    },
+    {
+      "markt": "EDEKA",
+      "produkt": "Leerdammer Caractère Schnittkäse",
+      "preis": 1.49,
+      "preis_app": null,
+      "einheit": "100g",
+      "kg_preis": 14.9,
+      "kat": "milch",
+      "von": "2026-05-26",
+      "bis": "2026-05-30",
+      "notiz": "für Rike",
+      "relevant": "ok"
+    },
+    {
+      "markt": "HIT",
+      "produkt": "Seelachsfilet frisch",
+      "preis": 1.89,
+      "preis_app": null,
+      "einheit": "100g",
+      "kg_preis": 18.9,
+      "kat": "fisch",
+      "von": "2026-05-26",
+      "bis": "2026-05-31",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "HIT",
+      "produkt": "Lachskoteletts frisch",
+      "preis": 1.99,
+      "preis_app": null,
+      "einheit": "100g",
+      "kg_preis": 19.9,
+      "kat": "fisch",
+      "von": "2026-05-26",
+      "bis": "2026-05-31",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "HIT",
+      "produkt": "followfish Bio-Lachs / Kabeljau TK",
+      "preis": 6.99,
+      "preis_app": null,
+      "einheit": "360g",
+      "kg_preis": 19.42,
+      "kat": "fisch",
+      "von": "2026-05-26",
+      "bis": "2026-05-31",
+      "notiz": "mit App 7,99€",
+      "relevant": "ok"
+    },
+    {
+      "markt": "HIT",
+      "produkt": "Jungbullen-Schmorbraten / Gulasch Zungenstück",
+      "preis": 1.69,
+      "preis_app": null,
+      "einheit": "100g",
+      "kg_preis": 16.9,
+      "kat": "fleisch",
+      "von": "2026-05-26",
+      "bis": "2026-05-31",
+      "notiz": "1kg = 16,90€",
+      "relevant": "ok"
+    },
+    {
+      "markt": "HIT",
+      "produkt": "Kalbsbraten / Schnitzel / Gulasch Keule",
+      "preis": 2.69,
+      "preis_app": null,
+      "einheit": "100g",
+      "kg_preis": 26.9,
+      "kat": "fleisch",
+      "von": "2026-05-26",
+      "bis": "2026-05-31",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "HIT",
+      "produkt": "Argentinisches Roastbeef / Rumpsteak natur",
+      "preis": 2.99,
+      "preis_app": null,
+      "einheit": "100g",
+      "kg_preis": 29.9,
+      "kat": "fleisch",
+      "von": "2026-05-26",
+      "bis": "2026-05-31",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "HIT",
+      "produkt": "Lammkoteletts frisch Neuseeland",
+      "preis": 2.29,
+      "preis_app": null,
+      "einheit": "100g",
+      "kg_preis": 22.9,
+      "kat": "fleisch",
+      "von": "2026-05-26",
+      "bis": "2026-05-31",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "HIT",
+      "produkt": "Hähnchenbrustfilet frisch deutsch natur",
+      "preis": 1.49,
+      "preis_app": null,
+      "einheit": "100g",
+      "kg_preis": 14.9,
+      "kat": "geflügel",
+      "von": "2026-05-26",
+      "bis": "2026-05-31",
+      "notiz": "1kg = 14,90€",
+      "relevant": "ok"
+    },
+    {
+      "markt": "HIT",
+      "produkt": "Hähnchenbrustfilet mariniert deutsch",
+      "preis": 1.59,
+      "preis_app": null,
+      "einheit": "100g",
+      "kg_preis": 15.9,
+      "kat": "geflügel",
+      "von": "2026-05-26",
+      "bis": "2026-05-31",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "HIT",
+      "produkt": "Hähnchen-Hammerkeulen mariniert Spicy Curry",
+      "preis": 3.99,
+      "preis_app": null,
+      "einheit": "550g",
+      "kg_preis": 7.25,
+      "kat": "geflügel",
+      "von": "2026-05-26",
+      "bis": "2026-05-31",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "HIT",
+      "produkt": "Romatomaten Niederlande",
+      "preis": 1.29,
+      "preis_app": null,
+      "einheit": "500g",
+      "kg_preis": 2.58,
+      "kat": "gemüse-frisch",
+      "von": "2026-05-26",
+      "bis": "2026-05-31",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "HIT",
+      "produkt": "Zucchini Spanien",
+      "preis": 1.39,
+      "preis_app": null,
+      "einheit": "1kg",
+      "kg_preis": 1.39,
+      "kat": "gemüse-frisch",
+      "von": "2026-05-26",
+      "bis": "2026-05-31",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "HIT",
+      "produkt": "Cocktailstrauchtomaten Gourmet HIT",
+      "preis": 1.99,
+      "preis_app": null,
+      "einheit": "400g",
+      "kg_preis": 4.98,
+      "kat": "gemüse-frisch",
+      "von": "2026-05-26",
+      "bis": "2026-05-31",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "HIT",
+      "produkt": "HAK Hülsenfrüchte Linsen",
+      "preis": 1.69,
+      "preis_app": null,
+      "einheit": "225g",
+      "kg_preis": 7.51,
+      "kat": "konserve",
+      "von": "2026-05-26",
+      "bis": "2026-05-31",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "HIT",
+      "produkt": "Heinz Tomato Frito / passiert",
+      "preis": 0.99,
+      "preis_app": null,
+      "einheit": "350g",
+      "kg_preis": 2.83,
+      "kat": "konserve",
+      "von": "2026-05-26",
+      "bis": "2026-05-31",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "HIT",
+      "produkt": "Cirio Pasta Sauce Napoli",
+      "preis": 1.49,
+      "preis_app": null,
+      "einheit": "340g",
+      "kg_preis": 4.38,
+      "kat": "konserve",
+      "von": "2026-05-26",
+      "bis": "2026-05-31",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "HIT",
+      "produkt": "Weihenstephan H-Milch 3,5%",
+      "preis": 0.99,
+      "preis_app": null,
+      "einheit": "1l",
+      "kg_preis": 0.99,
+      "kat": "milch",
+      "von": "2026-05-26",
+      "bis": "2026-05-31",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "HIT",
+      "produkt": "Buko Frischkäse dänisch",
+      "preis": 0.99,
+      "preis_app": null,
+      "einheit": "200g",
+      "kg_preis": 4.95,
+      "kat": "milch",
+      "von": "2026-05-26",
+      "bis": "2026-05-31",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "HIT",
+      "produkt": "Grana Padano gerieben Giovanni Ferrari",
+      "preis": 3.99,
+      "preis_app": null,
+      "einheit": "150g",
+      "kg_preis": 26.6,
+      "kat": "milch",
+      "von": "2026-05-26",
+      "bis": "2026-05-31",
+      "notiz": "für Rike - Pasta-Käse",
+      "relevant": "ok"
+    },
+    {
+      "markt": "HIT",
+      "produkt": "Gazi Grill- und Pfannenkäse",
+      "preis": 1.99,
+      "preis_app": null,
+      "einheit": "200g",
+      "kg_preis": 9.95,
+      "kat": "milch",
+      "von": "2026-05-26",
+      "bis": "2026-05-31",
+      "notiz": "für Rike",
+      "relevant": "ok"
+    },
+    {
+      "markt": "HIT",
+      "produkt": "Landliebe Butter",
+      "preis": 1.19,
+      "preis_app": null,
+      "einheit": "250g",
+      "kg_preis": 4.76,
+      "kat": "milch",
+      "von": "2026-05-26",
+      "bis": "2026-05-31",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "HIT",
+      "produkt": "De Cecco Pasta versch. Sorten",
+      "preis": 1.29,
+      "preis_app": null,
+      "einheit": "500g",
+      "kg_preis": 2.58,
+      "kat": "stärke",
+      "von": "2026-05-26",
+      "bis": "2026-05-31",
+      "notiz": "Italienische Qualitäts-Pasta",
+      "relevant": "ok"
+    },
+    {
+      "markt": "HIT",
+      "produkt": "Speisefrühkartoffeln Drillinge festkochend",
+      "preis": 1.99,
+      "preis_app": null,
+      "einheit": "1kg",
+      "kg_preis": 1.99,
+      "kat": "stärke",
+      "von": "2026-05-26",
+      "bis": "2026-05-31",
+      "notiz": "Ägypten",
+      "relevant": "ok"
+    },
+    {
+      "markt": "HIT",
+      "produkt": "Dr. Oetker Ofenfrische Pizza",
+      "preis": 1.99,
+      "preis_app": null,
+      "einheit": "435g",
+      "kg_preis": 4.57,
+      "kat": "tiefkühl",
+      "von": "2026-05-26",
+      "bis": "2026-05-31",
+      "notiz": "Pflicht-Slot Italienisch Wochenende",
+      "relevant": "ok"
+    },
+    {
+      "markt": "HIT",
+      "produkt": "Iglo Rahm-Gemüse / Gemüse-Ideen TK",
+      "preis": 2.22,
+      "preis_app": null,
+      "einheit": "500g",
+      "kg_preis": 4.44,
+      "kat": "tiefkühl",
+      "von": "2026-05-26",
+      "bis": "2026-05-31",
+      "notiz": "TK-Gemüse Beilage",
+      "relevant": "ok"
+    },
+    {
+      "markt": "HIT",
+      "produkt": "Iglo Fischstäbchen TK",
+      "preis": 2.49,
+      "preis_app": null,
+      "einheit": "450g",
+      "kg_preis": 5.53,
+      "kat": "tiefkühl",
+      "von": "2026-05-26",
+      "bis": "2026-05-31",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "HIT",
+      "produkt": "Block House American Burger 4er",
+      "preis": 7.49,
+      "preis_app": null,
+      "einheit": "500g",
+      "kg_preis": 14.98,
+      "kat": "tiefkühl",
+      "von": "2026-05-26",
+      "bis": "2026-05-31",
+      "notiz": "Pflicht-Slot Burger",
+      "relevant": "ok"
+    },
+    {
+      "markt": "HIT",
+      "produkt": "Iglo Chicken Nuggets TK",
+      "preis": 2.99,
+      "preis_app": null,
+      "einheit": "250g",
+      "kg_preis": 11.96,
+      "kat": "tiefkühl",
+      "von": "2026-05-26",
+      "bis": "2026-05-31",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "Penny",
+      "produkt": "Eye of Round Steak Black Angus Butchers",
+      "preis": 4.99,
+      "preis_app": 4.44,
+      "einheit": "200g",
+      "kg_preis": 24.95,
+      "kat": "fleisch",
+      "von": "2026-05-26",
+      "bis": "2026-06-01",
+      "notiz": "mit App 4,44€",
+      "relevant": "ok"
+    },
+    {
+      "markt": "Penny",
+      "produkt": "Burger Patties Paprika frisch Butchers",
+      "preis": 3.33,
+      "preis_app": null,
+      "einheit": "250g",
+      "kg_preis": 13.32,
+      "kat": "fleisch",
+      "von": "2026-05-26",
+      "bis": "2026-06-01",
+      "notiz": "Pflicht-Slot Burger",
+      "relevant": "ok"
+    },
+    {
+      "markt": "Penny",
+      "produkt": "Hähnchen-Innenbrustfilets Mühlenhof frisch",
+      "preis": 6.99,
+      "preis_app": null,
+      "einheit": "800g",
+      "kg_preis": 8.74,
+      "kat": "geflügel",
+      "von": "2026-05-26",
+      "bis": "2026-06-01",
+      "notiz": "1kg = 8,74€",
+      "relevant": "ok"
+    },
+    {
+      "markt": "Penny",
+      "produkt": "Hähnchen-Geschnetzeltes Mühlenhof frisch mariniert",
+      "preis": 3.99,
+      "preis_app": null,
+      "einheit": "400g",
+      "kg_preis": 9.98,
+      "kat": "geflügel",
+      "von": "2026-05-26",
+      "bis": "2026-06-01",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "Penny",
+      "produkt": "Rote Paprika Marktliebe",
+      "preis": 1.99,
+      "preis_app": null,
+      "einheit": "1kg",
+      "kg_preis": 1.99,
+      "kat": "gemüse-frisch",
+      "von": "2026-05-26",
+      "bis": "2026-06-01",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "Penny",
+      "produkt": "Cherry-Romatomaten Bio Naturgut",
+      "preis": 1.11,
+      "preis_app": 0.99,
+      "einheit": "250g",
+      "kg_preis": 4.44,
+      "kat": "gemüse-frisch",
+      "von": "2026-05-26",
+      "bis": "2026-06-01",
+      "notiz": "mit App 0,99€",
+      "relevant": "ok"
+    },
+    {
+      "markt": "Penny",
+      "produkt": "Hawesta Heringsfilets",
+      "preis": 1.11,
+      "preis_app": null,
+      "einheit": "",
+      "kg_preis": null,
+      "kat": "konserve",
+      "von": "2026-05-26",
+      "bis": "2026-06-01",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "Penny",
+      "produkt": "Meggle Feine Butter",
+      "preis": 1.39,
+      "preis_app": 1.19,
+      "einheit": "250g",
+      "kg_preis": 5.56,
+      "kat": "milch",
+      "von": "2026-05-26",
+      "bis": "2026-06-01",
+      "notiz": "mit App 1,19€",
+      "relevant": "ok"
+    },
+    {
+      "markt": "Penny",
+      "produkt": "Miree Frischkäse",
+      "preis": 1.11,
+      "preis_app": null,
+      "einheit": "150g",
+      "kg_preis": 7.4,
+      "kat": "milch",
+      "von": "2026-05-26",
+      "bis": "2026-06-01",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "Penny",
+      "produkt": "Mozzarella San Fabio XXL",
+      "preis": 2.59,
+      "preis_app": null,
+      "einheit": "400g",
+      "kg_preis": 6.48,
+      "kat": "milch",
+      "von": "2026-05-26",
+      "bis": "2026-06-01",
+      "notiz": "für Rike",
+      "relevant": "ok"
+    },
+    {
+      "markt": "Penny",
+      "produkt": "Milram Reibekäse Auflauf-Liebe",
+      "preis": 1.39,
+      "preis_app": 1.39,
+      "einheit": "150g",
+      "kg_preis": 9.27,
+      "kat": "milch",
+      "von": "2026-05-26",
+      "bis": "2026-06-01",
+      "notiz": "für Rike",
+      "relevant": "ok"
+    },
+    {
+      "markt": "Penny",
+      "produkt": "Patros Grill- und Ofenkäse",
+      "preis": 1.79,
+      "preis_app": 1.69,
+      "einheit": "180g",
+      "kg_preis": 9.94,
+      "kat": "milch",
+      "von": "2026-05-26",
+      "bis": "2026-06-01",
+      "notiz": "mit App 1,69€ — für Rike",
+      "relevant": "ok"
+    },
+    {
+      "markt": "Penny",
+      "produkt": "PENNY Zukunftsbauer Vollmilch 3,5%",
+      "preis": 0.99,
+      "preis_app": null,
+      "einheit": "1l",
+      "kg_preis": 0.99,
+      "kat": "milch",
+      "von": "2026-05-26",
+      "bis": "2026-06-01",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "Penny",
+      "produkt": "PENNY Zukunftsbauer Kochsahne",
+      "preis": 1.19,
+      "preis_app": 0.99,
+      "einheit": "250g",
+      "kg_preis": 4.76,
+      "kat": "milch",
+      "von": "2026-05-26",
+      "bis": "2026-06-01",
+      "notiz": "mit App 0,99€",
+      "relevant": "ok"
+    },
+    {
+      "markt": "Penny",
+      "produkt": "Spaghetti Bio Naturgut",
+      "preis": 0.89,
+      "preis_app": null,
+      "einheit": "500g",
+      "kg_preis": 1.78,
+      "kat": "stärke",
+      "von": "2026-05-26",
+      "bis": "2026-06-01",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "Penny",
+      "produkt": "Speisefrühkartoffeln Marktliebe",
+      "preis": 1.79,
+      "preis_app": null,
+      "einheit": "1500g",
+      "kg_preis": 1.19,
+      "kat": "stärke",
+      "von": "2026-05-26",
+      "bis": "2026-06-01",
+      "notiz": "",
+      "relevant": "ok"
+    },
+    {
+      "markt": "Penny",
+      "produkt": "Dr. Oetker Suprema Pizza Salame Romano",
+      "preis": 3.99,
+      "preis_app": null,
+      "einheit": "487g",
+      "kg_preis": 8.19,
+      "kat": "tiefkühl",
+      "von": "2026-05-26",
+      "bis": "2026-06-01",
+      "notiz": "Pflicht-Slot Italienisch / Wochenende",
+      "relevant": "ok"
+    }
+  ],
+  "wochenplan": [
+    {
+      "variante": "guenstig",
+      "woche": 1,
+      "tag": "di",
+      "mahlzeit": "abend",
+      "rezept_id": 22,
+      "rezept_name": "Linsen-Curry mit Kokosreis (klein)",
+      "kat": "abend",
+      "kosten": 1.6,
+      "zeit": 25
+    },
+    {
+      "variante": "guenstig",
+      "woche": 1,
+      "tag": "di",
+      "mahlzeit": "mittag",
+      "rezept_id": 16,
+      "rezept_name": "Kartoffelspalten mit Kräuterquark",
+      "kat": "mittag",
+      "kosten": 1.8,
+      "zeit": 30
+    },
+    {
+      "variante": "guenstig",
+      "woche": 1,
+      "tag": "di",
+      "mahlzeit": "schulbrot",
+      "rezept_id": 9,
+      "rezept_name": "Elvis Special",
+      "kat": "schulbrot",
+      "kosten": null,
+      "zeit": 4
+    },
+    {
+      "variante": "guenstig",
+      "woche": 1,
+      "tag": "do",
+      "mahlzeit": "mittag",
+      "rezept_id": 29,
+      "rezept_name": "Überbackene Fusilli mit Hack & Käse (Rike Vorkoch)",
+      "kat": "abend",
+      "kosten": 2.8,
+      "zeit": 35
+    },
+    {
+      "variante": "guenstig",
+      "woche": 1,
+      "tag": "do",
+      "mahlzeit": "schulbrot",
+      "rezept_id": 10,
+      "rezept_name": "Choco-Banana-Express",
+      "kat": "schulbrot",
+      "kosten": null,
+      "zeit": 4
+    },
+    {
+      "variante": "guenstig",
+      "woche": 1,
+      "tag": "fr",
+      "mahlzeit": "abend",
+      "rezept_id": 25,
+      "rezept_name": "Kartoffelpüree, Schnitzel & Rotkohl",
+      "kat": "abend",
+      "kosten": 3.8,
+      "zeit": 40
+    },
+    {
+      "variante": "guenstig",
+      "woche": 1,
+      "tag": "fr",
+      "mahlzeit": "mittag",
+      "rezept_id": 19,
+      "rezept_name": "Vollkorn-Tagliatelle Pute-Tomaten",
+      "kat": "mittag",
+      "kosten": 2.8,
+      "zeit": 25
+    },
+    {
+      "variante": "guenstig",
+      "woche": 1,
+      "tag": "fr",
+      "mahlzeit": "schulbrot",
+      "rezept_id": 6,
+      "rezept_name": "Honey Crunch",
+      "kat": "schulbrot",
+      "kosten": null,
+      "zeit": 4
+    },
+    {
+      "variante": "guenstig",
+      "woche": 1,
+      "tag": "mi",
+      "mahlzeit": "abend",
+      "rezept_id": 23,
+      "rezept_name": "Magerquark-Bowl süß (Beeren, Nüsse, Honig)",
+      "kat": "abend",
+      "kosten": 1.8,
+      "zeit": 3
+    },
+    {
+      "variante": "guenstig",
+      "woche": 1,
+      "tag": "mi",
+      "mahlzeit": "mittag",
+      "rezept_id": 15,
+      "rezept_name": "Kokos-Reis mit Hähnchen-Curry",
+      "kat": "mittag",
+      "kosten": 3.1,
+      "zeit": 25
+    },
+    {
+      "variante": "guenstig",
+      "woche": 1,
+      "tag": "mi",
+      "mahlzeit": "schulbrot",
+      "rezept_id": 5,
+      "rezept_name": "Sunshine Crunch",
+      "kat": "schulbrot",
+      "kosten": null,
+      "zeit": 5
+    },
+    {
+      "variante": "guenstig",
+      "woche": 1,
+      "tag": "mo",
+      "mahlzeit": "abend",
+      "rezept_id": 21,
+      "rezept_name": "Putenbrust Ofengemüse & Kräuterquark-Dip",
+      "kat": "abend",
+      "kosten": 3.0,
+      "zeit": 30
+    },
+    {
+      "variante": "guenstig",
+      "woche": 1,
+      "tag": "mo",
+      "mahlzeit": "mittag",
+      "rezept_id": 14,
+      "rezept_name": "Vollkorn-Penne Hack-Bolognese",
+      "kat": "mittag",
+      "kosten": 2.8,
+      "zeit": 30
+    },
+    {
+      "variante": "guenstig",
+      "woche": 1,
+      "tag": "mo",
+      "mahlzeit": "schulbrot",
+      "rezept_id": 3,
+      "rezept_name": "Gurken-Klassiker",
+      "kat": "schulbrot",
+      "kosten": null,
+      "zeit": 5
+    },
+    {
+      "variante": "guenstig",
+      "woche": 2,
+      "tag": "di",
+      "mahlzeit": "abend",
+      "rezept_id": 28,
+      "rezept_name": "Magerquark-Bowl herzhaft",
+      "kat": "abend",
+      "kosten": 1.6,
+      "zeit": 5
+    },
+    {
+      "variante": "guenstig",
+      "woche": 2,
+      "tag": "di",
+      "mahlzeit": "mittag",
+      "rezept_id": 17,
+      "rezept_name": "Vollkorn-Fusilli mit Tomaten-Hack-Sauce",
+      "kat": "mittag",
+      "kosten": 2.6,
+      "zeit": 25
+    },
+    {
+      "variante": "guenstig",
+      "woche": 2,
+      "tag": "di",
+      "mahlzeit": "schulbrot",
+      "rezept_id": 13,
+      "rezept_name": "Erdnuss-Bananen-Vollkorn",
+      "kat": "schulbrot",
+      "kosten": null,
+      "zeit": 4
+    },
+    {
+      "variante": "guenstig",
+      "woche": 2,
+      "tag": "do",
+      "mahlzeit": "mittag",
+      "rezept_id": 29,
+      "rezept_name": "Überbackene Fusilli mit Hack & Käse (Rike Vorkoch)",
+      "kat": "abend",
+      "kosten": 2.8,
+      "zeit": 35
+    },
+    {
+      "variante": "guenstig",
+      "woche": 2,
+      "tag": "do",
+      "mahlzeit": "schulbrot",
+      "rezept_id": 11,
+      "rezept_name": "Apfel-Zimt-Wolke",
+      "kat": "schulbrot",
+      "kosten": null,
+      "zeit": 6
+    },
+    {
+      "variante": "guenstig",
+      "woche": 2,
+      "tag": "fr",
+      "mahlzeit": "abend",
+      "rezept_id": 25,
+      "rezept_name": "Kartoffelpüree, Schnitzel & Rotkohl",
+      "kat": "abend",
+      "kosten": 3.8,
+      "zeit": 40
+    },
+    {
+      "variante": "guenstig",
+      "woche": 2,
+      "tag": "fr",
+      "mahlzeit": "mittag",
+      "rezept_id": 14,
+      "rezept_name": "Vollkorn-Penne Hack-Bolognese",
+      "kat": "mittag",
+      "kosten": 2.8,
+      "zeit": 30
+    },
+    {
+      "variante": "guenstig",
+      "woche": 2,
+      "tag": "fr",
+      "mahlzeit": "schulbrot",
+      "rezept_id": 8,
+      "rezept_name": "Vollkorn-Power mit Ei & Käse",
+      "kat": "schulbrot",
+      "kosten": null,
+      "zeit": 5
+    },
+    {
+      "variante": "guenstig",
+      "woche": 2,
+      "tag": "mi",
+      "mahlzeit": "abend",
+      "rezept_id": 27,
+      "rezept_name": "Linsen-Eintopf mit Karotte & Kartoffel",
+      "kat": "abend",
+      "kosten": 1.5,
+      "zeit": 25
+    },
+    {
+      "variante": "guenstig",
+      "woche": 2,
+      "tag": "mi",
+      "mahlzeit": "mittag",
+      "rezept_id": 20,
+      "rezept_name": "Kokos-Reis mit Pute & Brokkoli TK",
+      "kat": "mittag",
+      "kosten": 2.9,
+      "zeit": 25
+    },
+    {
+      "variante": "guenstig",
+      "woche": 2,
+      "tag": "mi",
+      "mahlzeit": "schulbrot",
+      "rezept_id": 7,
+      "rezept_name": "Puten-Senf-Schnitte",
+      "kat": "schulbrot",
+      "kosten": null,
+      "zeit": 5
+    },
+    {
+      "variante": "guenstig",
+      "woche": 2,
+      "tag": "mo",
+      "mahlzeit": "abend",
+      "rezept_id": 26,
+      "rezept_name": "Bohnen-Chili vegetarisch",
+      "kat": "abend",
+      "kosten": 1.7,
+      "zeit": 25
+    },
+    {
+      "variante": "guenstig",
+      "woche": 2,
+      "tag": "mo",
+      "mahlzeit": "mittag",
+      "rezept_id": 18,
+      "rezept_name": "Kartoffelpüree mit Hähnchen-Geschnetzeltem",
+      "kat": "mittag",
+      "kosten": 3.0,
+      "zeit": 30
+    },
+    {
+      "variante": "guenstig",
+      "woche": 2,
+      "tag": "mo",
+      "mahlzeit": "schulbrot",
+      "rezept_id": 4,
+      "rezept_name": "HGT Design",
+      "kat": "schulbrot",
+      "kosten": null,
+      "zeit": 5
+    }
+  ],
+  "meta": {
+    "erstellt": "2026-05-26",
+    "budget_tag": 8.5
+  }
+}

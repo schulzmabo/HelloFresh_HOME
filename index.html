@@ -233,7 +233,7 @@ async function loadData() {
   }
 }
 
-function renderAll() { renderWochenplan(); renderAngebote(); renderEinkauf(); renderRezepte('alle'); }
+function renderAll() { renderWochenplan(); renderAngebote(); renderEinkauf(); renderRezepte('kochrezepte'); }
 
 // VIEW
 function showView(name, btn) {
@@ -448,155 +448,90 @@ function renderEinkauf() {
 }
 
 // ====== REZEPTE ======
-let rezTab = 'alle';
+let rezTab = 'kochrezepte';
 let rezSearch = '';
 
 function renderRezepte(tab) {
   if(!D) return;
   rezTab = tab || rezTab;
   rezSearch = '';
-  buildRezepteView();
+  document.getElementById('view-rezepte').innerHTML = buildRezepteHTML();
 }
 
-function rezepteSearchInput(val) {
-  rezSearch = val.trim().toLowerCase();
-  buildRezepteView(true);
+function doSearch() {
+  const val = document.getElementById('rez-search').value.trim().toLowerCase();
+  rezSearch = val;
+  document.getElementById('view-rezepte').innerHTML = buildRezepteHTML();
+  setTimeout(()=>{ const el=document.getElementById('rez-search'); if(el){el.focus();el.setSelectionRange(el.value.length,el.value.length);} },30);
 }
 
-function buildRezepteView(keepSearch) {
-  if(!D) return;
+function clearSearch() {
+  rezSearch = '';
+  document.getElementById('view-rezepte').innerHTML = buildRezepteHTML();
+}
 
+function buildRezepteHTML() {
+  if(!D) return '';
   const tabs = [
-    {key:'alle',           label:'🍽 Alle Rezepte'},
+    {key:'kochrezepte',    label:'🍽 Kochrezepte'},
     {key:'sandwiches',     label:'🥪 Sandwiches'},
     {key:'smoothies-rike', label:'🥤 Smoothies Rike'},
     {key:'smoothies-papa', label:'🥤 Smoothies Papa'},
   ];
 
-  // Search bar (always visible)
-  const searchVal = keepSearch ? rezSearch : '';
-  let html = `<div class="rezept-tab-bar">${tabs.map(t=>`<button class="rtab ${rezTab===t.key?'active':''}" onclick="renderRezepte('${t.key}')">${t.label}</button>`).join('')}</div>`;
-  html += `<div style="margin-bottom:10px;position:relative">
-    <input id="rez-search" type="text" placeholder="🔍 Suchen z.B. Kartoffel, Hähnchen, Pasta…"
+  let html = `<div class="rezept-tab-bar">${tabs.map(t=>`<button class="rtab ${(!rezSearch && rezTab===t.key)?'active':''}" onclick="renderRezepte('${t.key}')">${t.label}</button>`).join('')}</div>`;
+
+  html += `<div style="display:flex;gap:6px;margin-bottom:10px">
+    <input id="rez-search" type="text" placeholder="🔍 Alle Bereiche durchsuchen…"
       value="${rezSearch}"
-      oninput="rezepteSearchInput(this.value)"
-      style="width:100%;padding:8px 12px 8px 14px;border:1.5px solid var(--border);border-radius:20px;
-             font-size:13px;background:var(--bg);color:var(--txt);outline:none;
-             transition:border-color .15s;"
-      onfocus="this.style.borderColor='var(--dg)'" onblur="this.style.borderColor='var(--border)'">
-    ${rezSearch?`<button onclick="rezepteSearchInput('');document.getElementById('rez-search').value=''"
-      style="position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--txt2);font-size:16px">✕</button>`:''}
+      onkeydown="if(event.key==='Enter'){event.preventDefault();doSearch();}"
+      style="flex:1;padding:8px 12px;border:1.5px solid var(--border);border-radius:20px;
+             font-size:13px;background:var(--bg);color:var(--txt);outline:none;">
+    ${rezSearch
+      ? `<button onclick="clearSearch()" style="padding:7px 12px;border-radius:20px;border:1.5px solid var(--border);background:var(--bg2);color:var(--txt);cursor:pointer;font-size:13px">✕ Löschen</button>`
+      : `<button onclick="doSearch()" style="padding:7px 14px;border-radius:20px;border:none;background:var(--dg);color:#fff;cursor:pointer;font-size:13px;font-weight:700">Suchen</button>`
+    }
   </div>`;
 
-  // === ALLE REZEPTE ===
-  if(rezTab === 'alle' || rezSearch) {
-    const all = D.rezepte_main || [];
-
-    // Filter by search
-    let filtered = rezSearch ? all.filter(r => {
-      const haystack = [
-        r.name, r.sub, r.kategorie,
-        (r.tags||[]).join(' '),
-        (r.zutaten||[]).map(z=>Array.isArray(z)?z[1]:z).join(' '),
-        r.hinweis||'', r.tipp||''
-      ].join(' ').toLowerCase();
-      return rezSearch.split(' ').every(word => haystack.includes(word));
-    }) : all;
-
-    if(rezSearch) {
-      html += `<div style="font-size:12px;color:var(--txt2);margin-bottom:8px">${filtered.length} Rezept${filtered.length!==1?'e':''} gefunden für <strong>"${rezSearch}"</strong></div>`;
-    }
-
-    if(!filtered.length) {
-      html += `<div class="empty"><div style="font-size:32px;margin-bottom:8px">🔍</div>Keine Rezepte für "${rezSearch}" gefunden.<br><small>Versuch z.B. "Hähnchen", "Pasta" oder "Kartoffel"</small></div>`;
-    } else if(rezSearch) {
-      // Search results: flat list without grouping
-      filtered.forEach(r => html += alleRezeptCard(r));
+  if(rezSearch) {
+    // Alle vier Bereiche durchsuchen
+    function mR(r) { return [r.name,r.sub||'',r.kategorie||'',(r.tags||[]).join(' '),(r.zutaten||[]).map(z=>Array.isArray(z)?z[1]:z).join(' '),r.hinweis||'',r.tipp||''].join(' ').toLowerCase().includes(rezSearch); }
+    function mS(s) { return [s.name,s.typ||s.sub||'',(s.zutaten||[]).map(z=>Array.isArray(z)?z[1]:z).join(' '),s.nutzen||'',s.tipp||''].join(' ').toLowerCase().includes(rezSearch); }
+    const rK=(D.rezepte_main||[]).filter(mR), rS=(D.rezepte_sandwiches||[]).filter(mS),
+          rR=(D.rezepte_smoothies_rike||[]).filter(mS), rP=(D.rezepte_smoothies_papa||[]).filter(mS);
+    const total=rK.length+rS.length+rR.length+rP.length;
+    html += `<div style="font-size:12px;color:var(--txt2);margin-bottom:8px">${total} Ergebnis${total!==1?'se':''} für <strong>"${rezSearch}"</strong> in allen Bereichen</div>`;
+    if(!total) {
+      html += `<div class="empty"><div style="font-size:32px;margin-bottom:8px">🔍</div>Nichts gefunden.<br><small>Versuch z.B. "Hähnchen", "Kartoffel", "Pasta", "Banane"</small></div>`;
     } else {
-      // Grouped by Kategorie → Subkategorie
-      const GRUPPE_LABELS = {
-        'mittag/pasta':              '🍝 Mittag · Pasta',
-        'mittag/kartoffel':          '🥔 Mittag · Kartoffel',
-        'mittag/reis':               '🍚 Mittag · Reis',
-        'mittag/eintopf':            '🥘 Mittag · Eintopf',
-        'mittag/ofen':               '🔥 Mittag · Ofen',
-        'mittag/salat-warm':         '🥗 Mittag · Salat warm',
-        'mittag/wochenende':         '🌞 Mittag · Wochenende',
-        'mittag/donnerstag-vorkoch': '🎒 Mittag · Donnerstag Vorkoch',
-        'abend/protein-klassiker':   '💪 Abend · Protein-Klassiker',
-        'abend/klassiker':           '🍽 Abend · Klassiker',
-        'abend/fisch':               '🐟 Abend · Fisch',
-        'abend/vegetarisch':         '🌿 Abend · Vegetarisch',
-        'abend/bowl':                '🥣 Abend · Bowl',
-        'abend/eintopf':             '🥘 Abend · Eintopf',
-        'abend/familienessen':       '👨‍👧 Abend · Familienessen',
-        'abend/wochenende':          '🌟 Abend · Wochenende',
-        'abend/donnerstag-vorkoch':  '🎒 Abend · Donnerstag Vorkoch',
-        'abend/beilage-klassiker':   '🥔 Abend · Beilage',
-      };
-      const ORDER = Object.keys(GRUPPE_LABELS);
-      const gruppen = {};
-      filtered.forEach(r => {
-        const k = `${r.kategorie}/${r.sub||'sonstige'}`;
-        if(!gruppen[k]) gruppen[k] = [];
-        gruppen[k].push(r);
-      });
-      const sortedKeys = [...Object.keys(gruppen)].sort((a,b) => {
-        const ia = ORDER.indexOf(a), ib = ORDER.indexOf(b);
-        return (ia<0?99:ia) - (ib<0?99:ib);
-      });
-      sortedKeys.forEach(k => {
-        const label = GRUPPE_LABELS[k] || ('📦 ' + k);
-        html += `<div class="sec-divider">${label} <span style="font-weight:400;font-size:11px;opacity:.7">(${gruppen[k].length})</span></div>`;
-        gruppen[k].forEach(r => html += alleRezeptCard(r));
-      });
+      if(rK.length)  { html+=`<div class="sec-divider">🍽 Kochrezepte (${rK.length})</div>`;      rK.forEach(r=>html+=alleRezeptCard(r)); }
+      if(rS.length)  { html+=`<div class="sec-divider">🥪 Sandwiches (${rS.length})</div>`;       rS.forEach(r=>html+=sandwichCard(r)); }
+      if(rR.length)  { html+=`<div class="sec-divider">🥤 Smoothies Rike (${rR.length})</div>`;   rR.forEach(s=>html+=smoothieCard(s,'rike')); }
+      if(rP.length)  { html+=`<div class="sec-divider">🥤 Smoothies Papa (${rP.length})</div>`;   rP.forEach(s=>html+=smoothieCard(s,'papa')); }
     }
-    if(!rezSearch && rezTab==='alle') {
-      document.getElementById('view-rezepte').innerHTML = html;
-      return;
-    }
+    return html;
   }
 
-  // === SANDWICHES ===
-  if(rezTab === 'sandwiches' && !rezSearch) {
-    const herzhaft = (D.rezepte_sandwiches||[]).filter(r=>r.sub==='herzhaft');
-    const suess = (D.rezepte_sandwiches||[]).filter(r=>r.sub==='suess');
-    if(herzhaft.length) { html += `<div class="sec-divider">🧀 Herzhaft (${herzhaft.length})</div>`; herzhaft.forEach(r=>html+=sandwichCard(r)); }
-    if(suess.length)    { html += `<div class="sec-divider">🍫 Süß (${suess.length})</div>`;       suess.forEach(r=>html+=sandwichCard(r)); }
+  // Kochrezepte
+  if(rezTab==='kochrezepte') {
+    const GL={'mittag/pasta':'🍝 Mittag · Pasta','mittag/kartoffel':'🥔 Mittag · Kartoffel','mittag/reis':'🍚 Mittag · Reis','mittag/eintopf':'🥘 Mittag · Eintopf','mittag/ofen':'🔥 Mittag · Ofen','mittag/salat-warm':'🥗 Mittag · Salat warm','mittag/wochenende':'🌞 Mittag · Wochenende','mittag/donnerstag-vorkoch':'🎒 Mittag · Donnerstag Vorkoch','abend/protein-klassiker':'💪 Abend · Protein-Klassiker','abend/klassiker':'🍽 Abend · Klassiker','abend/fisch':'🐟 Abend · Fisch','abend/vegetarisch':'🌿 Abend · Vegetarisch','abend/bowl':'🥣 Abend · Bowl','abend/eintopf':'🥘 Abend · Eintopf','abend/familienessen':'👨‍👧 Abend · Familienessen','abend/wochenende':'🌟 Abend · Wochenende','abend/donnerstag-vorkoch':'🎒 Abend · Donnerstag Vorkoch','abend/beilage-klassiker':'🥔 Abend · Beilage'};
+    const ORD=Object.keys(GL), gr={};
+    (D.rezepte_main||[]).forEach(r=>{ const k=`${r.kategorie}/${r.sub||'sonstige'}`; if(!gr[k]) gr[k]=[]; gr[k].push(r); });
+    [...Object.keys(gr)].sort((a,b)=>(ORD.indexOf(a)<0?99:ORD.indexOf(a))-(ORD.indexOf(b)<0?99:ORD.indexOf(b)))
+      .forEach(k=>{ html+=`<div class="sec-divider">${GL[k]||'📦 '+k} <span style="font-weight:400;font-size:11px;opacity:.7">(${gr[k].length})</span></div>`; gr[k].forEach(r=>html+=alleRezeptCard(r)); });
   }
-
-  // === SMOOTHIES RIKE ===
-  if(rezTab === 'smoothies-rike' && !rezSearch) {
-    html += `<div class="sec-divider">🌸 Schul-Smoothies Mo–Fr (${(D.rezepte_smoothies_rike||[]).length})</div>`;
-    (D.rezepte_smoothies_rike||[]).forEach(s=>html+=smoothieCard(s,'rike'));
+  if(rezTab==='sandwiches') {
+    (D.rezepte_sandwiches||[]).filter(r=>r.sub==='herzhaft').length && (html+=`<div class="sec-divider">🧀 Herzhaft</div>`,(D.rezepte_sandwiches||[]).filter(r=>r.sub==='herzhaft').forEach(r=>html+=sandwichCard(r)));
+    (D.rezepte_sandwiches||[]).filter(r=>r.sub==='suess').length && (html+=`<div class="sec-divider">🍫 Süß</div>`,(D.rezepte_sandwiches||[]).filter(r=>r.sub==='suess').forEach(r=>html+=sandwichCard(r)));
   }
-
-  // === SMOOTHIES PAPA ===
-  if(rezTab === 'smoothies-papa' && !rezSearch) {
-    html += `<div class="sec-divider">💪 Sport & Fokus Mo–Fr (${(D.rezepte_smoothies_papa||[]).length})</div>`;
-    (D.rezepte_smoothies_papa||[]).forEach(s=>html+=smoothieCard(s,'papa'));
-  }
-
-  document.getElementById('view-rezepte').innerHTML = html;
+  if(rezTab==='smoothies-rike') { html+=`<div class="sec-divider">🌸 Schul-Smoothies Mo–Fr</div>`; (D.rezepte_smoothies_rike||[]).forEach(s=>html+=smoothieCard(s,'rike')); }
+  if(rezTab==='smoothies-papa') { html+=`<div class="sec-divider">💪 Sport & Fokus Mo–Fr</div>`; (D.rezepte_smoothies_papa||[]).forEach(s=>html+=smoothieCard(s,'papa')); }
+  return html;
 }
 
 function alleRezeptCard(r) {
-  const slots = getSlots(r.tags||[]);
-  const hasKaese = (r.tags||[]).includes('käse-trennbar');
-  return `<div class="rcard" onclick="openRezept(${r.id})">
-    <div class="rcard-hdr">
-      <div style="flex:1">
-        <div class="rcard-name">${r.name}</div>
-        <div class="rcard-sub">${slots}${hasKaese?' <span style="color:var(--teal);font-size:10px">🧀 Käse sep.</span>':''}</div>
-      </div>
-      ${r.kosten?`<div style="text-align:right;flex-shrink:0"><div style="font-weight:700;color:var(--gold);font-size:13px">${fmt(parseFloat(r.kosten),'€')}</div><div style="font-size:10px;color:var(--txt2)">2 Pers.</div></div>`:''}
-    </div>
-    <div class="rcard-meta">
-      ${r.zeit?`<span>⏱ ${r.zeit} Min</span>`:''}
-      ${r.kcal?`<span>🔥 ${r.kcal} kcal</span>`:''}
-      ${r.protein?`<span>💪 ${r.protein}g</span>`:''}
-    </div>
-  </div>`;
+  const slots=getSlots(r.tags||[]), hasK=(r.tags||[]).includes('käse-trennbar');
+  return `<div class="rcard" onclick="openRezept(${r.id})"><div class="rcard-hdr"><div style="flex:1"><div class="rcard-name">${r.name}</div><div class="rcard-sub">${slots}${hasK?' <span style="color:var(--teal);font-size:10px">🧀 Käse sep.</span>':''}</div></div>${r.kosten?`<div style="text-align:right;flex-shrink:0"><div style="font-weight:700;color:var(--gold);font-size:13px">${fmt(parseFloat(r.kosten),'€')}</div><div style="font-size:10px;color:var(--txt2)">2 Pers.</div></div>`:''}</div><div class="rcard-meta">${r.zeit?`<span>⏱ ${r.zeit} Min</span>`:''}${r.kcal?`<span>🔥 ${r.kcal} kcal</span>`:''}${r.protein?`<span>💪 ${r.protein}g</span>`:''}</div></div>`;
 }
 
 function sandwichCard(r) {

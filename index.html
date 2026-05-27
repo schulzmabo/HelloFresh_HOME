@@ -5,437 +5,202 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Küchenwoche — Rike & Papa</title>
 <style>
-  /* ====== PDF-STYLE DESIGN SYSTEM ====== */
-  :root {
-    --dark-green:     #4A7C59;
-    --teal:           #008080;
-    --dark-blue:      #1B4F72;
-    --dark-text:      #333333;
-    --light-text:     #666666;
-    --block-green:    #EFF5E8;
-    --block-header:   #D4E4C1;
-    --block-cream:    #FAFAF2;
-    --accent-gold:    #B8860B;
-    --accent-green:   #27AE60;
-    --accent-red:     #C0392B;
-    --color-green-bg: #E8F5E9;
-    --color-yellow-bg:#FFF9C4;
-    --color-blue-bg:  #E3F2FD;
-    --color-orange-bg:#FFF3E0;
-    --color-gray-bg:  #F5F5F5;
-    --color-green-bar:#4CAF50;
-    --color-yellow-bar:#FFC107;
-    --color-blue-bar: #2196F3;
-    --color-orange-bar:#FF9800;
-    --white:          #ffffff;
-    --border:         #D0DFC8;
-    --shadow:         0 2px 8px rgba(74,124,89,0.10);
-  }
+:root {
+  --dg: #4A7C59; --teal: #008080; --gold: #B8860B;
+  --bg: #F4F7F2; --bg2: #EFF5E8; --bg3: #FAFAF2;
+  --hdr: #D4E4C1; --border: #D0DFC8;
+  --txt: #333; --txt2: #666;
+  --green-bg: #E8F5E9; --blue-bg: #E3F2FD; --orange-bg: #FFF3E0; --yellow-bg: #FFFDE7;
+  --green-bar: #4CAF50; --blue-bar: #2196F3; --orange-bar: #FF9800; --yellow-bar: #F9A825;
+  --shadow: 0 1px 6px rgba(74,124,89,.10);
+  --radius: 8px;
+}
+[data-theme="dark"] {
+  --bg: #1a1f1c; --bg2: #222b25; --bg3: #1e251f;
+  --hdr: #2a3d2e; --border: #2e3f32;
+  --txt: #e8ede9; --txt2: #8fa893;
+  --green-bg: #1a2e1d; --blue-bg: #1a2535; --orange-bg: #2e2010; --yellow-bg: #2a2510;
+  --shadow: 0 1px 6px rgba(0,0,0,.3);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: var(--bg); color: var(--txt); font-size: 14px; line-height: 1.5; }
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+/* HEADER */
+.site-header { background: var(--dg); color: #fff; padding: 12px 14px 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,.2); }
+.header-row { display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px; }
+.site-title { font-size: 17px; font-weight: 700; }
+.site-sub { font-size: 10px; opacity: .75; }
+.header-actions { display: flex; gap: 8px; align-items: center; }
+.budget-badge { background: var(--gold); color: #fff; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 10px; }
+.theme-btn { background: rgba(255,255,255,.18); border: none; color: #fff; width: 28px; height: 28px; border-radius: 50%; cursor: pointer; font-size: 14px; display: flex; align-items: center; justify-content: center; }
 
-  body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background: #F4F7F2;
-    color: var(--dark-text);
-    font-size: 14px;
-    line-height: 1.5;
-    min-height: 100vh;
-  }
+/* NAV */
+.nav-tabs { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; }
+.nav-tabs::-webkit-scrollbar { display: none; }
+.nav-tab { background: rgba(255,255,255,.13); color: rgba(255,255,255,.82); border: none; cursor: pointer; padding: 7px 14px; border-radius: 6px 6px 0 0; font-size: 12px; font-weight: 600; white-space: nowrap; transition: all .15s; }
+.nav-tab.active { background: var(--bg); color: var(--dg); }
 
-  /* ====== HEADER ====== */
-  .site-header {
-    background: var(--dark-green);
-    color: white;
-    padding: 14px 16px 10px;
-    position: sticky; top: 0; z-index: 100;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.18);
-  }
-  .header-top { display: flex; justify-content: space-between; align-items: center; }
-  .site-title { font-size: 18px; font-weight: 700; letter-spacing: 0.3px; }
-  .site-subtitle { font-size: 11px; opacity: 0.78; margin-top: 1px; }
-  .budget-badge {
-    background: var(--accent-gold);
-    color: white;
-    font-size: 11px; font-weight: 700;
-    padding: 3px 8px; border-radius: 12px;
-    white-space: nowrap;
-  }
+/* MAIN */
+.main { padding: 12px; max-width: 680px; margin: 0 auto; }
+.view { display: none; }
+.view.active { display: block; }
 
-  /* ====== NAV TABS ====== */
-  .nav-tabs {
-    display: flex; gap: 2px;
-    background: var(--dark-green);
-    padding: 6px 16px 0;
-    overflow-x: auto; -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-  .nav-tabs::-webkit-scrollbar { display: none; }
-  .nav-tab {
-    background: rgba(255,255,255,0.15);
-    color: rgba(255,255,255,0.85);
-    border: none; cursor: pointer;
-    padding: 6px 14px; border-radius: 6px 6px 0 0;
-    font-size: 12px; font-weight: 600;
-    white-space: nowrap; transition: all 0.15s;
-  }
-  .nav-tab.active {
-    background: #F4F7F2;
-    color: var(--dark-green);
-  }
-  .nav-tab:hover:not(.active) { background: rgba(255,255,255,0.25); }
+/* SECTION BLOCK */
+.block { background: var(--bg2); border-radius: var(--radius); margin-bottom: 10px; overflow: hidden; box-shadow: var(--shadow); }
+.block.cream { background: var(--bg3); }
+.block-title { background: var(--hdr); color: var(--dg); font-size: 11px; font-weight: 700; padding: 6px 12px; letter-spacing: .5px; text-transform: uppercase; border-bottom: 1px solid var(--border); }
+.block-body { padding: 10px 12px; }
 
-  /* ====== MAIN CONTENT ====== */
-  .main { padding: 14px 12px; max-width: 680px; margin: 0 auto; }
+/* KV ROW */
+.kv { display: flex; justify-content: space-between; align-items: baseline; padding: 4px 0; border-bottom: 1px solid rgba(74,124,89,.07); }
+.kv:last-child { border-bottom: none; }
+.kv-l { color: var(--txt); font-size: 13px; }
+.kv-r { color: var(--gold); font-weight: 700; font-size: 13px; text-align: right; }
+.kv-r.g { color: #27AE60; } .kv-r.t { color: var(--teal); } .kv-r.r { color: #C0392B; }
 
-  /* ====== VIEW ====== */
-  .view { display: none; }
-  .view.active { display: block; }
+/* COLOR ROW */
+.crow { display: flex; align-items: center; margin-bottom: 5px; border-radius: 4px; overflow: hidden; background: var(--green-bg); }
+.crow.blue { background: var(--blue-bg); } .crow.orange { background: var(--orange-bg); } .crow.yellow { background: var(--yellow-bg); }
+.cbar { width: 4px; min-height: 34px; align-self: stretch; background: var(--green-bar); flex-shrink: 0; }
+.crow.blue .cbar { background: var(--blue-bar); } .crow.orange .cbar { background: var(--orange-bar); } .crow.yellow .cbar { background: var(--yellow-bar); }
+.ccontent { padding: 5px 10px; flex: 1; }
+.clabel { font-weight: 700; font-size: 12px; color: var(--txt); }
+.cdesc { font-size: 11px; color: var(--txt2); }
 
-  /* ====== SECTION BLOCK (PDF-Style Kernbaustein) ====== */
-  .section-block {
-    background: var(--block-green);
-    border-radius: 6px;
-    margin-bottom: 12px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-  }
-  .section-block.cream { background: var(--block-cream); }
+/* WOCHENPLAN */
+.kw-label { font-size: 13px; font-weight: 700; color: var(--dg); margin-bottom: 10px; padding: 6px 10px; background: var(--hdr); border-radius: 6px; }
+.tag-card { margin-bottom: 8px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.tag-hdr { background: var(--dg); color: #fff; font-weight: 700; font-size: 13px; padding: 7px 12px; display: flex; justify-content: space-between; }
+.tag-hdr-cost { font-size: 11px; opacity: .8; font-weight: 400; }
+.tag-body { background: var(--bg); border: 1px solid var(--border); border-top: none; border-radius: 0 0 var(--radius) var(--radius); }
+.meal-row { padding: 9px 12px; border-bottom: 1px solid var(--border); cursor: pointer; transition: background .1s; }
+.meal-row:last-child { border-bottom: none; }
+.meal-row:hover { background: var(--bg2); }
+.meal-time { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 2px; }
+.meal-time.m { color: #2E7D32; } /* grün statt gelb für Mittag */
+.meal-time.a { color: var(--teal); }
+.meal-name { font-size: 14px; font-weight: 600; color: var(--txt); }
+.meal-meta { display: flex; gap: 10px; font-size: 11px; color: var(--txt2); margin-top: 3px; flex-wrap: wrap; }
 
-  .section-title {
-    background: var(--block-header);
-    color: var(--dark-green);
-    font-size: 12px; font-weight: 700;
-    padding: 7px 12px;
-    letter-spacing: 0.4px;
-    text-transform: uppercase;
-    border-bottom: 1px solid var(--border);
-  }
-  .section-body { padding: 10px 12px; }
+/* SLOT BADGES */
+.badge { display: inline-block; font-size: 9px; font-weight: 700; padding: 1px 5px; border-radius: 6px; margin-right: 2px; }
+.b-it { background: #E8F4E8; color: #1B5E20; }
+.b-de { background: #E3F2FD; color: #0D47A1; }
+.b-veg { background: #F3E5F5; color: #4A148C; }
+.b-bur { background: #FFF3E0; color: #BF360C; }
 
-  /* ====== KV ROW ====== */
-  .kv-row {
-    display: flex; justify-content: space-between; align-items: baseline;
-    padding: 4px 0;
-    border-bottom: 1px solid rgba(74,124,89,0.08);
-  }
-  .kv-row:last-child { border-bottom: none; }
-  .kv-label { color: var(--dark-text); font-size: 13px; }
-  .kv-value { color: var(--accent-gold); font-weight: 700; font-size: 13px; text-align: right; }
-  .kv-value.green { color: var(--accent-green); }
-  .kv-value.teal  { color: var(--teal); }
-  .kv-value.red   { color: var(--accent-red); }
+/* MODAL */
+.overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.55); z-index: 200; align-items: flex-end; justify-content: center; }
+.overlay.open { display: flex; }
+.modal { background: var(--bg); width: 100%; max-width: 680px; max-height: 88vh; border-radius: 14px 14px 0 0; overflow-y: auto; padding-bottom: env(safe-area-inset-bottom,16px); }
+.modal-handle { width: 36px; height: 4px; background: var(--border); border-radius: 2px; margin: 10px auto 0; }
+.modal-hdr { padding: 10px 16px; border-bottom: 2px solid var(--hdr); position: sticky; top: 0; background: var(--bg); z-index: 1; }
+.modal-title { font-size: 16px; font-weight: 700; color: var(--dg); }
+.modal-sub { font-size: 11px; color: var(--txt2); margin-top: 2px; }
+.modal-close { position: absolute; top: 10px; right: 12px; background: var(--bg2); border: none; cursor: pointer; width: 26px; height: 26px; border-radius: 50%; font-size: 14px; color: var(--txt); display: flex; align-items: center; justify-content: center; }
+.modal-body { padding: 12px 16px; }
+.m-sec { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--dg); margin: 12px 0 5px; padding-bottom: 3px; border-bottom: 1px solid var(--border); }
+.zutat-row { display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid rgba(0,0,0,.04); font-size: 13px; }
+.zutat-m { color: var(--gold); font-weight: 700; text-align: right; min-width: 80px; }
+.step-row { display: flex; gap: 10px; margin-bottom: 8px; font-size: 13px; }
+.step-n { background: var(--dg); color: #fff; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+.hint-box { background: var(--blue-bg); border-left: 4px solid var(--blue-bar); padding: 7px 10px; border-radius: 0 4px 4px 0; font-size: 12px; margin-top: 8px; }
 
-  /* ====== COLOR ROW (Farbbalken-Zeile) ====== */
-  .color-row {
-    display: flex; align-items: center;
-    margin-bottom: 5px; border-radius: 4px; overflow: hidden;
-    background: var(--color-green-bg);
-  }
-  .color-row.yellow { background: var(--color-yellow-bg); }
-  .color-row.blue   { background: var(--color-blue-bg); }
-  .color-row.orange { background: var(--color-orange-bg); }
-  .color-row.gray   { background: var(--color-gray-bg); }
-  .color-bar {
-    width: 4px; min-height: 36px; align-self: stretch;
-    background: var(--color-green-bar); flex-shrink: 0;
-  }
-  .color-row.yellow .color-bar { background: var(--color-yellow-bar); }
-  .color-row.blue   .color-bar { background: var(--color-blue-bar); }
-  .color-row.orange .color-bar { background: var(--color-orange-bar); }
-  .color-row.gray   .color-bar { background: #9E9E9E; }
-  .color-content { padding: 6px 10px; flex: 1; }
-  .color-label { font-weight: 700; font-size: 12px; color: var(--dark-text); }
-  .color-desc  { font-size: 12px; color: var(--light-text); }
+/* ANGEBOTE */
+.markt-hdr { background: var(--teal); color: #fff; padding: 7px 12px; border-radius: var(--radius) var(--radius) 0 0; font-size: 13px; font-weight: 700; display: flex; justify-content: space-between; }
+.markt-sub { font-size: 10px; opacity: .82; font-weight: 400; }
+.app-pill { background: #fff; color: var(--teal); font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 8px; }
+.kat-hdr { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .4px; color: var(--dg); margin: 8px 0 3px; }
 
-  /* ====== TABLE ====== */
-  .data-table { width: 100%; border-collapse: collapse; font-size: 12px; }
-  .data-table th {
-    background: var(--block-header);
-    color: var(--dark-green); font-weight: 700;
-    padding: 6px 8px; text-align: left;
-    border-bottom: 2px solid var(--dark-green);
-  }
-  .data-table th.right, .data-table td.right { text-align: right; }
-  .data-table td { padding: 5px 8px; border-bottom: 1px solid var(--border); }
-  .data-table tr:last-child td { border-bottom: none; }
-  .data-table tr:nth-child(even) td { background: rgba(212,228,193,0.20); }
+/* EINKAUF */
+.ei-item { display: flex; align-items: flex-start; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--border); }
+.ei-item:last-child { border-bottom: none; }
+.ei-chk { width: 18px; height: 18px; border: 2px solid var(--dg); border-radius: 4px; flex-shrink: 0; cursor: pointer; display: flex; align-items: center; justify-content: center; margin-top: 2px; transition: all .15s; }
+.ei-chk.done { background: var(--dg); color: #fff; }
+.ei-chk.done::after { content: "✓"; font-size: 11px; font-weight: 700; }
+.ei-info { flex: 1; }
+.ei-name { font-size: 13px; font-weight: 600; }
+.ei-detail { font-size: 11px; color: var(--txt2); }
+.ei-preis { text-align: right; min-width: 60px; }
+.preis-m { font-size: 13px; font-weight: 700; color: var(--gold); }
+.preis-a { font-size: 10px; color: var(--teal); font-weight: 700; }
+.gesamt-row { background: var(--hdr); padding: 7px 12px; border-radius: 4px; display: flex; justify-content: space-between; margin-top: 4px; font-weight: 700; }
+.gesamt-l { color: var(--dg); font-size: 13px; }
+.gesamt-v { color: var(--gold); font-size: 15px; }
 
-  /* ====== WOCHENPLAN VIEW ====== */
-  .woche-header {
-    display: flex; justify-content: space-between; align-items: center;
-    margin-bottom: 10px;
-  }
-  .woche-title { font-size: 16px; font-weight: 700; color: var(--dark-green); }
+/* REZEPTE */
+.rezept-tab-bar { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
+.rtab { background: var(--bg3); border: 1.5px solid var(--border); color: var(--txt); padding: 5px 12px; border-radius: 14px; font-size: 12px; cursor: pointer; transition: all .15s; }
+.rtab.active { background: var(--dg); border-color: var(--dg); color: #fff; font-weight: 700; }
+.rcard { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 8px; overflow: hidden; cursor: pointer; box-shadow: var(--shadow); transition: box-shadow .15s; }
+.rcard:hover { box-shadow: 0 3px 12px rgba(74,124,89,.18); }
+.rcard-hdr { background: var(--bg2); padding: 9px 12px; display: flex; justify-content: space-between; align-items: flex-start; }
+.rcard-name { font-size: 14px; font-weight: 700; color: var(--dg); }
+.rcard-sub { font-size: 11px; color: var(--txt2); margin-top: 2px; }
+.rcard-meta { display: flex; gap: 8px; padding: 6px 12px; font-size: 11px; color: var(--txt2); border-top: 1px solid var(--border); }
 
-  .tag-block { margin-bottom: 10px; }
-  .tag-header {
-    background: var(--dark-green);
-    color: white; font-weight: 700; font-size: 13px;
-    padding: 6px 12px; border-radius: 6px 6px 0 0;
-    display: flex; justify-content: space-between; align-items: center;
-  }
-  .tag-body { background: white; border: 1px solid var(--border); border-top: none;
-    border-radius: 0 0 6px 6px; overflow: hidden; }
+/* SMOOTHIE CARD */
+.smcard { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 8px; overflow: hidden; cursor: pointer; box-shadow: var(--shadow); }
+.smcard-hdr { padding: 9px 12px; display: flex; justify-content: space-between; align-items: center; }
+.smcard-name { font-size: 14px; font-weight: 700; color: var(--dg); }
+.smcard-tag { font-size: 10px; color: var(--teal); font-weight: 600; }
+.smcard-fokus { font-size: 11px; color: var(--txt2); padding: 0 12px 7px; }
 
-  .mahlzeit-row {
-    padding: 9px 12px;
-    border-bottom: 1px solid var(--border);
-    display: flex; flex-direction: column; gap: 3px;
-    cursor: pointer; transition: background 0.1s;
-  }
-  .mahlzeit-row:last-child { border-bottom: none; }
-  .mahlzeit-row:hover { background: var(--block-green); }
-  .mahlzeit-time {
-    font-size: 10px; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  .mahlzeit-time.mittag { color: var(--color-yellow-bar); }
-  .mahlzeit-time.abend  { color: var(--teal); }
-  .mahlzeit-name { font-size: 14px; font-weight: 600; color: var(--dark-text); }
-  .mahlzeit-meta {
-    display: flex; gap: 10px; font-size: 11px; color: var(--light-text);
-  }
-  .meta-pill {
-    background: var(--block-header);
-    color: var(--dark-green); font-size: 10px; font-weight: 700;
-    padding: 1px 6px; border-radius: 8px;
-  }
+/* SECTION DIVIDER */
+.sec-divider { font-size: 12px; font-weight: 700; color: var(--dg); text-transform: uppercase; letter-spacing: .6px; margin: 14px 0 8px; padding-bottom: 4px; border-bottom: 2px solid var(--hdr); }
 
-  /* ====== REZEPT DETAIL MODAL ====== */
-  .modal-overlay {
-    display: none; position: fixed; inset: 0;
-    background: rgba(0,0,0,0.55); z-index: 200;
-    align-items: flex-end; justify-content: center;
-  }
-  .modal-overlay.open { display: flex; }
-  .modal {
-    background: white; width: 100%; max-width: 680px;
-    max-height: 88vh; border-radius: 14px 14px 0 0;
-    overflow-y: auto; -webkit-overflow-scrolling: touch;
-    padding-bottom: env(safe-area-inset-bottom, 16px);
-  }
-  .modal-handle {
-    width: 36px; height: 4px; background: #CCC;
-    border-radius: 2px; margin: 10px auto 0;
-  }
-  .modal-header {
-    padding: 12px 16px 10px;
-    border-bottom: 2px solid var(--block-header);
-    position: sticky; top: 0; background: white; z-index: 1;
-  }
-  .modal-title { font-size: 17px; font-weight: 700; color: var(--dark-green); }
-  .modal-meta  { font-size: 12px; color: var(--light-text); margin-top: 3px; }
-  .modal-close {
-    position: absolute; top: 12px; right: 14px;
-    background: var(--color-gray-bg); border: none; cursor: pointer;
-    width: 28px; height: 28px; border-radius: 50%;
-    font-size: 16px; color: var(--dark-text);
-    display: flex; align-items: center; justify-content: center;
-  }
-  .modal-body { padding: 14px 16px; }
+/* LOADING */
+.loading { text-align: center; padding: 40px 20px; color: var(--txt2); }
+.spinner { width: 30px; height: 30px; border: 3px solid var(--hdr); border-top-color: var(--dg); border-radius: 50%; animation: spin .8s linear infinite; margin: 0 auto 12px; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.empty { text-align: center; padding: 30px; color: var(--txt2); }
 
-  .rezept-section-title {
-    font-size: 11px; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 0.5px; color: var(--dark-green);
-    margin: 14px 0 6px; padding-bottom: 3px;
-    border-bottom: 1px solid var(--border);
-  }
-  .zutat-row { display: flex; justify-content: space-between; padding: 4px 0;
-    border-bottom: 1px solid rgba(0,0,0,0.04); font-size: 13px; }
-  .zutat-menge { color: var(--accent-gold); font-weight: 700; text-align: right; min-width: 80px; }
-  .schritt-row { display: flex; gap: 10px; margin-bottom: 8px; font-size: 13px; }
-  .schritt-num {
-    background: var(--dark-green); color: white;
-    width: 22px; height: 22px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 11px; font-weight: 700; flex-shrink: 0; margin-top: 1px;
-  }
-  .hinweis-box {
-    background: var(--color-blue-bg);
-    border-left: 4px solid var(--color-blue-bar);
-    padding: 8px 10px; border-radius: 0 4px 4px 0;
-    font-size: 12px; color: var(--dark-text); margin-top: 10px;
-  }
-
-  /* ====== ANGEBOTE VIEW ====== */
-  .markt-header {
-    background: var(--teal); color: white;
-    padding: 7px 12px; border-radius: 6px 6px 0 0;
-    font-size: 13px; font-weight: 700;
-    display: flex; justify-content: space-between; align-items: center;
-  }
-  .markt-gueltig { font-size: 10px; opacity: 0.85; font-weight: 400; }
-  .app-badge {
-    background: white; color: var(--teal);
-    font-size: 10px; font-weight: 700;
-    padding: 2px 6px; border-radius: 8px;
-  }
-
-  /* ====== EINKAUFSLISTE VIEW ====== */
-  .einkauf-item {
-    display: flex; align-items: flex-start; gap: 10px;
-    padding: 7px 0; border-bottom: 1px solid var(--border);
-  }
-  .einkauf-item:last-child { border-bottom: none; }
-  .einkauf-check {
-    width: 18px; height: 18px; border: 2px solid var(--dark-green);
-    border-radius: 4px; flex-shrink: 0; cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    margin-top: 1px; transition: all 0.15s;
-  }
-  .einkauf-check.checked {
-    background: var(--dark-green); color: white;
-  }
-  .einkauf-check.checked::after { content: "✓"; font-size: 11px; font-weight: 700; }
-  .einkauf-info { flex: 1; }
-  .einkauf-name { font-size: 13px; font-weight: 600; }
-  .einkauf-detail { font-size: 11px; color: var(--light-text); }
-  .einkauf-preis { text-align: right; min-width: 60px; }
-  .preis-main { font-size: 13px; font-weight: 700; color: var(--accent-gold); }
-  .preis-app { font-size: 11px; color: var(--teal); font-weight: 700; }
-
-  .gesamt-row {
-    background: var(--block-header);
-    padding: 8px 12px; border-radius: 4px;
-    display: flex; justify-content: space-between; align-items: center;
-    margin-top: 4px; font-weight: 700;
-  }
-  .gesamt-label { color: var(--dark-green); font-size: 13px; }
-  .gesamt-wert  { color: var(--accent-gold); font-size: 15px; }
-
-  /* ====== REZEPTBUCH VIEW ====== */
-  .filter-bar {
-    display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px;
-  }
-  .filter-btn {
-    background: white; border: 1.5px solid var(--border);
-    color: var(--dark-text); padding: 4px 10px;
-    border-radius: 14px; font-size: 12px; cursor: pointer;
-    transition: all 0.15s;
-  }
-  .filter-btn.active {
-    background: var(--dark-green); border-color: var(--dark-green);
-    color: white; font-weight: 700;
-  }
-
-  .rezept-card {
-    background: white; border: 1px solid var(--border);
-    border-radius: 8px; margin-bottom: 8px;
-    overflow: hidden; cursor: pointer; transition: box-shadow 0.15s;
-    box-shadow: var(--shadow);
-  }
-  .rezept-card:hover { box-shadow: 0 4px 14px rgba(74,124,89,0.18); }
-  .rezept-card-header {
-    background: var(--block-green);
-    padding: 9px 12px;
-    display: flex; justify-content: space-between; align-items: flex-start;
-  }
-  .rezept-card-name { font-size: 14px; font-weight: 700; color: var(--dark-green); }
-  .rezept-card-sub  { font-size: 11px; color: var(--light-text); margin-top: 2px; }
-  .rezept-card-meta {
-    display: flex; gap: 6px; padding: 6px 12px;
-    font-size: 11px; color: var(--light-text);
-    border-top: 1px solid var(--border);
-  }
-  .rezept-stat { display: flex; align-items: center; gap: 3px; }
-
-  /* ====== SLOTS BADGES ====== */
-  .slot-badge {
-    display: inline-block; font-size: 9px; font-weight: 700;
-    padding: 1px 5px; border-radius: 6px; text-transform: uppercase;
-    letter-spacing: 0.3px; margin-right: 3px;
-  }
-  .slot-it  { background: #E8F4E8; color: #2E7D32; }
-  .slot-de  { background: #E3F2FD; color: #1565C0; }
-  .slot-veg { background: #F3E5F5; color: #6A1B9A; }
-  .slot-bur { background: #FFF3E0; color: #E65100; }
-
-  /* ====== LOADING ====== */
-  .loading {
-    text-align: center; padding: 40px 20px;
-    color: var(--light-text); font-size: 14px;
-  }
-  .loading-spinner {
-    width: 32px; height: 32px; border: 3px solid var(--block-header);
-    border-top-color: var(--dark-green); border-radius: 50%;
-    animation: spin 0.8s linear infinite; margin: 0 auto 12px;
-  }
-  @keyframes spin { to { transform: rotate(360deg); } }
-
-  /* ====== EMPTY STATE ====== */
-  .empty { text-align: center; padding: 30px 20px; color: var(--light-text); }
-  .empty-icon { font-size: 36px; margin-bottom: 8px; }
-
-  /* ====== RESPONSIVE ====== */
-  @media (min-width: 480px) {
-    .main { padding: 16px; }
-    .site-title { font-size: 20px; }
-  }
+@media (min-width: 480px) { .main { padding: 16px; } }
 </style>
 </head>
 <body>
 
 <header class="site-header">
-  <div class="header-top">
+  <div class="header-row">
     <div>
       <div class="site-title">🍽 Küchenwoche</div>
-      <div class="site-subtitle">Rike & Papa — Wochenplaner</div>
+      <div class="site-sub">Rike & Papa</div>
     </div>
-    <div class="budget-badge">💰 8,50 €/Tag</div>
+    <div class="header-actions">
+      <div class="budget-badge" id="budget-badge">💰 8,50 €/Tag</div>
+      <button class="theme-btn" id="theme-btn" onclick="toggleTheme()" title="Hell/Dunkel">☀️</button>
+    </div>
   </div>
+  <nav class="nav-tabs">
+    <button class="nav-tab active" onclick="showView('wochenplan',this)">📅 Wochenplan</button>
+    <button class="nav-tab" onclick="showView('einkaufen',this)">🛒 Einkaufen</button>
+    <button class="nav-tab" onclick="showView('angebote',this)">🏷 Angebote</button>
+    <button class="nav-tab" onclick="showView('rezepte',this)">📖 Rezepte</button>
+  </nav>
 </header>
 
-<nav class="nav-tabs">
-  <button class="nav-tab active" onclick="showView('wochenplan')">📅 Wochenplan</button>
-  <button class="nav-tab" onclick="showView('einkaufen')">🛒 Einkaufen</button>
-  <button class="nav-tab" onclick="showView('angebote')">🏷 Angebote</button>
-  <button class="nav-tab" onclick="showView('rezepte')">📖 Rezepte</button>
-</nav>
-
 <main class="main">
-
-  <!-- ====== VIEW: WOCHENPLAN ====== -->
   <div id="view-wochenplan" class="view active">
-    <div id="wochenplan-loading" class="loading">
-      <div class="loading-spinner"></div>Wochenplan wird geladen…
-    </div>
-    <div id="wochenplan-content" style="display:none"></div>
+    <div class="loading"><div class="spinner"></div>Lädt…</div>
   </div>
-
-  <!-- ====== VIEW: EINKAUFEN ====== -->
   <div id="view-einkaufen" class="view">
-    <div id="einkaufen-loading" class="loading">
-      <div class="loading-spinner"></div>Einkaufsliste wird erstellt…
-    </div>
-    <div id="einkaufen-content" style="display:none"></div>
+    <div class="loading"><div class="spinner"></div>Lädt…</div>
   </div>
-
-  <!-- ====== VIEW: ANGEBOTE ====== -->
   <div id="view-angebote" class="view">
-    <div id="angebote-loading" class="loading">
-      <div class="loading-spinner"></div>Angebote werden geladen…
-    </div>
-    <div id="angebote-content" style="display:none"></div>
+    <div class="loading"><div class="spinner"></div>Lädt…</div>
   </div>
-
-  <!-- ====== VIEW: REZEPTE ====== -->
   <div id="view-rezepte" class="view">
-    <div id="rezepte-loading" class="loading">
-      <div class="loading-spinner"></div>Rezepte werden geladen…
-    </div>
-    <div id="rezepte-content" style="display:none"></div>
+    <div class="loading"><div class="spinner"></div>Lädt…</div>
   </div>
-
 </main>
 
-<!-- ====== REZEPT MODAL ====== -->
-<div class="modal-overlay" id="rezept-modal" onclick="closeModal(event)">
-  <div class="modal" id="modal-inner">
+<!-- MODAL -->
+<div class="overlay" id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal">
     <div class="modal-handle"></div>
-    <div class="modal-header">
-      <div class="modal-title" id="modal-title">Rezept</div>
-      <div class="modal-meta" id="modal-meta"></div>
+    <div class="modal-hdr">
+      <div class="modal-title" id="modal-title"></div>
+      <div class="modal-sub" id="modal-sub"></div>
       <button class="modal-close" onclick="closeModalDirect()">✕</button>
     </div>
     <div class="modal-body" id="modal-body"></div>
@@ -443,498 +208,397 @@
 </div>
 
 <script>
-// ====== DATEN LADEN ======
-let APP_DATA = null;
-let checked = {};
+let D = null;
+const TAGE_ORDER = ['mo','di','mi','do','fr','sa','so'];
+const TAGE_LABEL = {mo:'Montag',di:'Dienstag',mi:'Mittwoch',do:'Donnerstag',fr:'Freitag',sa:'Samstag',so:'Sonntag'};
+const KAT_ICON = {geflügel:'🍗',fleisch:'🥩',fisch:'🐟','gemüse-tk':'🥦','gemüse-frisch':'🥕',milch:'🧀',tiefkühl:'❄️',stärke:'🍝',staerke:'🍝',konserve:'🥫',sonstige:'📦'};
 
+// THEME
+let dark = localStorage.getItem('kuechen-theme') === 'dark';
+function applyTheme() {
+  document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+  document.getElementById('theme-btn').textContent = dark ? '🌙' : '☀️';
+}
+function toggleTheme() { dark = !dark; localStorage.setItem('kuechen-theme', dark ? 'dark' : 'light'); applyTheme(); }
+applyTheme();
+
+// DATA
 async function loadData() {
   try {
     const r = await fetch('data.json?v=' + Date.now(), { cache: 'no-store' });
-    APP_DATA = await r.json();
+    D = await r.json();
     renderAll();
   } catch(e) {
-    document.querySelectorAll('.loading').forEach(el => {
-      el.innerHTML = '⚠️ data.json nicht gefunden.<br><small>Bitte data.json ins gleiche Verzeichnis legen.</small>';
-    });
+    document.querySelectorAll('.loading').forEach(el => el.innerHTML = '⚠️ data.json nicht gefunden.');
   }
 }
 
-function renderAll() {
-  renderWochenplan();
-  renderAngebote();
-  renderEinkaufsliste();
-  renderRezepte();
-}
+function renderAll() { renderWochenplan(); renderAngebote(); renderEinkauf(); renderRezepte(); }
 
-// ====== VIEW-SWITCHING ======
-function showView(name) {
+// VIEW
+function showView(name, btn) {
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
   document.getElementById('view-' + name).classList.add('active');
-  event.target.classList.add('active');
+  btn.classList.add('active');
 }
 
-// ====== HELPER ======
-const TAGE = { mo:'Montag', di:'Dienstag', mi:'Mittwoch', do:'Donnerstag', fr:'Freitag', sa:'Samstag', so:'Sonntag' };
-const TAGE_ORDER = ['mo','di','mi','do','fr','sa','so'];
+function fmt(v, s='') { return v != null ? Number(v).toFixed(2).replace('.',',') + s : '—'; }
 
-function fmt(val, suffix='') {
-  if (val === null || val === undefined) return '—';
-  return typeof val === 'number' ? val.toFixed(2).replace('.',',') + suffix : val + suffix;
-}
-
-function getTagSlots(tags) {
+function getSlots(tags) {
   const t = Array.isArray(tags) ? tags : (tags||'').split(',');
-  const slots = [];
-  if (t.some(x => ['pasta','pizza','risotto','italienisch'].includes(x.trim()))) slots.push({cls:'slot-it', label:'🇮🇹 IT'});
-  if (t.some(x => ['deutsch','schnitzel','gulasch','frikadelle','eintopf','braten'].includes(x.trim()))) slots.push({cls:'slot-de', label:'🇩🇪 DE'});
-  if (t.some(x => x.trim() === 'vegetarisch')) slots.push({cls:'slot-veg', label:'🌿 VEG'});
-  if (t.some(x => ['burger','hot-dog','hotdog'].includes(x.trim()))) slots.push({cls:'slot-bur', label:'🍔 Burger'});
-  return slots;
+  const s = [];
+  if (t.some(x => ['pasta','pizza','risotto','italienisch'].includes(x.trim()))) s.push('<span class="badge b-it">🇮🇹 IT</span>');
+  if (t.some(x => ['deutsch','schnitzel','gulasch','frikadelle','eintopf','braten'].includes(x.trim()))) s.push('<span class="badge b-de">🇩🇪 DE</span>');
+  if (t.some(x => x.trim()==='vegetarisch')) s.push('<span class="badge b-veg">🌿 VEG</span>');
+  if (t.some(x => ['burger','hot-dog','hotdog'].includes(x.trim()))) s.push('<span class="badge b-bur">🍔 BUR</span>');
+  return s.join('');
 }
 
 // ====== WOCHENPLAN ======
 function renderWochenplan() {
-  if (!APP_DATA) return;
-  const { wochenplan, rezepte } = APP_DATA;
-  const rezeptMap = {};
-  rezepte.forEach(r => rezeptMap[r.id] = r);
+  if (!D) return;
+  const { wochenplan, rezepte_main, meta } = D;
+  const rmap = {}; (rezepte_main||[]).forEach(r => rmap[r.id] = r);
 
-  // Gruppieren nach Woche + Tag
+  // Nur mahlzeit == mittag/abend, nach variante/woche gruppieren — nimm neueste Woche
   const wochen = {};
   wochenplan.forEach(wp => {
-    const k = wp.woche;
-    if (!wochen[k]) wochen[k] = {};
-    if (!wochen[k][wp.tag]) wochen[k][wp.tag] = [];
-    wochen[k][wp.tag].push(wp);
+    if (!['mittag','abend'].includes(wp.mahlzeit)) return;
+    const k = wp.variante + '_' + wp.woche;
+    if (!wochen[k]) wochen[k] = { variante: wp.variante, woche: wp.woche, tage: {} };
+    if (!wochen[k].tage[wp.tag]) wochen[k].tage[wp.tag] = [];
+    wochen[k].tage[wp.tag].push(wp);
   });
 
-  let html = '';
+  const kwLabel = meta?.kw_label || '';
+  let html = kwLabel ? `<div class="kw-label">📅 ${kwLabel}</div>` : '';
 
   if (Object.keys(wochen).length === 0) {
-    html = `<div class="empty"><div class="empty-icon">📅</div>Noch kein Wochenplan in der Datenbank.<br><small>Wochenplan über den Skill generieren lassen.</small></div>`;
+    html += '<div class="empty">Noch kein Wochenplan. Bitte Skill ausführen.</div>';
   } else {
-    Object.keys(wochen).sort().forEach(woche => {
-      html += `<div class="section-block"><div class="section-title">Woche ${woche}</div><div class="section-body" style="padding:0">`;
-      const tagsInWoche = TAGE_ORDER.filter(t => wochen[woche][t]);
-      tagsInWoche.forEach(tag => {
-        const mahlzeiten = wochen[woche][tag].sort((a,b) => a.mahlzeit < b.mahlzeit ? -1 : 1);
-        const tageskosten = mahlzeiten.reduce((s, m) => s + (parseFloat(m.kosten) || 0), 0);
-        html += `<div class="tag-block" style="margin:0">
-          <div class="tag-header">
-            <span>${TAGE[tag] || tag}</span>
-            <span style="font-size:11px;opacity:0.85">${tageskosten > 0 ? '~' + tageskosten.toFixed(2).replace('.',',') + ' €' : ''}</span>
+    // Nur letzte Variante (kw22)
+    const latest = Object.values(wochen).sort((a,b) => b.woche - a.woche)[0];
+    const tagsInWoche = TAGE_ORDER.filter(t => latest.tage[t]);
+    tagsInWoche.forEach(tag => {
+      const meals = latest.tage[tag].sort((a,b) => a.mahlzeit < b.mahlzeit ? -1 : 1);
+      const cost = meals.reduce((s,m) => s + (parseFloat(m.kosten)||0), 0);
+      html += `<div class="tag-card">
+        <div class="tag-hdr"><span>${TAGE_LABEL[tag]||tag}</span><span class="tag-hdr-cost">${cost>0?'~'+cost.toFixed(2).replace('.',',')+'€':''}</span></div>
+        <div class="tag-body">`;
+      meals.forEach(wp => {
+        const r = rmap[wp.rezept_id] || {};
+        const isMit = wp.mahlzeit === 'mittag';
+        html += `<div class="meal-row" onclick="openRezept(${r.id})">
+          <div class="meal-time ${isMit?'m':'a'}">${isMit ? 'Mittagessen · 14:30' : 'Abendessen · 18:00'}</div>
+          <div class="meal-name">${r.name||wp.rezept_name||'—'}</div>
+          <div class="meal-meta">
+            ${r.zeit?`<span>⏱ ${r.zeit} Min</span>`:''}
+            ${r.kcal?`<span>🔥 ${r.kcal} kcal</span>`:''}
+            ${r.kosten?`<span>💰 ${fmt(r.kosten,'€')}</span>`:''}
+            ${getSlots(r.tags||[])}
           </div>
-          <div class="tag-body">`;
-        mahlzeiten.forEach(wp => {
-          const r = rezeptMap[wp.rezept_id] || {};
-          const isMittag = wp.mahlzeit === 'mittag';
-          const slots = getTagSlots(r.tags || []);
-          const slotHtml = slots.map(s => `<span class="slot-badge ${s.cls}">${s.label}</span>`).join('');
-          html += `<div class="mahlzeit-row" onclick="openRezept(${r.id})">
-            <div class="mahlzeit-time ${isMittag ? 'mittag' : 'abend'}">${isMittag ? '14:30 · Kleines Mittag' : '18:00 · Großes Abend'}</div>
-            <div class="mahlzeit-name">${r.name || wp.rezept_name || '—'}</div>
-            <div class="mahlzeit-meta">
-              ${r.zeit ? `<span>⏱ ${r.zeit} Min</span>` : ''}
-              ${r.kcal ? `<span>🔥 ${r.kcal} kcal</span>` : ''}
-              ${r.kosten ? `<span>💰 ${fmt(r.kosten,'€')}</span>` : ''}
-              ${slotHtml}
-            </div>
-          </div>`;
-        });
-        html += `</div></div>`;
+        </div>`;
       });
       html += `</div></div>`;
     });
   }
 
-  document.getElementById('wochenplan-loading').style.display = 'none';
-  const c = document.getElementById('wochenplan-content');
-  c.style.display = 'block';
-  c.innerHTML = html;
+  const el = document.getElementById('view-wochenplan');
+  el.innerHTML = html;
 }
 
 // ====== ANGEBOTE ======
 function renderAngebote() {
-  if (!APP_DATA) return;
-  const { angebote } = APP_DATA;
+  if (!D) return;
   const heute = new Date().toISOString().slice(0,10);
+  const gueltig = (D.angebote||[]).filter(a => a.bis >= heute);
 
-  // Nur gültige
-  const gueltige = angebote.filter(a => a.bis >= heute);
-
-  if (gueltige.length === 0) {
-    document.getElementById('angebote-loading').style.display = 'none';
-    document.getElementById('angebote-content').style.display = 'block';
-    document.getElementById('angebote-content').innerHTML = `<div class="empty"><div class="empty-icon">🏷</div>Keine aktuellen Angebote.<br><small>Neuen Prospekt über den Skill einlesen lassen.</small></div>`;
+  if (!gueltig.length) {
+    document.getElementById('view-angebote').innerHTML = '<div class="empty">Keine aktuellen Angebote. Neuen Prospekt einlesen lassen.</div>';
     return;
   }
-
-  // Nach Markt gruppieren
   const maerkte = {};
-  gueltige.forEach(a => {
-    if (!maerkte[a.markt]) maerkte[a.markt] = [];
-    maerkte[a.markt].push(a);
-  });
+  gueltig.forEach(a => { if(!maerkte[a.markt]) maerkte[a.markt]=[]; maerkte[a.markt].push(a); });
 
-  // Kategorien-Reihenfolge
-  const KAT_ORDER = ['geflügel','fleisch','fisch','gemüse-tk','gemüse-frisch','milch','tiefkühl','stärke','staerke','konserve','sonstige'];
-  const KAT_ICONS = { 'geflügel':'🍗', 'fleisch':'🥩', 'fisch':'🐟', 'gemüse-tk':'🥦', 'gemüse-frisch':'🥕', 'milch':'🧀', 'tiefkühl':'❄️', 'stärke':'🍝', 'staerke':'🍝', 'konserve':'🥫', 'sonstige':'📦' };
-
-  let html = `<div class="section-block cream"><div class="section-title">📱 App-Preise aktiv</div><div class="section-body">
-    <div class="color-row blue"><div class="color-bar"></div><div class="color-content">
-      <div class="color-label">📱 = App-Preis</div>
-      <div class="color-desc">EDEKA App · Penny App · vor dem Einkauf aktivieren!</div>
-    </div></div>
+  let html = `<div class="block cream"><div class="block-title">📱 App-Hinweis</div><div class="block-body">
+    <div class="crow blue"><div class="cbar"></div><div class="ccontent"><div class="clabel">📱 = App-Preis</div><div class="cdesc">EDEKA App · Penny App vor dem Einkauf aktivieren!</div></div></div>
   </div></div>`;
+
+  const KAT_ORDER = ['geflügel','fleisch','fisch','gemüse-tk','gemüse-frisch','milch','tiefkühl','stärke','staerke','konserve','sonstige'];
 
   Object.keys(maerkte).sort().forEach(markt => {
     const items = maerkte[markt];
-    const vonBis = items[0];
     const hatApp = items.some(a => a.preis_app);
-
-    // Nach Kategorie gruppieren
     const byKat = {};
-    items.forEach(a => {
-      const kat = a.kat || 'sonstige';
-      if (!byKat[kat]) byKat[kat] = [];
-      byKat[kat].push(a);
-    });
+    items.forEach(a => { const k=a.kat||'sonstige'; if(!byKat[k]) byKat[k]=[]; byKat[k].push(a); });
 
-    html += `<div class="section-block" style="margin-bottom:14px">
-      <div class="markt-header">
+    html += `<div style="margin-bottom:12px">
+      <div class="markt-hdr">
         <span>${markt}</span>
-        <span class="markt-gueltig">gültig bis ${vonBis.bis.slice(5).replace('-','.')}.</span>
-        ${hatApp ? '<span class="app-badge">📱 App</span>' : ''}
-      </div>`;
+        <span style="display:flex;gap:6px;align-items:center">
+          <span class="markt-sub">bis ${items[0].bis.slice(5).replace('-','.')}</span>
+          ${hatApp?'<span class="app-pill">📱 App</span>':''}
+        </span>
+      </div>
+      <div style="background:var(--bg);border:1px solid var(--border);border-top:none;border-radius:0 0 var(--radius) var(--radius);padding:8px 12px">`;
 
-    const sortedKats = Object.keys(byKat).sort((a,b) => {
-      const ia = KAT_ORDER.indexOf(a), ib = KAT_ORDER.indexOf(b);
-      return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
-    });
-
-    sortedKats.forEach(kat => {
-      html += `<div style="padding:8px 12px 4px; border-bottom: 1px solid var(--border)">
-        <div style="font-size:11px;font-weight:700;color:var(--dark-green);margin-bottom:4px;text-transform:uppercase;letter-spacing:0.4px">
-          ${KAT_ICONS[kat]||'📦'} ${kat}
-        </div>`;
+    Object.keys(byKat).sort((a,b) => { const ia=KAT_ORDER.indexOf(a),ib=KAT_ORDER.indexOf(b); return (ia<0?99:ia)-(ib<0?99:ib); }).forEach(kat => {
+      html += `<div class="kat-hdr">${KAT_ICON[kat]||'📦'} ${kat}</div>`;
       byKat[kat].forEach(a => {
-        const bestPreis = a.preis_app || a.preis;
-        const isApp = !!(a.preis_app && a.preis_app < a.preis);
-        html += `<div class="kv-row">
-          <div>
-            <div class="kv-label">${a.produkt}</div>
-            <div style="font-size:11px;color:var(--light-text)">${a.einheit}${a.notiz ? ' · ' + a.notiz : ''}</div>
-          </div>
-          <div style="text-align:right;min-width:70px">
-            <div class="kv-value">${bestPreis ? fmt(parseFloat(bestPreis),'€') : '—'}${isApp ? ' 📱' : ''}</div>
-            ${isApp ? `<div style="font-size:10px;color:var(--light-text);text-decoration:line-through">${fmt(parseFloat(a.preis),'€')}</div>` : ''}
-            ${a.kg_preis ? `<div style="font-size:10px;color:var(--light-text)">${fmt(parseFloat(a.kg_preis),'€')}/kg</div>` : ''}
+        const bp = parseFloat(a.preis_app||a.preis)||0;
+        const isApp = !!(a.preis_app && parseFloat(a.preis_app) < parseFloat(a.preis));
+        html += `<div class="kv">
+          <div><div class="kv-l">${a.produkt}</div><div style="font-size:11px;color:var(--txt2)">${a.einheit||''}${a.notiz?' · '+a.notiz:''}</div></div>
+          <div style="text-align:right">
+            <div class="kv-r">${fmt(bp,'€')}${isApp?' 📱':''}</div>
+            ${isApp?`<div style="font-size:10px;color:var(--txt2);text-decoration:line-through">${fmt(parseFloat(a.preis),'€')}</div>`:''}
+            ${a.kg_preis?`<div style="font-size:10px;color:var(--txt2)">${fmt(parseFloat(a.kg_preis),'€')}/kg</div>`:''}
           </div>
         </div>`;
       });
-      html += `</div>`;
     });
-    html += `</div>`;
+    html += `</div></div>`;
   });
 
-  document.getElementById('angebote-loading').style.display = 'none';
-  const c = document.getElementById('angebote-content');
-  c.style.display = 'block';
-  c.innerHTML = html;
+  document.getElementById('view-angebote').innerHTML = html;
 }
 
-// ====== EINKAUFSLISTE ======
-function renderEinkaufsliste() {
-  if (!APP_DATA) return;
-  const { wochenplan, rezepte, angebote } = APP_DATA;
+// ====== EINKAUF ======
+function renderEinkauf() {
+  if (!D) return;
   const heute = new Date().toISOString().slice(0,10);
-  const gueltigeAngebote = angebote.filter(a => a.bis >= heute);
-  const rezeptMap = {};
-  rezepte.forEach(r => rezeptMap[r.id] = r);
+  const gueltig = (D.angebote||[]).filter(a => a.bis >= heute);
+  const rmap = {}; (D.rezepte_main||[]).forEach(r => rmap[r.id]=r);
 
-  // Zutaten aus Wochenplan sammeln
-  const zutatenMap = {};
-  wochenplan.forEach(wp => {
-    const r = rezeptMap[wp.rezept_id];
-    if (!r || !r.zutaten) return;
+  // Zutaten aus Wochenplan
+  const zmap = {};
+  (D.wochenplan||[]).forEach(wp => {
+    const r = rmap[wp.rezept_id]; if(!r||!r.zutaten) return;
     r.zutaten.forEach(z => {
-      if (!Array.isArray(z) || z.length < 2) return;
-      const key = z[1].toLowerCase().replace(/[^a-zäöü\s]/g,'').trim();
-      if (!key || key.length < 3) return;
-      if (!zutatenMap[key]) zutatenMap[key] = { name: z[1], menge: z[0], rezepte: [] };
-      zutatenMap[key].rezepte.push(r.name);
+      if(!Array.isArray(z)||!z[1]) return;
+      const key = z[1].toLowerCase().replace(/[^a-zäöü\s]/g,'').trim().split(' ')[0];
+      if(!key||key.length<3) return;
+      if(!zmap[key]) zmap[key] = {name:z[1], menge:z[0], rezepte:[]};
+      zmap[key].rezepte.push(r.name);
     });
   });
 
-  // Angebots-Match
-  function findAngebot(zutatName) {
-    const n = zutatName.toLowerCase();
-    return gueltigeAngebote.find(a => {
-      const p = a.produkt.toLowerCase();
-      return p.includes(n.split(' ')[0]) || n.includes(p.split(' ')[0]);
-    });
+  function findAng(name) {
+    const n = name.toLowerCase().split(' ')[0];
+    return gueltig.find(a => a.produkt.toLowerCase().includes(n) || n.includes(a.produkt.toLowerCase().split(' ')[0]));
   }
 
-  // Einkaufsliste mit Markt-Zuordnung
-  const marktListen = {};
-  const ohneAngebot = [];
+  const byMarkt = {}; const rest = [];
+  const VORRAT = ['olivenoel','salz','pfeffer','knoblauch','zwiebeln','tomatenmark','curry','paprika','kurkuma','oregano','pasta','reis','kokosmilch','honig','senf','worcester','mehl'];
 
-  Object.values(zutatenMap).forEach(z => {
-    const ang = findAngebot(z.name);
-    if (ang) {
-      const m = ang.markt;
-      if (!marktListen[m]) marktListen[m] = [];
-      marktListen[m].push({ ...z, angebot: ang });
-    } else {
-      ohneAngebot.push(z);
-    }
+  Object.values(zmap).forEach(z => {
+    const isVorrat = VORRAT.some(g => z.name.toLowerCase().includes(g));
+    if(isVorrat) return;
+    const a = findAng(z.name);
+    if(a) { if(!byMarkt[a.markt]) byMarkt[a.markt]=[]; byMarkt[a.markt].push({...z,ang:a}); }
+    else rest.push(z);
   });
 
-  const GRUNDVORRAT = ['olivenoel','salz','pfeffer','knoblauch','zwiebeln','tomatenmark','curry','paprika','kurkuma','oregano','pasta','reis','kokosmilch','honig','senf','worcester','mehl'];
-
-  let html = `<div class="section-block cream"><div class="section-title">ℹ️ Hinweise</div><div class="section-body">
-    <div class="color-row blue"><div class="color-bar"></div><div class="color-content">
-      <div class="color-label">📱 App-Preis</div>
-      <div class="color-desc">App aktivieren vor dem Einkauf!</div>
-    </div></div>
-    <div class="color-row gray" style="margin-top:5px"><div class="color-bar"></div><div class="color-content">
-      <div class="color-label">Grundvorrat</div>
-      <div class="color-desc">Olivenöl · Salz · Gewürze · Pasta · Reis · Kokosmilch — nicht auf Liste</div>
-    </div></div>
+  let appSave = 0; let html = `<div class="block cream"><div class="block-title">ℹ️ Hinweise</div><div class="block-body">
+    <div class="crow blue"><div class="cbar"></div><div class="ccontent"><div class="clabel">📱 App-Preis</div><div class="cdesc">App aktivieren vor dem Einkauf</div></div></div>
+    <div class="crow" style="margin-top:4px"><div class="cbar" style="background:#9E9E9E"></div><div class="ccontent"><div class="clabel">Grundvorrat</div><div class="cdesc">Olivenöl · Gewürze · Pasta · Reis — nicht aufgelistet</div></div></div>
   </div></div>`;
 
-  let gesamtApp = 0;
-  let gesamtNormal = 0;
-
-  // Pro Markt
-  Object.keys(marktListen).sort().forEach(markt => {
-    const items = marktListen[markt];
-    html += `<div class="section-block">
-      <div class="section-title" style="background:var(--teal);color:white">${markt}</div>
-      <div class="section-body" style="padding:8px 12px">`;
-
-    items.forEach((item, i) => {
-      const a = item.angebot;
-      const bestPreis = parseFloat(a.preis_app || a.preis) || 0;
-      const isApp = !!(a.preis_app && parseFloat(a.preis_app) < parseFloat(a.preis));
-      gesamtApp += bestPreis;
-      gesamtNormal += parseFloat(a.preis) || bestPreis;
-      const id = `chk-${markt}-${i}`;
-      html += `<div class="einkauf-item">
-        <div class="einkauf-check" id="${id}" onclick="toggleCheck('${id}')"></div>
-        <div class="einkauf-info">
-          <div class="einkauf-name">${a.produkt}</div>
-          <div class="einkauf-detail">${a.einheit} · für: ${[...new Set(item.rezepte)].slice(0,2).join(', ')}</div>
-        </div>
-        <div class="einkauf-preis">
-          <div class="preis-main">${fmt(bestPreis,'€')}${isApp ? ' 📱' : ''}</div>
-          ${isApp ? `<div style="font-size:10px;color:var(--light-text);text-decoration:line-through">${fmt(parseFloat(a.preis),'€')}</div>` : ''}
-        </div>
+  let totalApp=0, totalNorm=0;
+  Object.keys(byMarkt).sort().forEach((markt,mi) => {
+    const items = byMarkt[markt];
+    html += `<div class="block"><div class="block-title" style="background:var(--teal);color:#fff">${markt}</div><div class="block-body" style="padding:8px 12px">`;
+    items.forEach((it,i) => {
+      const a = it.ang;
+      const bp = parseFloat(a.preis_app||a.preis)||0;
+      const isApp = !!(a.preis_app && parseFloat(a.preis_app)<parseFloat(a.preis));
+      totalApp += bp; totalNorm += parseFloat(a.preis)||bp;
+      if(isApp) appSave += parseFloat(a.preis)-bp;
+      const id = `chk-${mi}-${i}`;
+      html += `<div class="ei-item">
+        <div class="ei-chk" id="${id}" onclick="this.classList.toggle('done')"></div>
+        <div class="ei-info"><div class="ei-name">${a.produkt}</div><div class="ei-detail">${a.einheit||''} · ${[...new Set(it.rezepte)].slice(0,2).join(', ')}</div></div>
+        <div class="ei-preis"><div class="preis-m">${fmt(bp,'€')}${isApp?' 📱':''}</div>${isApp?`<div style="font-size:10px;color:var(--txt2);text-decoration:line-through">${fmt(parseFloat(a.preis),'€')}</div>`:''}</div>
       </div>`;
     });
-
-    const marktGesamt = items.reduce((s,it) => s + parseFloat(it.angebot.preis_app || it.angebot.preis || 0), 0);
-    html += `<div class="gesamt-row"><span class="gesamt-label">Gesamt ${markt}</span><span class="gesamt-wert">${fmt(marktGesamt,'€')}</span></div>`;
+    const mt = items.reduce((s,it)=>s+parseFloat(it.ang.preis_app||it.ang.preis||0),0);
+    html += `<div class="gesamt-row"><span class="gesamt-l">Gesamt ${markt}</span><span class="gesamt-v">${fmt(mt,'€')}</span></div>`;
     html += `</div></div>`;
   });
 
-  // Restliches ohne Angebot
-  const sinnvoll = ohneAngebot.filter(z => !GRUNDVORRAT.some(g => z.name.toLowerCase().includes(g)));
-  if (sinnvoll.length > 0) {
-    html += `<div class="section-block cream"><div class="section-title">🛒 Sonstiges (kein Angebot)</div><div class="section-body" style="padding:8px 12px">`;
-    sinnvoll.forEach((item, i) => {
-      const id = `chk-rest-${i}`;
-      html += `<div class="einkauf-item">
-        <div class="einkauf-check" id="${id}" onclick="toggleCheck('${id}')"></div>
-        <div class="einkauf-info">
-          <div class="einkauf-name">${item.name}</div>
-          <div class="einkauf-detail">${item.menge} · ${[...new Set(item.rezepte)].slice(0,2).join(', ')}</div>
-        </div>
-        <div class="einkauf-preis"><div class="preis-main">—</div></div>
-      </div>`;
+  if(rest.length) {
+    html += `<div class="block cream"><div class="block-title">🛒 Sonstiges</div><div class="block-body" style="padding:8px 12px">`;
+    rest.forEach((it,i)=>{
+      const id=`chk-rest-${i}`;
+      html+=`<div class="ei-item"><div class="ei-chk" id="${id}" onclick="this.classList.toggle('done')"></div><div class="ei-info"><div class="ei-name">${it.name}</div><div class="ei-detail">${it.menge||''} · ${[...new Set(it.rezepte)].slice(0,2).join(', ')}</div></div><div class="ei-preis"><div class="preis-m">—</div></div></div>`;
     });
     html += `</div></div>`;
   }
 
-  // Ersparnis durch Apps
-  const ersparnis = gesamtNormal - gesamtApp;
-  if (ersparnis > 0.01) {
-    html += `<div class="section-block"><div class="section-title">💰 App-Ersparnis diese Woche</div><div class="section-body">
-      <div class="kv-row"><div class="kv-label">Ohne App</div><div class="kv-value red">${fmt(gesamtNormal,'€')}</div></div>
-      <div class="kv-row"><div class="kv-label">Mit App</div><div class="kv-value green">${fmt(gesamtApp,'€')}</div></div>
-      <div class="kv-row"><div class="kv-label">Ersparnis 📱</div><div class="kv-value teal">${fmt(ersparnis,'€')}</div></div>
+  if(appSave > 0.01) {
+    html += `<div class="block"><div class="block-title">💰 App-Ersparnis</div><div class="block-body">
+      <div class="kv"><div class="kv-l">Ohne App</div><div class="kv-r r">${fmt(totalNorm,'€')}</div></div>
+      <div class="kv"><div class="kv-l">Mit App</div><div class="kv-r g">${fmt(totalApp,'€')}</div></div>
+      <div class="kv"><div class="kv-l">Ersparnis 📱</div><div class="kv-r t">${fmt(appSave,'€')}</div></div>
     </div></div>`;
   }
 
-  document.getElementById('einkaufen-loading').style.display = 'none';
-  const c = document.getElementById('einkaufen-content');
-  c.style.display = 'block';
-  c.innerHTML = html;
-}
-
-function toggleCheck(id) {
-  const el = document.getElementById(id);
-  el.classList.toggle('checked');
+  document.getElementById('view-einkaufen').innerHTML = html;
 }
 
 // ====== REZEPTE ======
-let aktFilter = 'alle';
-function renderRezepte(filter) {
-  if (!APP_DATA) return;
-  aktFilter = filter || 'alle';
-  const { rezepte } = APP_DATA;
+let rezTab = 'sandwiches';
+function renderRezepte(tab) {
+  if(!D) return;
+  rezTab = tab || rezTab;
 
-  const filters = [
-    { key:'alle', label:'Alle' },
-    { key:'mittag', label:'🌞 Mittag' },
-    { key:'abend', label:'🌙 Abend' },
-    { key:'günstig', label:'💰 Günstig' },
-    { key:'schnell', label:'⚡ Schnell' },
-    { key:'vegetarisch', label:'🌿 Veg' },
+  const tabs = [
+    {key:'sandwiches', label:'🥪 Sandwiches (Rike)'},
+    {key:'smoothies-rike', label:'🥤 Smoothies Rike'},
+    {key:'smoothies-papa', label:'🥤 Smoothies Papa'},
   ];
 
-  let filtered = rezepte.filter(r => r.kategorie !== 'schulbrot' && r.kategorie !== 'smoothie');
-  if (aktFilter === 'mittag') filtered = filtered.filter(r => r.kategorie === 'mittag');
-  else if (aktFilter === 'abend') filtered = filtered.filter(r => r.kategorie === 'abend');
-  else if (aktFilter === 'günstig') filtered = filtered.filter(r => r.kosten && parseFloat(r.kosten) < 2.0);
-  else if (aktFilter === 'schnell') filtered = filtered.filter(r => r.zeit && r.zeit <= 20);
-  else if (aktFilter === 'vegetarisch') filtered = filtered.filter(r => r.sub === 'vegetarisch' || (r.tags||[]).includes('vegetarisch'));
+  let html = `<div class="rezept-tab-bar">${tabs.map(t=>`<button class="rtab ${rezTab===t.key?'active':''}" onclick="renderRezepte('${t.key}')">${t.label}</button>`).join('')}</div>`;
 
-  const filterHtml = `<div class="filter-bar">${filters.map(f =>
-    `<button class="filter-btn ${aktFilter===f.key?'active':''}" onclick="renderRezepte('${f.key}')">${f.label}</button>`
-  ).join('')}</div>`;
-
-  let cardsHtml = '';
-  if (filtered.length === 0) {
-    cardsHtml = `<div class="empty"><div class="empty-icon">🍽</div>Keine Rezepte gefunden.</div>`;
-  } else {
-    filtered.forEach(r => {
-      const slots = getTagSlots(r.tags);
-      const slotHtml = slots.map(s => `<span class="slot-badge ${s.cls}">${s.label}</span>`).join('');
-      cardsHtml += `<div class="rezept-card" onclick="openRezept(${r.id})">
-        <div class="rezept-card-header">
-          <div>
-            <div class="rezept-card-name">${r.name}</div>
-            <div class="rezept-card-sub">${r.sub || r.kategorie} ${slotHtml}</div>
-          </div>
-          ${r.kosten ? `<div style="text-align:right"><div style="font-weight:700;color:var(--accent-gold);font-size:14px">${fmt(parseFloat(r.kosten),'€')}</div><div style="font-size:10px;color:var(--light-text)">2 Pers.</div></div>` : ''}
-        </div>
-        <div class="rezept-card-meta">
-          ${r.zeit ? `<span class="rezept-stat">⏱ ${r.zeit} Min</span>` : ''}
-          ${r.kcal ? `<span class="rezept-stat">🔥 ${r.kcal} kcal</span>` : ''}
-          ${r.protein ? `<span class="rezept-stat">💪 ${r.protein}g Protein</span>` : ''}
-        </div>
-      </div>`;
-    });
+  if(rezTab === 'sandwiches') {
+    const herzhaft = (D.rezepte_sandwiches||[]).filter(r=>r.sub==='herzhaft');
+    const suess = (D.rezepte_sandwiches||[]).filter(r=>r.sub==='suess');
+    if(herzhaft.length) {
+      html += `<div class="sec-divider">🧀 Herzhaft</div>`;
+      herzhaft.forEach(r => html += sandwichCard(r));
+    }
+    if(suess.length) {
+      html += `<div class="sec-divider">🍫 Süß</div>`;
+      suess.forEach(r => html += sandwichCard(r));
+    }
+  } else if(rezTab === 'smoothies-rike') {
+    html += `<div class="sec-divider">🌸 Rike — Schul-Smoothies (Mo–Fr)</div>`;
+    (D.rezepte_smoothies_rike||[]).forEach(s => html += smoothieCard(s, 'rike'));
+  } else if(rezTab === 'smoothies-papa') {
+    html += `<div class="sec-divider">💪 Papa — Sport & Fokus (Mo–Fr)</div>`;
+    (D.rezepte_smoothies_papa||[]).forEach(s => html += smoothieCard(s, 'papa'));
   }
 
-  document.getElementById('rezepte-loading').style.display = 'none';
-  const c = document.getElementById('rezepte-content');
-  c.style.display = 'block';
-  c.innerHTML = filterHtml + cardsHtml;
+  document.getElementById('view-rezepte').innerHTML = html;
 }
 
-// ====== REZEPT MODAL ======
-function openRezept(id) {
-  if (!APP_DATA) return;
-  const r = APP_DATA.rezepte.find(x => x.id === id);
-  if (!r) return;
+function sandwichCard(r) {
+  return `<div class="rcard" onclick="openRezeptRaw(${JSON.stringify(r).replace(/"/g,'&quot;')})">
+    <div class="rcard-hdr">
+      <div><div class="rcard-name">${r.name}</div><div class="rcard-sub">${r.sub==='herzhaft'?'Herzhaft':'Süß'}</div></div>
+      <div style="text-align:right;font-size:11px;color:var(--txt2)">${r.kcal?r.kcal+' kcal':''}</div>
+    </div>
+    <div class="rcard-meta">
+      ${r.zeit?`<span>⏱ ${r.zeit} Min</span>`:''}
+      ${r.protein?`<span>💪 ${r.protein}g</span>`:''}
+      <span style="color:var(--teal);font-size:10px">Für Rike's Schulbrot</span>
+    </div>
+  </div>`;
+}
 
+function smoothieCard(s, who) {
+  const col = who==='rike' ? 'var(--orange-bg)' : 'var(--blue-bg)';
+  return `<div class="smcard" onclick="openSmoothie(${JSON.stringify(s).replace(/"/g,'&quot;')})" style="border-top:3px solid ${who==='rike'?'var(--orange-bar)':'var(--blue-bar)'}">
+    <div class="smcard-hdr" style="background:${col}">
+      <div><div class="smcard-name">${s.name}</div><div class="smcard-tag">${s.wochentag} · ${s.fokus}</div></div>
+      <div style="text-align:right;font-size:11px;color:var(--txt2)">${s.kcal?s.kcal+' kcal':''}<br>${s.zeit?' ⏱ '+s.zeit+' Min':''}</div>
+    </div>
+  </div>`;
+}
+
+// ====== MODAL ======
+function openRezept(id) {
+  if(!D) return;
+  const r = (D.rezepte_main||[]).find(x=>x.id===id);
+  if(!r) return;
+  openRezeptRaw(r);
+}
+
+function openRezeptRaw(r) {
   document.getElementById('modal-title').textContent = r.name;
-  document.getElementById('modal-meta').innerHTML =
-    `${r.kategorie} · ${r.sub || ''} · ${r.zeit ? r.zeit + ' Min' : ''} · ${r.kcal ? r.kcal + ' kcal' : ''} · ${r.kosten ? fmt(parseFloat(r.kosten),'€') + ' (2 Pers.)' : ''}`;
+  document.getElementById('modal-sub').innerHTML =
+    `${r.kategorie||''} · ${r.sub||''} · ${r.zeit?r.zeit+' Min':''} · ${r.kcal?r.kcal+' kcal':''} · ${r.kosten?fmt(parseFloat(r.kosten),'€')+' (2 Pers.)':''}`;
 
   let body = '';
-
-  // Käse-Hinweis
-  const tags = r.tags || [];
-  if (tags.includes('käse-trennbar') || (r.name && r.name.toLowerCase().includes('käse'))) {
-    body += `<div class="color-row orange"><div class="color-bar"></div><div class="color-content">
-      <div class="color-label">🧀 Käse separat</div>
-      <div class="color-desc">Rike mit Käse · Papa ohne — immer getrennt auflegen</div>
-    </div></div>`;
+  const tags = Array.isArray(r.tags) ? r.tags : (r.tags||'').split(',');
+  if(tags.includes('käse-trennbar')||(r.name||'').toLowerCase().includes('käse')) {
+    body += `<div class="crow orange"><div class="cbar"></div><div class="ccontent"><div class="clabel">🧀 Käse separat</div><div class="cdesc">Rike mit Käse · Papa ohne — immer getrennt servieren</div></div></div>`;
   }
-
-  // Zutaten
-  if (r.zutaten && r.zutaten.length > 0) {
-    body += `<div class="rezept-section-title">Zutaten (2 Personen)</div>`;
+  if(r.zutaten?.length) {
+    body += `<div class="m-sec">Zutaten (2 Personen)</div>`;
     r.zutaten.forEach(z => {
-      if (!Array.isArray(z)) return;
-      const isKaese = z[1] && z[1].toLowerCase().includes('käse');
-      body += `<div class="zutat-row">
-        <div>${z[1] || ''}${isKaese ? ' <span style="color:var(--teal);font-size:10px">* Rike</span>' : ''}</div>
-        <div class="zutat-menge">${z[0] || ''}</div>
-      </div>`;
+      if(!Array.isArray(z)) return;
+      const isK = (z[1]||'').toLowerCase().includes('käse');
+      body += `<div class="zutat-row"><div>${z[1]||''}${isK?' <span style="color:var(--teal);font-size:10px">★ Rike</span>':''}</div><div class="zutat-m">${z[0]||''}</div></div>`;
     });
   }
-
-  // Schritte
-  if (r.schritte && r.schritte.length > 0) {
-    body += `<div class="rezept-section-title">Zubereitung</div>`;
-    r.schritte.forEach((s, i) => {
-      const text = Array.isArray(s) ? s.join(' ') : s;
-      body += `<div class="schritt-row">
-        <div class="schritt-num">${i+1}</div>
-        <div>${text}</div>
-      </div>`;
+  if(r.schritte?.length) {
+    body += `<div class="m-sec">Zubereitung</div>`;
+    r.schritte.forEach((s,i) => {
+      const txt = Array.isArray(s)?s.join(' '):s;
+      body += `<div class="step-row"><div class="step-n">${i+1}</div><div>${txt}</div></div>`;
     });
   }
-
-  // Hinweis
-  if (r.hinweis) {
-    body += `<div class="hinweis-box">💡 ${r.hinweis}</div>`;
-  }
+  if(r.hinweis) body += `<div class="hint-box">💡 ${r.hinweis}</div>`;
+  if(r.tipp) body += `<div class="hint-box" style="background:var(--green-bg);border-color:var(--green-bar);margin-top:6px">🍴 ${r.tipp}</div>`;
 
   document.getElementById('modal-body').innerHTML = body;
-  document.getElementById('rezept-modal').classList.add('open');
+  document.getElementById('modal-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
 
-function closeModal(e) {
-  if (e.target === document.getElementById('rezept-modal')) closeModalDirect();
-}
-function closeModalDirect() {
-  document.getElementById('rezept-modal').classList.remove('open');
-  document.body.style.overflow = '';
+function openSmoothie(s) {
+  document.getElementById('modal-title').textContent = s.name;
+  document.getElementById('modal-sub').innerHTML = `${s.wochentag} · ${s.fokus} · ${s.kcal?s.kcal+' kcal':''} · ${s.zeit?s.zeit+' Min':''}`;
+  let body = '';
+  if(s.nutzen) body += `<div class="crow blue"><div class="cbar"></div><div class="ccontent"><div class="clabel">Wirkung</div><div class="cdesc">${s.nutzen}</div></div></div>`;
+  if(s.zutaten?.length) {
+    body += `<div class="m-sec">Zutaten</div>`;
+    s.zutaten.forEach(z => { if(Array.isArray(z)) body += `<div class="zutat-row"><div>${z[1]}</div><div class="zutat-m">${z[0]}</div></div>`; });
+  }
+  if(s.schritte?.length) {
+    body += `<div class="m-sec">Zubereitung</div>`;
+    s.schritte.forEach((st,i) => body += `<div class="step-row"><div class="step-n">${i+1}</div><div>${st}</div></div>`);
+  }
+  if(s.tipp) body += `<div class="hint-box">💡 ${s.tipp}</div>`;
+  document.getElementById('modal-body').innerHTML = body;
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
 
-// URL-Parameter für direkten View-Aufruf (wie Papa-Kalender)
-function initFromURL() {
-  const params = new URLSearchParams(window.location.search);
-  const view = params.get('view');
-  if (view && ['wochenplan','einkaufen','angebote','rezepte'].includes(view)) {
-    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-    document.getElementById('view-' + view).classList.add('active');
-    const tabs = document.querySelectorAll('.nav-tab');
-    const order = ['wochenplan','einkaufen','angebote','rezepte'];
-    const idx = order.indexOf(view);
-    if (tabs[idx]) tabs[idx].classList.add('active');
+function closeModal(e) { if(e.target===document.getElementById('modal-overlay')) closeModalDirect(); }
+function closeModalDirect() { document.getElementById('modal-overlay').classList.remove('open'); document.body.style.overflow=''; }
+
+// URL PARAM
+function initURL() {
+  const p = new URLSearchParams(window.location.search).get('view');
+  if(p) {
+    const tabs = ['wochenplan','einkaufen','angebote','rezepte'];
+    if(tabs.includes(p)) {
+      document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+      document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
+      document.getElementById('view-'+p).classList.add('active');
+      document.querySelectorAll('.nav-tab')[tabs.indexOf(p)].classList.add('active');
+    }
   }
 }
 
-// ====== START ======
-initFromURL();
+initURL();
 loadData();
 </script>
 
 <script>
-if ('serviceWorker' in navigator) {
+if('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('sw.js')
-      .then(reg => {
-        // Beim Aktivieren neuer SW: Seite neu laden damit frische Daten kommen
-        reg.addEventListener('updatefound', () => {
-          const w = reg.installing;
-          w.addEventListener('statechange', () => {
-            if (w.state === 'activated') window.location.reload();
-          });
-        });
+    navigator.serviceWorker.register('sw.js').then(reg => {
+      reg.addEventListener('updatefound', () => {
+        const w = reg.installing;
+        w.addEventListener('statechange', () => { if(w.state==='activated') window.location.reload(); });
       });
+    });
   });
 }
 </script>
-
 </body>
 </html>

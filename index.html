@@ -149,6 +149,18 @@ body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: 
 /* SECTION DIVIDER */
 .sec-divider { font-size: 12px; font-weight: 700; color: var(--dg); text-transform: uppercase; letter-spacing: .6px; margin: 14px 0 8px; padding-bottom: 4px; border-bottom: 2px solid var(--hdr); }
 
+/* KOSTEN DETAIL */
+.cost-panel { display:none; background:var(--blue-bg); border:1px solid var(--blue-bar); border-radius:6px; margin-top:6px; padding:8px 10px; font-size:12px; }
+.cost-panel.open { display:block; }
+.cost-row { display:flex; justify-content:space-between; align-items:baseline; padding:3px 0; border-bottom:1px solid rgba(33,150,243,.12); }
+.cost-row:last-child { border-bottom:none; }
+.cost-zutat { color:var(--txt); flex:1; }
+.cost-markt { color:var(--teal); font-size:10px; font-weight:700; margin:0 8px; }
+.cost-preis { color:var(--gold); font-weight:700; white-space:nowrap; }
+.cost-total { background:var(--hdr); border-radius:4px; padding:4px 8px; display:flex; justify-content:space-between; margin-top:5px; font-weight:700; font-size:12px; }
+.cost-btn { display:inline-flex; align-items:center; gap:3px; margin-top:4px; background:var(--bg); border:1px solid var(--border); border-radius:10px; padding:2px 8px; font-size:10px; font-weight:700; color:var(--teal); cursor:pointer; transition:all .15s; }
+.cost-btn:hover { background:var(--blue-bg); border-color:var(--blue-bar); }
+
 /* LOADING */
 .loading { text-align: center; padding: 40px 20px; color: var(--txt2); }
 .spinner { width: 30px; height: 30px; border: 3px solid var(--hdr); border-top-color: var(--dg); border-radius: 50%; animation: spin .8s linear infinite; margin: 0 auto 12px; }
@@ -289,6 +301,7 @@ function renderWochenplan() {
       meals.forEach(wp => {
         const r = rmap[wp.rezept_id] || {};
         const isMit = wp.mahlzeit === 'mittag';
+        const cpid = `cp-${tag}-${wp.mahlzeit}`;
         html += `<div class="meal-row" onclick="openRezept(${r.id})">
           <div class="meal-time ${isMit?'m':'a'}">${isMit ? 'Mittagessen · 14:30' : 'Abendessen · 18:00'}</div>
           <div class="meal-name">${r.name||wp.rezept_name||'—'}</div>
@@ -298,6 +311,8 @@ function renderWochenplan() {
             ${r.kosten?`<span>💰 ${fmt(r.kosten,'€')}</span>`:''}
             ${getSlots(r.tags||[])}
           </div>
+          <button class="cost-btn" onclick="event.stopPropagation();toggleCostPanel('${cpid}',${r.id})">💰 Woher &amp; was kostet es?</button>
+          <div class="cost-panel" id="${cpid}"></div>
         </div>`;
       });
       html += `</div></div>`;
@@ -556,6 +571,118 @@ function smoothieCard(s, who) {
       <div style="text-align:right;font-size:11px;color:var(--txt2)">${s.kcal?s.kcal+' kcal':''}<br>${s.zeit?' ⏱ '+s.zeit+' Min':''}</div>
     </div>
   </div>`;
+}
+
+// ====== KOSTEN PANEL ======
+const GRUNDVORRAT = ['olivenoel','olivenöl','salz','pfeffer','knoblauch','zwiebel','tomatenmark','curry','paprika gemah','kurkuma','oregano','pasta','reis','kokosmilch','honig','senf','worcester','mehl','brühe','wasser','zucker','öl','butter','gewürz','kräuter'];
+
+function isGrundvorrat(name) {
+  if(!name) return true;
+  const n = name.toLowerCase();
+  return GRUNDVORRAT.some(g => n.includes(g));
+}
+
+function toggleCostPanel(cpid, rezeptId) {
+  const panel = document.getElementById(cpid);
+  if(!panel) return;
+  if(panel.classList.contains('open')) { panel.classList.remove('open'); return; }
+
+  const r = (D.rezepte_main||[]).find(x => x.id === rezeptId);
+  if(!r || !r.zutaten) { panel.innerHTML='<div style="color:var(--txt2)">Keine Zutaten gefunden.</div>'; panel.classList.add('open'); return; }
+
+  const heute = new Date().toISOString().slice(0,10);
+  const angebote = (D.angebote||[]).filter(a => a.bis >= heute && a.relevant === 'ok');
+
+  function findAngebot(zutatName) {
+    if(!zutatName) return null;
+    const n = zutatName.toLowerCase();
+    // Schlüsselwort-Matching: erstes sinnvolles Wort
+    const keywords = n.replace(/[()\/]/g,' ').split(/\s+/).filter(w => w.length > 3 && !['oder','und','mit','aus','von','für','beim','nach'].includes(w));
+    for(const kw of keywords) {
+      const match = angebote.find(a => a.produkt.toLowerCase().includes(kw));
+      if(match) return match;
+    }
+    return null;
+  }
+
+  function parseGramm(mengeStr) {
+    if(!mengeStr) return null;
+    const m = mengeStr.replace(',','.').match(/([\d.]+)\s*(g|kg|ml|l)/i);
+    if(!m) return null;
+    const val = parseFloat(m[1]);
+    const unit = m[2].toLowerCase();
+    if(unit==='kg'||unit==='l') return val*1000;
+    return val;
+  }
+
+  function calcAnteil(angebot, mengeStr) {
+    // Preis pro g aus Angebot, dann * menge
+    const kgPreis = angebot.kg_preis ? parseFloat(angebot.kg_preis) : null;
+    const gramm = parseGramm(mengeStr);
+    if(kgPreis && gramm) return (kgPreis / 1000) * gramm;
+    // Fallback: bester Preis / einheit-gramm * gramm
+    const bp = parseFloat(angebot.preis_app || angebot.preis) || 0;
+    const eg = parseGramm(angebot.einheit);
+    if(bp && eg && gramm) return (bp / eg) * gramm;
+    // Kann nicht berechnen → ganzen Preis nehmen
+    return bp;
+  }
+
+  let rows = [];
+  let totalBerechenbar = 0;
+  let countAngebotsZutaten = 0;
+
+  r.zutaten.forEach(z => {
+    const menge = Array.isArray(z) ? z[0] : '';
+    const name  = Array.isArray(z) ? z[1] : z;
+    if(!name || isGrundvorrat(name)) return;
+
+    const ang = findAngebot(name);
+    if(ang) {
+      const anteil = calcAnteil(ang, menge);
+      const bp = parseFloat(ang.preis_app || ang.preis) || 0;
+      const isApp = !!(ang.preis_app && parseFloat(ang.preis_app) < parseFloat(ang.preis));
+      totalBerechenbar += anteil || 0;
+      countAngebotsZutaten++;
+      rows.push({
+        name: name.split('(')[0].trim(),
+        menge,
+        markt: ang.markt,
+        produkt: ang.produkt,
+        bp,
+        anteil,
+        isApp
+      });
+    } else {
+      rows.push({ name: name.split('(')[0].trim(), menge, markt: null, bp: null, anteil: null, isApp: false });
+    }
+  });
+
+  let html = '';
+  if(!rows.length) {
+    html = '<div style="color:var(--txt2);font-size:12px">Alle Zutaten sind Grundvorrat.</div>';
+  } else {
+    rows.forEach(row => {
+      html += `<div class="cost-row">
+        <span class="cost-zutat">${row.menge ? `<span style="color:var(--txt2)">${row.menge}</span> ` : ''}${row.name}</span>
+        ${row.markt
+          ? `<span class="cost-markt">${row.markt}${row.isApp?' 📱':''}</span>
+             <span class="cost-preis">${row.anteil ? '~'+row.anteil.toFixed(2).replace('.',',')+' €' : row.bp ? row.bp.toFixed(2).replace('.',',')+' €' : '—'}</span>`
+          : `<span style="color:var(--txt2);font-size:10px">kein Angebot</span><span class="cost-preis" style="color:var(--txt2)">—</span>`
+        }
+      </div>`;
+    });
+    if(totalBerechenbar > 0) {
+      html += `<div class="cost-total">
+        <span style="color:var(--dg)">∑ Zutaten aus Angeboten</span>
+        <span style="color:var(--gold)">~${totalBerechenbar.toFixed(2).replace('.',',')} €</span>
+      </div>`;
+    }
+    html += `<div style="font-size:10px;color:var(--txt2);margin-top:4px">Grundvorrat (Öl, Salz, Gewürze…) nicht eingerechnet</div>`;
+  }
+
+  panel.innerHTML = html;
+  panel.classList.add('open');
 }
 
 // ====== MODAL ======

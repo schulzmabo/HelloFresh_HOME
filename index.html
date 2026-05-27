@@ -233,7 +233,7 @@ async function loadData() {
   }
 }
 
-function renderAll() { renderWochenplan(); renderAngebote(); renderEinkauf(); renderRezepte(); }
+function renderAll() { renderWochenplan(); renderAngebote(); renderEinkauf(); renderRezepte('alle'); }
 
 // VIEW
 function showView(name, btn) {
@@ -448,39 +448,155 @@ function renderEinkauf() {
 }
 
 // ====== REZEPTE ======
-let rezTab = 'sandwiches';
+let rezTab = 'alle';
+let rezSearch = '';
+
 function renderRezepte(tab) {
   if(!D) return;
   rezTab = tab || rezTab;
+  rezSearch = '';
+  buildRezepteView();
+}
+
+function rezepteSearchInput(val) {
+  rezSearch = val.trim().toLowerCase();
+  buildRezepteView(true);
+}
+
+function buildRezepteView(keepSearch) {
+  if(!D) return;
 
   const tabs = [
-    {key:'sandwiches', label:'🥪 Sandwiches (Rike)'},
+    {key:'alle',           label:'🍽 Alle Rezepte'},
+    {key:'sandwiches',     label:'🥪 Sandwiches'},
     {key:'smoothies-rike', label:'🥤 Smoothies Rike'},
     {key:'smoothies-papa', label:'🥤 Smoothies Papa'},
   ];
 
+  // Search bar (always visible)
+  const searchVal = keepSearch ? rezSearch : '';
   let html = `<div class="rezept-tab-bar">${tabs.map(t=>`<button class="rtab ${rezTab===t.key?'active':''}" onclick="renderRezepte('${t.key}')">${t.label}</button>`).join('')}</div>`;
+  html += `<div style="margin-bottom:10px;position:relative">
+    <input id="rez-search" type="text" placeholder="🔍 Suchen z.B. Kartoffel, Hähnchen, Pasta…"
+      value="${rezSearch}"
+      oninput="rezepteSearchInput(this.value)"
+      style="width:100%;padding:8px 12px 8px 14px;border:1.5px solid var(--border);border-radius:20px;
+             font-size:13px;background:var(--bg);color:var(--txt);outline:none;
+             transition:border-color .15s;"
+      onfocus="this.style.borderColor='var(--dg)'" onblur="this.style.borderColor='var(--border)'">
+    ${rezSearch?`<button onclick="rezepteSearchInput('');document.getElementById('rez-search').value=''"
+      style="position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--txt2);font-size:16px">✕</button>`:''}
+  </div>`;
 
-  if(rezTab === 'sandwiches') {
+  // === ALLE REZEPTE ===
+  if(rezTab === 'alle' || rezSearch) {
+    const all = D.rezepte_main || [];
+
+    // Filter by search
+    let filtered = rezSearch ? all.filter(r => {
+      const haystack = [
+        r.name, r.sub, r.kategorie,
+        (r.tags||[]).join(' '),
+        (r.zutaten||[]).map(z=>Array.isArray(z)?z[1]:z).join(' '),
+        r.hinweis||'', r.tipp||''
+      ].join(' ').toLowerCase();
+      return rezSearch.split(' ').every(word => haystack.includes(word));
+    }) : all;
+
+    if(rezSearch) {
+      html += `<div style="font-size:12px;color:var(--txt2);margin-bottom:8px">${filtered.length} Rezept${filtered.length!==1?'e':''} gefunden für <strong>"${rezSearch}"</strong></div>`;
+    }
+
+    if(!filtered.length) {
+      html += `<div class="empty"><div style="font-size:32px;margin-bottom:8px">🔍</div>Keine Rezepte für "${rezSearch}" gefunden.<br><small>Versuch z.B. "Hähnchen", "Pasta" oder "Kartoffel"</small></div>`;
+    } else if(rezSearch) {
+      // Search results: flat list without grouping
+      filtered.forEach(r => html += alleRezeptCard(r));
+    } else {
+      // Grouped by Kategorie → Subkategorie
+      const GRUPPE_LABELS = {
+        'mittag/pasta':              '🍝 Mittag · Pasta',
+        'mittag/kartoffel':          '🥔 Mittag · Kartoffel',
+        'mittag/reis':               '🍚 Mittag · Reis',
+        'mittag/eintopf':            '🥘 Mittag · Eintopf',
+        'mittag/ofen':               '🔥 Mittag · Ofen',
+        'mittag/salat-warm':         '🥗 Mittag · Salat warm',
+        'mittag/wochenende':         '🌞 Mittag · Wochenende',
+        'mittag/donnerstag-vorkoch': '🎒 Mittag · Donnerstag Vorkoch',
+        'abend/protein-klassiker':   '💪 Abend · Protein-Klassiker',
+        'abend/klassiker':           '🍽 Abend · Klassiker',
+        'abend/fisch':               '🐟 Abend · Fisch',
+        'abend/vegetarisch':         '🌿 Abend · Vegetarisch',
+        'abend/bowl':                '🥣 Abend · Bowl',
+        'abend/eintopf':             '🥘 Abend · Eintopf',
+        'abend/familienessen':       '👨‍👧 Abend · Familienessen',
+        'abend/wochenende':          '🌟 Abend · Wochenende',
+        'abend/donnerstag-vorkoch':  '🎒 Abend · Donnerstag Vorkoch',
+        'abend/beilage-klassiker':   '🥔 Abend · Beilage',
+      };
+      const ORDER = Object.keys(GRUPPE_LABELS);
+      const gruppen = {};
+      filtered.forEach(r => {
+        const k = `${r.kategorie}/${r.sub||'sonstige'}`;
+        if(!gruppen[k]) gruppen[k] = [];
+        gruppen[k].push(r);
+      });
+      const sortedKeys = [...Object.keys(gruppen)].sort((a,b) => {
+        const ia = ORDER.indexOf(a), ib = ORDER.indexOf(b);
+        return (ia<0?99:ia) - (ib<0?99:ib);
+      });
+      sortedKeys.forEach(k => {
+        const label = GRUPPE_LABELS[k] || ('📦 ' + k);
+        html += `<div class="sec-divider">${label} <span style="font-weight:400;font-size:11px;opacity:.7">(${gruppen[k].length})</span></div>`;
+        gruppen[k].forEach(r => html += alleRezeptCard(r));
+      });
+    }
+    if(!rezSearch && rezTab==='alle') {
+      document.getElementById('view-rezepte').innerHTML = html;
+      return;
+    }
+  }
+
+  // === SANDWICHES ===
+  if(rezTab === 'sandwiches' && !rezSearch) {
     const herzhaft = (D.rezepte_sandwiches||[]).filter(r=>r.sub==='herzhaft');
     const suess = (D.rezepte_sandwiches||[]).filter(r=>r.sub==='suess');
-    if(herzhaft.length) {
-      html += `<div class="sec-divider">🧀 Herzhaft</div>`;
-      herzhaft.forEach(r => html += sandwichCard(r));
-    }
-    if(suess.length) {
-      html += `<div class="sec-divider">🍫 Süß</div>`;
-      suess.forEach(r => html += sandwichCard(r));
-    }
-  } else if(rezTab === 'smoothies-rike') {
-    html += `<div class="sec-divider">🌸 Rike — Schul-Smoothies (Mo–Fr)</div>`;
-    (D.rezepte_smoothies_rike||[]).forEach(s => html += smoothieCard(s, 'rike'));
-  } else if(rezTab === 'smoothies-papa') {
-    html += `<div class="sec-divider">💪 Papa — Sport & Fokus (Mo–Fr)</div>`;
-    (D.rezepte_smoothies_papa||[]).forEach(s => html += smoothieCard(s, 'papa'));
+    if(herzhaft.length) { html += `<div class="sec-divider">🧀 Herzhaft (${herzhaft.length})</div>`; herzhaft.forEach(r=>html+=sandwichCard(r)); }
+    if(suess.length)    { html += `<div class="sec-divider">🍫 Süß (${suess.length})</div>`;       suess.forEach(r=>html+=sandwichCard(r)); }
+  }
+
+  // === SMOOTHIES RIKE ===
+  if(rezTab === 'smoothies-rike' && !rezSearch) {
+    html += `<div class="sec-divider">🌸 Schul-Smoothies Mo–Fr (${(D.rezepte_smoothies_rike||[]).length})</div>`;
+    (D.rezepte_smoothies_rike||[]).forEach(s=>html+=smoothieCard(s,'rike'));
+  }
+
+  // === SMOOTHIES PAPA ===
+  if(rezTab === 'smoothies-papa' && !rezSearch) {
+    html += `<div class="sec-divider">💪 Sport & Fokus Mo–Fr (${(D.rezepte_smoothies_papa||[]).length})</div>`;
+    (D.rezepte_smoothies_papa||[]).forEach(s=>html+=smoothieCard(s,'papa'));
   }
 
   document.getElementById('view-rezepte').innerHTML = html;
+}
+
+function alleRezeptCard(r) {
+  const slots = getSlots(r.tags||[]);
+  const hasKaese = (r.tags||[]).includes('käse-trennbar');
+  return `<div class="rcard" onclick="openRezept(${r.id})">
+    <div class="rcard-hdr">
+      <div style="flex:1">
+        <div class="rcard-name">${r.name}</div>
+        <div class="rcard-sub">${slots}${hasKaese?' <span style="color:var(--teal);font-size:10px">🧀 Käse sep.</span>':''}</div>
+      </div>
+      ${r.kosten?`<div style="text-align:right;flex-shrink:0"><div style="font-weight:700;color:var(--gold);font-size:13px">${fmt(parseFloat(r.kosten),'€')}</div><div style="font-size:10px;color:var(--txt2)">2 Pers.</div></div>`:''}
+    </div>
+    <div class="rcard-meta">
+      ${r.zeit?`<span>⏱ ${r.zeit} Min</span>`:''}
+      ${r.kcal?`<span>🔥 ${r.kcal} kcal</span>`:''}
+      ${r.protein?`<span>💪 ${r.protein}g</span>`:''}
+    </div>
+  </div>`;
 }
 
 function sandwichCard(r) {

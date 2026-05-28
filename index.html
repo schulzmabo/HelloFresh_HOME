@@ -304,7 +304,7 @@ function renderWochenplan() {
         const cpid = `cp-${tag}-${wp.mahlzeit}`;
         html += `<div class="meal-row" onclick="openRezept(${r.id})">
           <div class="meal-time ${isMit?'m':'a'}">${isMit ? 'Mittagessen · 14:30' : 'Abendessen · 18:00'}</div>
-          <div class="meal-name">${r.name||wp.rezept_name||'—'}</div>
+          <div class="meal-name">${r.name||wp.rezept_name||'—'} <span style="color:var(--txt2);font-size:11px;font-weight:400">#${r.id||''}</span></div>
           <div class="meal-meta">
             ${r.zeit?`<span>⏱ ${r.zeit} Min</span>`:''}
             ${r.kcal?`<span>🔥 ${r.kcal} kcal</span>`:''}
@@ -380,87 +380,212 @@ function renderAngebote() {
 }
 
 // ====== EINKAUF ======
+
+const VORRAT_KEYS = ['olivenöl','olivenoel','salz','pfeffer','knoblauch','zwiebel','tomatenmark',
+  'curry','kurkuma','oregano','mehl','brühe','wasser','zucker','öl','butterschmalz',
+  'gewürz','kräuter','basilikum','petersilie','chiliflocken','muskat','sojasoße','essig'];
+
+function isVorrat(name) {
+  if(!name) return true;
+  const n = name.toLowerCase();
+  return VORRAT_KEYS.some(k => n.includes(k));
+}
+
+function parseGr(s) {
+  if(!s) return null;
+  const str = String(s).replace(',','.');
+  const m = str.match(/([\d.]+)\s*(kg|g|ml|l)/i);
+  if(!m) return null;
+  const v = parseFloat(m[1]), u = m[2].toLowerCase();
+  return (u==='kg'||u==='l') ? v*1000 : v;
+}
+
+function calcPackungen(benötigt, handelsgr) {
+  if(!benötigt || !handelsgr) return null;
+  const packs = Math.ceil(benötigt / handelsgr);
+  const rest = (packs * handelsgr) - benötigt;
+  return { packs, rest };
+}
+
+function bestAng(name, angebote) {
+  if(!name) return null;
+  const n = name.toLowerCase().replace(/[()\/\-]/g,' ');
+  const words = n.split(/\s+/).filter(w => w.length > 3 &&
+    !['oder','und','mit','aus','von','für','beim','nach','statt','kein','keine','aufgetaut'].includes(w));
+  let hits = [];
+  for(const kw of words) {
+    hits.push(...angebote.filter(a => a.produkt.toLowerCase().includes(kw)));
+  }
+  const seen = new Set();
+  hits = hits.filter(a => { if(seen.has(a.produkt)) return false; seen.add(a.produkt); return true; });
+  hits.sort((a,b) => (parseFloat(a.kg_preis)||999) - (parseFloat(b.kg_preis)||999));
+  return hits[0] || null;
+}
+
 function renderEinkauf() {
-  if (!D) return;
+  if(!D) return;
   const heute = new Date().toISOString().slice(0,10);
-  const gueltig = (D.angebote||[]).filter(a => a.bis >= heute);
+  const gueltig = (D.angebote||[]).filter(a => a.bis >= heute && a.relevant==='ok');
   const rmap = {}; (D.rezepte_main||[]).forEach(r => rmap[r.id]=r);
 
-  // Zutaten aus Wochenplan
-  const zmap = {};
+  // SCHRITT 1: Alle Zutaten aggregieren (Gramm summieren)
+  const aggr = {};
   (D.wochenplan||[]).forEach(wp => {
-    const r = rmap[wp.rezept_id]; if(!r||!r.zutaten) return;
+    const r = rmap[wp.rezept_id];
+    if(!r || !r.zutaten) return;
     r.zutaten.forEach(z => {
-      if(!Array.isArray(z)||!z[1]) return;
-      const key = z[1].toLowerCase().replace(/[^a-zäöü\s]/g,'').trim().split(' ')[0];
-      if(!key||key.length<3) return;
-      if(!zmap[key]) zmap[key] = {name:z[1], menge:z[0], rezepte:[]};
-      zmap[key].rezepte.push(r.name);
+      if(!Array.isArray(z) || !z[1]) return;
+      const name = z[1], menge = z[0]||'';
+      if(isVorrat(name)) return;
+      const key = name.toLowerCase().replace(/[()\/\-]/g,' ').split(/\s+/)
+        .filter(w=>w.length>2).slice(0,2).join(' ');
+      if(!key || key.length<3) return;
+      if(!aggr[key]) aggr[key] = { name, grammTotal:0, rezepte:[], rezeptIds:[], isTK: false };
+      const gr = parseGr(menge);
+      if(gr) aggr[key].grammTotal += gr;
+      aggr[key].rezepte.push(r.name);
+      if(r.id && !aggr[key].rezeptIds.includes(r.id)) aggr[key].rezeptIds.push(r.id);
+      if(name.toLowerCase().includes('tk')||name.toLowerCase().includes('tiefkühl')) aggr[key].isTK = true;
     });
   });
 
-  function findAng(name) {
-    const n = name.toLowerCase().split(' ')[0];
-    return gueltig.find(a => a.produkt.toLowerCase().includes(n) || n.includes(a.produkt.toLowerCase().split(' ')[0]));
-  }
+  // SCHRITT 2: Bestes Angebot pro Zutat (1x, kein Duplikat)
+  const byMarkt = {}, ohneAng = [];
+  const usedAngebote = new Set();
 
-  const byMarkt = {}; const rest = [];
-  const VORRAT = ['olivenoel','salz','pfeffer','knoblauch','zwiebeln','tomatenmark','curry','paprika','kurkuma','oregano','pasta','reis','kokosmilch','honig','senf','worcester','mehl'];
-
-  Object.values(zmap).forEach(z => {
-    const isVorrat = VORRAT.some(g => z.name.toLowerCase().includes(g));
-    if(isVorrat) return;
-    const a = findAng(z.name);
-    if(a) { if(!byMarkt[a.markt]) byMarkt[a.markt]=[]; byMarkt[a.markt].push({...z,ang:a}); }
-    else rest.push(z);
+  Object.values(aggr).forEach(z => {
+    const ang = bestAng(z.name, gueltig);
+    if(ang) {
+      // Verhindere dass gleiches Angebot für zwei verschiedene Zutaten erscheint
+      if(usedAngebote.has(ang.produkt)) {
+        // Zusammenführen mit bestehender Position
+        const m = ang.markt;
+        const existing = (byMarkt[m]||[]).find(x=>x.ang.produkt===ang.produkt);
+        if(existing) { existing.grammTotal+=z.grammTotal; existing.rezepte.push(...z.rezepte); (z.rezeptIds||[]).forEach(id=>{if(!existing.rezeptIds)existing.rezeptIds=[];if(!existing.rezeptIds.includes(id))existing.rezeptIds.push(id);}); return; }
+      }
+      usedAngebote.add(ang.produkt);
+      if(!byMarkt[ang.markt]) byMarkt[ang.markt]=[];
+      byMarkt[ang.markt].push({...z, ang});
+    } else {
+      ohneAng.push(z);
+    }
   });
 
-  let appSave = 0; let html = `<div class="block cream"><div class="block-title">ℹ️ Hinweise</div><div class="block-body">
-    <div class="crow blue"><div class="cbar"></div><div class="ccontent"><div class="clabel">📱 App-Preis</div><div class="cdesc">App aktivieren vor dem Einkauf</div></div></div>
-    <div class="crow" style="margin-top:4px"><div class="cbar" style="background:#9E9E9E"></div><div class="ccontent"><div class="clabel">Grundvorrat</div><div class="cdesc">Olivenöl · Gewürze · Pasta · Reis — nicht aufgelistet</div></div></div>
+  // SCHRITT 3: HTML
+  let totalApp=0, totalNorm=0, appSave=0;
+  const resteliste=[];
+
+  let html = `<div class="block cream"><div class="block-title">ℹ️ Legende</div><div class="block-body">
+    <div class="crow blue"><div class="cbar"></div><div class="ccontent"><div class="clabel">📱 App-Preis</div><div class="cdesc">EDEKA App · Penny App vor dem Einkauf aktivieren</div></div></div>
+    <div class="crow" style="margin-top:4px"><div class="cbar" style="background:#26A69A"></div><div class="ccontent"><div class="clabel">🧊 Rest einfrieren</div><div class="cdesc">Übrige Mengen TK-tauglich</div></div></div>
+    <div class="crow" style="margin-top:4px"><div class="cbar" style="background:#9E9E9E"></div><div class="ccontent"><div class="clabel">Grundvorrat</div><div class="cdesc">Öl · Salz · Gewürze — nicht aufgelistet</div></div></div>
   </div></div>`;
 
-  let totalApp=0, totalNorm=0;
   Object.keys(byMarkt).sort().forEach((markt,mi) => {
     const items = byMarkt[markt];
     html += `<div class="block"><div class="block-title" style="background:var(--teal);color:#fff">${markt}</div><div class="block-body" style="padding:8px 12px">`;
+    let marktTotal = 0;
+
     items.forEach((it,i) => {
       const a = it.ang;
       const bp = parseFloat(a.preis_app||a.preis)||0;
-      const isApp = !!(a.preis_app && parseFloat(a.preis_app)<parseFloat(a.preis));
-      totalApp += bp; totalNorm += parseFloat(a.preis)||bp;
-      if(isApp) appSave += parseFloat(a.preis)-bp;
+      const np = parseFloat(a.preis)||bp;
+      const isApp = !!(a.preis_app && parseFloat(a.preis_app)<np);
+      const handelsgr = parseGr(a.einheit);
+      const pack = it.grammTotal>0 && handelsgr ? calcPackungen(it.grammTotal, handelsgr) : null;
+      const anzahl = pack ? pack.packs : 1;
+      const kosten = bp * anzahl;
+      totalApp += kosten; totalNorm += np * anzahl;
+      if(isApp) appSave += (np-bp)*anzahl;
+      marktTotal += kosten;
+
+      // Rest merken
+      if(pack && pack.rest > 50) {
+        const isTKfaehig = it.isTK || ['hack','hähnchen','haehnchen','pute','fisch','lachs','fleisch'].some(k=>it.name.toLowerCase().includes(k));
+        resteliste.push({name:it.name, rest:pack.rest, tk:isTKfaehig});
+      }
+
+      const rezStr = [...new Set(it.rezepte)].slice(0,3).join(' · ');
+      const rezNrStr = (it.rezeptIds||[]).length
+        ? 'Rezept ' + it.rezeptIds.map(id=>'#'+id).join(' · ')
+        : rezStr;
       const id = `chk-${mi}-${i}`;
+
       html += `<div class="ei-item">
         <div class="ei-chk" id="${id}" onclick="this.classList.toggle('done')"></div>
-        <div class="ei-info"><div class="ei-name">${a.produkt}</div><div class="ei-detail">${a.einheit||''} · ${[...new Set(it.rezepte)].slice(0,2).join(', ')}</div></div>
-        <div class="ei-preis"><div class="preis-m">${fmt(bp,'€')}${isApp?' 📱':''}</div>${isApp?`<div style="font-size:10px;color:var(--txt2);text-decoration:line-through">${fmt(parseFloat(a.preis),'€')}</div>`:''}</div>
+        <div class="ei-info">
+          <div class="ei-name">${a.produkt}</div>
+          <div class="ei-detail">
+            ${pack ? `<strong>${pack.packs}× ${a.einheit||''}</strong> · benötigt ~${it.grammTotal}g` : (a.einheit||'')}
+            ${pack && pack.rest>50
+              ? ` · <span style="color:#26A69A;font-weight:700">Rest ~${Math.round(pack.rest)}g 🧊</span>`
+              : pack && pack.rest<=50 ? ` · <span style="color:var(--green-bar);font-weight:600">✓ aufgebraucht</span>` : ''}
+          </div>
+          <div style="font-size:10px;color:var(--txt2);margin-top:1px">${rezNrStr}</div>
+        </div>
+        <div class="ei-preis">
+          <div class="preis-m">${anzahl>1?anzahl+'× ':''}${fmt(bp,'€')}${isApp?' 📱':''}</div>
+          ${anzahl>1?`<div style="font-size:11px;color:var(--gold);font-weight:700">= ${fmt(kosten,'€')}</div>`:''}
+          ${isApp?`<div style="font-size:10px;color:var(--txt2);text-decoration:line-through">${fmt(np,'€')}</div>`:''}
+        </div>
       </div>`;
     });
-    const mt = items.reduce((s,it)=>s+parseFloat(it.ang.preis_app||it.ang.preis||0),0);
-    html += `<div class="gesamt-row"><span class="gesamt-l">Gesamt ${markt}</span><span class="gesamt-v">${fmt(mt,'€')}</span></div>`;
+
+    html += `<div class="gesamt-row"><span class="gesamt-l">Gesamt ${markt}</span><span class="gesamt-v">${fmt(marktTotal,'€')}</span></div>`;
     html += `</div></div>`;
   });
 
-  if(rest.length) {
+  if(ohneAng.length) {
     html += `<div class="block cream"><div class="block-title">🛒 Sonstiges</div><div class="block-body" style="padding:8px 12px">`;
-    rest.forEach((it,i)=>{
-      const id=`chk-rest-${i}`;
-      html+=`<div class="ei-item"><div class="ei-chk" id="${id}" onclick="this.classList.toggle('done')"></div><div class="ei-info"><div class="ei-name">${it.name}</div><div class="ei-detail">${it.menge||''} · ${[...new Set(it.rezepte)].slice(0,2).join(', ')}</div></div><div class="ei-preis"><div class="preis-m">—</div></div></div>`;
+    ohneAng.forEach((it,i) => {
+      html += `<div class="ei-item">
+        <div class="ei-chk" id="chk-r-${i}" onclick="this.classList.toggle('done')"></div>
+        <div class="ei-info">
+          <div class="ei-name">${it.name}</div>
+          <div style="font-size:10px;color:var(--txt2)">${it.grammTotal>0?'~'+it.grammTotal+'g · ':''}${(it.rezeptIds||[]).length ? it.rezeptIds.map(id=>'#'+id).join(' · ') : [...new Set(it.rezepte)].slice(0,2).join(' · ')}</div>
+        </div>
+        <div class="ei-preis"><div class="preis-m" style="color:var(--txt2)">—</div></div>
+      </div>`;
     });
     html += `</div></div>`;
   }
 
+  // Reste-Übersicht
+  if(resteliste.length) {
+    html += `<div class="block"><div class="block-title">♻️ Reste diese Woche</div><div class="block-body">`;
+    resteliste.forEach(r => {
+      html += `<div class="crow ${r.tk?'':'orange'}">
+        <div class="cbar" style="background:${r.tk?'#26A69A':'var(--orange-bar)'}"></div>
+        <div class="ccontent">
+          <div class="clabel">${r.name}</div>
+          <div class="cdesc">~${Math.round(r.rest)}g übrig → ${r.tk?'🧊 einfrieren für nächste Woche':'📅 diese Woche noch verwenden'}</div>
+        </div></div>`;
+    });
+    html += `</div></div>`;
+  }
+
+  // App-Ersparnis
   if(appSave > 0.01) {
     html += `<div class="block"><div class="block-title">💰 App-Ersparnis</div><div class="block-body">
       <div class="kv"><div class="kv-l">Ohne App</div><div class="kv-r r">${fmt(totalNorm,'€')}</div></div>
-      <div class="kv"><div class="kv-l">Mit App</div><div class="kv-r g">${fmt(totalApp,'€')}</div></div>
-      <div class="kv"><div class="kv-l">Ersparnis 📱</div><div class="kv-r t">${fmt(appSave,'€')}</div></div>
+      <div class="kv"><div class="kv-l">Mit App 📱</div><div class="kv-r g">${fmt(totalApp,'€')}</div></div>
+      <div class="kv"><div class="kv-l">Ersparnis</div><div class="kv-r t">${fmt(appSave,'€')}</div></div>
     </div></div>`;
   }
 
+  // Budget-Check
+  const budget = (D.meta?.budget_tag||8.50) * 5;
+  const diff = totalApp - budget;
+  html += `<div class="block"><div class="block-title">📊 Budget-Check Woche</div><div class="block-body">
+    <div class="kv"><div class="kv-l">Einkauf gesamt</div><div class="kv-r">${fmt(totalApp,'€')}</div></div>
+    <div class="kv"><div class="kv-l">Budget (5×8,50€)</div><div class="kv-r">${fmt(budget,'€')}</div></div>
+    <div class="kv"><div class="kv-l">${diff>0?'⚠️ Über Budget':'✓ Im Budget'}</div>
+      <div class="kv-r ${diff>0?'r':'g'}">${diff>0?'+':''}${fmt(Math.abs(diff),'€')}</div></div>
+  </div></div>`;
+
   document.getElementById('view-einkaufen').innerHTML = html;
 }
+
 
 // ====== REZEPTE ======
 let rezTab = 'kochrezepte';

@@ -296,7 +296,7 @@ function renderWochenplan() {
     const latest = Object.values(wochen).sort((a,b) => b.woche - a.woche)[0];
     const tagsInWoche = TAGE_ORDER.filter(t => latest.tage[t]);
     tagsInWoche.forEach(tag => {
-      const meals = latest.tage[tag].sort((a,b) => a.mahlzeit < b.mahlzeit ? -1 : 1);
+      const meals = latest.tage[tag].sort((a,b) => a.mahlzeit === 'mittag' ? -1 : 1);
       const cost = meals.reduce((s,m) => s + (parseFloat(m.kosten)||0), 0);
       html += `<div class="tag-card">
         <div class="tag-hdr"><span>${TAGE_LABEL[tag]||tag}</span><span class="tag-hdr-cost">${cost>0?'~'+cost.toFixed(2).replace('.',',')+'€':''}</span></div>

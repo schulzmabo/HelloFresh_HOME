@@ -2542,6 +2542,92 @@
         "Tomaten + Oregano rein, 8 Min köcheln.",
         "Pasta unterheben, Rikes Portion käsen."
       ]
+    },
+    {
+      "id": 55,
+      "name": "Spaghetti Jäger-Art mit Geflügelwürstchen",
+      "kategorie": "mittag",
+      "sub": "pasta",
+      "kcal": 680,
+      "protein": 28.0,
+      "kosten": 2.4,
+      "zeit": 20,
+      "hinweis": "1. Wahl: Geflügel-Wiener oder Hähnchen-Bratwurst (steht 'Geflügel'/'Hähnchen' auf Packung). Falls nicht verfügbar: Thüringer Weiße oder andere Schweinewurst geht notfalls auch. Aber KEIN Schweinehackfleisch — das ist die einzige harte Grenze.",
+      "tipp": "Geflügelwürstchen vorher anbraten bis leicht gebräunt — gibt Röstaroma wie beim Original.",
+      "tags": [
+        "pasta",
+        "würstchen",
+        "schnell",
+        "deutsch",
+        "alltagsheld",
+        "käse-trennbar",
+        "günstig"
+      ],
+      "zutaten": [
+        [
+          "3-4 Stück",
+          "Geflügel-Wiener oder Hähnchen-Bratwurst (1. Wahl) — notfalls Thüringer Weiße/Schweinewurst, KEIN Schweinehack"
+        ],
+        [
+          "3-4 Stück",
+          "Geflügelwürstchen (KEIN Schwein — Hähnchenbratwurst oder Geflügel-Wiener)"
+        ],
+        [
+          "1 Dose",
+          "Tomaten gewürfelt (400g)"
+        ],
+        [
+          "1",
+          "rote Paprika TK (oder frisch)"
+        ],
+        [
+          "1",
+          "Zwiebel (fein gewürfelt)"
+        ],
+        [
+          "1 Zehe",
+          "Knoblauch"
+        ],
+        [
+          "150ml",
+          "Brühe (Pulver ok)"
+        ],
+        [
+          "1 TL",
+          "Paprika edelsüß + Rauchpaprika (gibt Jäger-Charakter)"
+        ],
+        [
+          "1 TL",
+          "Oregano + Thymian TK"
+        ],
+        [
+          "1 EL",
+          "Tomatenmark"
+        ],
+        [
+          "1 EL",
+          "Öl"
+        ],
+        [
+          "Salz, Pfeffer",
+          "nach Geschmack"
+        ],
+        [
+          "Parmesan oder Reibekäse",
+          "nur für Rikes Portion"
+        ]
+      ],
+      "schritte": [
+        "Pasta nach Packung in Salzwasser kochen.",
+        "Würstchen in 1 cm Scheiben schneiden, in Öl bei mittlerer Hitze 2-3 Min rundum anbraten bis leicht gebräunt. Rausnehmen.",
+        "Zwiebel + Knoblauch in gleicher Pfanne andünsten.",
+        "Paprika TK dazu, 2 Min mitbraten.",
+        "Tomatenmark kurz mitrösten, dann Tomaten + Brühe + Paprika edelsüß + Rauchpaprika + Kräuter rein.",
+        "10 Min köcheln bis Soße eindickt.",
+        "Würstchen zurück in die Soße, 2 Min erwärmen.",
+        "Pasta abgießen, auf Tellern anrichten, Soße drüber.",
+        "Rikes Portion: Käse drüber — Papas Portion ohne."
+      ]
     }
   ],
   "rezepte_sandwiches": [

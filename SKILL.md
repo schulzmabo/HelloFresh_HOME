@@ -503,6 +503,44 @@ Gehackte Tomaten, Honig, Senf, Worcestersauce, Mehl, Bruehepulver, Sojasosse
 
 ---
 
+## WORKFLOW C.2: Rike Nachtisch & Süßes (PFLICHT bei jeder neuen Woche)
+
+### Regel:
+Bei jeder neuen Wochenplanung werden 3 Nachtisch-Kombis fuer Rike vorgeschlagen.
+Budget: 5-8 EUR extra (nicht im Mahlzeiten-Budget enthalten).
+NUR fuer Rike — Papa bekommt keinen Nachtisch eingeplant.
+
+### Vorgehensweise:
+1. Aktuelle Prospekte durchsuchen nach: Eis, Schokolade, Pudding, Gummibärchen,
+   Waffeln, Crêpes, Riegel, Joghurt-Desserts, Kekse
+2. 3 Kombis zusammenstellen mit unterschiedlichem Charakter:
+   - KOMBI A: günstigste Option (~5€), z.B. Pudding + Schoko + 1 Packung Süßes
+   - KOMBI B: Eis-Fokus (~6€), z.B. 2 verschiedene Eissorten = 7-8 Eis/Woche
+   - KOMBI C: Abwechslungs-Mix (~7-8€), z.B. Eis + Pudding + Gummibärchen + Waffeln + Riegel
+3. User waehlt eine Kombi
+4. Gewaehlte Kombi wird in `data.json` als `extras_einkauf` gespeichert
+5. Erscheint in der Einkaufsliste als eigener Block "🍬 Rike Nachtisch"
+6. Taucht NICHT im Wochenplan/Tagesmenü auf
+
+### data.json Format:
+```json
+"extras_einkauf": [
+  {"markt": "Lidl",  "produkt": "Kuchenzauber Waffeln XXL 335g", "preis": 1.79, "fuer": "Rike Nachtisch"},
+  {"markt": "Netto", "produkt": "Nimm2 Lachgummi 325g",          "preis": 1.00, "fuer": "Rike Nachtisch"}
+]
+```
+
+### Typische Produkte die Rike mag (aus bisherigen Wochen):
+- Kinder Maxi King, Kinder Bueno Eis
+- Paula Pudding, Grand Dessert
+- Nimm2 Lachgummi, Haribo
+- Milka Schokolade
+- Mövenpick Eis, Langnese Eis
+- Kuchenzauber Crêpes/Waffeln
+- Monte Mega
+
+---
+
 ## WORKFLOW D: PDF ausgeben
 
 ### PDF-Style: pdf-style Skill lesen vor Generierung.
@@ -606,29 +644,82 @@ Bevorzugt:
 
 ---
 
-## QUALITAETS-CHECKLISTE VOR PDF-EXPORT
+## WEB-APP DEPLOYMENT & CACHE (nach Papa-Kalender-Vorbild)
+
+### Repo: `rezepte-schulz` auf GitHub Pages
+
+Dateien im Repo:
+```
+index.html      — die App (Views: Wochenplan, Einkaufen, Angebote, Rezepte)
+data.json       — alle Daten (Rezepte, Angebote, Wochenplan, Extras)
+sw.js           — Service Worker mit VERSION-Konstante
+```
+
+### Service Worker Versionierung (wie Papa-Kalender):
+`sw.js` hat eine `VERSION`-Konstante, z.B. `'kuechen-v9'`. Bei JEDER neuen
+Veroeffentlichung von index.html diese Zahl hochzaehlen, damit Clients
+beim naechsten Oeffnen die neue Version laden statt die alte aus dem Cache.
+
+### Cache-Zwang (iPhone + Desktop):
+Die index.html erzwingt Neuladen durch drei Mechanismen:
+1. **Meta-Tags**: `Cache-Control: no-cache, no-store, must-revalidate`
+2. **SW sofort-Update**: `reg.update()` bei jedem App-Start
+3. **Fokus-Update**: `visibilitychange`-Event — wenn App aus Hintergrund kommt,
+   wird SW-Update geprueft und bei Bedarf Seite neu geladen
+
+### data.json Cache-Bust:
+```javascript
+fetch('data.json?v=' + Date.now(), { cache: 'no-store' })
+```
+Timestamp-Parameter + no-store = Browser kann sie NIE aus Cache nehmen.
+
+### Wochenplan-Anzeige:
+Zeigt immer die **neueste Woche** (hoechste `woche`-Nummer in `wochenplan`).
+Alte Wochen bleiben in data.json fuer Verlauf, werden aber nicht angezeigt.
+
+### Tagesreihenfolge:
+Mittagessen wird immer VOR Abendessen angezeigt (sort: mittag < abend).
+
+### Einkaufsliste:
+Generiert aus Zutaten der neuesten Woche + `extras_einkauf` (Rike Nachtisch).
+Aggregiert Mengen, zeigt Packungsanzahl, Reste, Budget-Check.
+
+### Deployment-Checkliste bei neuer Woche:
+1. `data.json` im Repo ersetzen (neue Woche, neue Angebote)
+2. `index.html` nur ersetzen wenn Code-Aenderungen
+3. `sw.js` VERSION hochzaehlen wenn index.html geaendert
+4. Nach 1-2 Min auf GitHub Pages live
+
+---
+
+## QUALITAETS-CHECKLISTE VOR EXPORT
 
 - [ ] Planungsdatum und Angebots-Gueltigkeit geprueft?
 - [ ] Alle 4 Pflicht-Slots belegt (Italienisch / Deutsch / Vegetarisch / Burger-HotDog)?
 - [ ] Keine Rezepte aus der Vorwoche wiederholt?
-- [ ] Budget 8,50 EUR/Tag eingehalten (Wochentage)?
+- [ ] Budget eingehalten?
 - [ ] TK-Gemuese bevorzugt wo moeglich?
-- [ ] Resteverwertungs-Ketten geplant?
+- [ ] Resteverwertungs-Ketten mengengenau geplant?
+- [ ] Mengen-Aggregation geprueft (Protein-Ketten passen auf Handelseinheiten)?
 - [ ] Neue Rezepte korrekt in DB gespeichert (mit Tags fuer Pflicht-Slot)?
-- [ ] Keine Ausschluss-Produkte?
+- [ ] Keine Ausschluss-Produkte (Pilze, Schweinehack, Tofu, Thunfisch)?
 - [ ] Rike-Naehrstoffe abgedeckt (Eisen, Kalzium, Protein)?
 - [ ] Einkaufsliste nach Markt sortiert?
+- [ ] **3 Nachtisch-Kombis fuer Rike vorgeschlagen?**
+- [ ] **extras_einkauf in data.json eingetragen?**
+- [ ] Mittagessen vor Abendessen in Tagesreihenfolge?
+- [ ] sw.js VERSION hochgezaehlt wenn index.html geaendert?
 - [ ] Kein "Trading" im PDF?
 
 ---
 
 ## VERSION
 
-- **v2.5 — 2026-05-27** — Mengen-Aggregation (Zutaten wochenuebergreifend summieren), Handelseinheiten-Mapping, mengengenaue Resteverwertungs-Ketten, verbessertes Angebots-Matching (1 Angebot pro Zutat, Score-basiert nach kg-Preis). Web-App index.html v4 mit aggregierter Einkaufsliste, Packungsanzahl, Reste-Block, Budget-Check.
-- **v2.4 — 2026-05-26** — App-Preise: neue Spalte preis_app_eur in DB, Budget nutzt immer besten Preis (App < Normal), Einkaufsliste zeigt 📱 Kennzeichnung. DB-Klarstellung: lebt lokal beim User, wird per Upload eingebracht.
-
-- **v2.3 — 2026-05-26** — Pilze und Schweinefleisch generell ausgeschlossen (kein Low-Priority mehr). Kaese-Regel: immer separat, Papa ohne / Rike mit, Tag kaese-trennbar obligatorisch.
-- **v2.2 — 2026-05-26** — Pflicht-Slots (Italienisch/Deutsch/Vegetarisch/Burger-HotDog), Wiederholungs-Schutz (Vorwoche-Sperre), Online-Recherche (Chefkoch/Reddit), Preis-Archiv dauerhaft in DB, Jahres-Analyse-Query.
-- **v2.1 — 2026-05-26** — Angebots-Gueltigkeits-Regel: gueltig_bis >= Planungsdatum strikt erzwungen.
+- **v2.6 — 2026-05-29** — Rike Nachtisch-Workflow (3 Kombis bei jeder neuen Woche, extras_einkauf in data.json, pinker Block in Einkaufsliste). Web-App Cache-Zwang dokumentiert (Meta-Tags, SW sofort-Update, visibilitychange). Tagesreihenfolge: Mittag vor Abend. Schweinewurst als Notfall-Option bei Würsten. sw.js v9.
+- **v2.5 — 2026-05-27** — Mengen-Aggregation, Handelseinheiten-Mapping, mengengenaue Resteverwertungs-Ketten, verbessertes Angebots-Matching. Web-App v4 mit aggregierter Einkaufsliste, Packungsanzahl, Reste-Block, Budget-Check.
+- **v2.4 — 2026-05-26** — App-Preise: preis_app_eur in DB, Budget nutzt besten Preis, Einkaufsliste zeigt 📱.
+- **v2.3 — 2026-05-26** — Pilze und Schweinefleisch ausgeschlossen. Kaese-Regel: Papa ohne / Rike mit.
+- **v2.2 — 2026-05-26** — Pflicht-Slots, Wiederholungs-Schutz, Online-Recherche, Preis-Archiv.
+- **v2.1 — 2026-05-26** — Angebots-Gueltigkeits-Regel strikt erzwungen.
 - **v2.0 — 2026-05-26** — Neufassung: ernaehrung.db-Integration, Prospekt-Workflow, Budget, Resteverwertung.
 - **v1.x** — Vorgaenger: rezeptbuch Skill (nur PDF, keine DB).

@@ -6378,5 +6378,43 @@
     "kw_label": "KW 23 · 01.06. – 07.06.2026",
     "kw_von": "2026-06-01",
     "kw_bis": "2026-06-07"
-  }
+  },
+  "extras_einkauf": [
+    {
+      "markt": "Netto",
+      "produkt": "Nimm2 Lachgummi 325g",
+      "preis": 1.0,
+      "fuer": "Rike Nachtisch"
+    },
+    {
+      "markt": "Netto",
+      "produkt": "Dr. Oetker Paula Pudding 4x125g",
+      "preis": 1.49,
+      "fuer": "Rike Nachtisch"
+    },
+    {
+      "markt": "Penny",
+      "produkt": "Kinder Maxi King 3x35g",
+      "preis": 0.99,
+      "fuer": "Rike Nachtisch"
+    },
+    {
+      "markt": "Penny",
+      "produkt": "Mövenpick Eis 900ml",
+      "preis": 1.99,
+      "fuer": "Rike Nachtisch"
+    },
+    {
+      "markt": "Penny",
+      "produkt": "Ehrmann Grand Dessert 190g",
+      "preis": 0.49,
+      "fuer": "Rike Nachtisch"
+    },
+    {
+      "markt": "Lidl",
+      "produkt": "Kuchenzauber Waffeln XXL 335g",
+      "preis": 1.79,
+      "fuer": "Rike Nachtisch"
+    }
+  ]
 }

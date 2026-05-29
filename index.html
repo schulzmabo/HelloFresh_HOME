@@ -589,6 +589,29 @@ function renderEinkauf() {
     html += `</div></div>`;
   }
 
+  // Extras (Süßigkeiten, Eis etc. — nicht an Rezepte gebunden)
+  const extras = D.extras_einkauf || [];
+  if(extras.length) {
+    const byMarktX = {};
+    extras.forEach(x => { if(!byMarktX[x.markt]) byMarktX[x.markt]=[]; byMarktX[x.markt].push(x); });
+    let extTotal = extras.reduce((s,x) => s + (x.preis||0), 0);
+    totalApp += extTotal; totalNorm += extTotal;
+
+    html += `<div class="block"><div class="block-title" style="background:#E91E63;color:#fff">🍬 Rike — Nachtisch & Süßes (${fmt(extTotal,'€')})</div><div class="block-body" style="padding:8px 12px">`;
+    Object.keys(byMarktX).sort().forEach((markt,mi) => {
+      html += `<div style="font-size:10px;font-weight:700;color:var(--dg);text-transform:uppercase;letter-spacing:.4px;margin:6px 0 3px">${markt}</div>`;
+      byMarktX[markt].forEach((x,i) => {
+        const id = `chk-ext-${mi}-${i}`;
+        html += `<div class="ei-item">
+          <div class="ei-chk" id="${id}" onclick="this.classList.toggle('done')"></div>
+          <div class="ei-info"><div class="ei-name">${x.produkt}</div><div style="font-size:10px;color:var(--txt2)">${x.fuer||''}</div></div>
+          <div class="ei-preis"><div class="preis-m">${fmt(x.preis,'€')}</div></div>
+        </div>`;
+      });
+    });
+    html += `</div></div>`;
+  }
+
   // Reste-Übersicht
   if(resteliste.length) {
     html += `<div class="block"><div class="block-title">♻️ Reste diese Woche</div><div class="block-body">`;

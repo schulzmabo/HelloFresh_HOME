@@ -412,13 +412,40 @@ function bestAng(name, angebote) {
   const n = name.toLowerCase().replace(/[()\/\-]/g,' ');
   const words = n.split(/\s+/).filter(w => w.length > 3 &&
     !['oder','und','mit','aus','von','für','beim','nach','statt','kein','keine','aufgetaut'].includes(w));
+
+  // Konfliktvermeidung: Hack ≠ Steak/Schenkel, Hähnchenbrust ≠ Schenkel/Keule
+  const KONFLIKTE = {
+    'hack': ['steak','schenkel','keule','kotelett','roastbeef','entrecote','rumpsteak'],
+    'hackfleisch': ['steak','schenkel','keule','kotelett'],
+    'hähnchenbrustfilet': ['schenkel','keule','kotelett','mariniert','hammerkeu'],
+    'hähnchenbrust': ['schenkel','keule','kotelett','hammerkeu'],
+    'putenbrust': ['schenkel','keule'],
+    'seelachs': ['lachs','räucherlachs','lachskotelett'],
+  };
+
   let hits = [];
   for(const kw of words) {
-    hits.push(...angebote.filter(a => a.produkt.toLowerCase().includes(kw)));
+    const treffer = angebote.filter(a => {
+      const ap = a.produkt.toLowerCase();
+      if(!ap.includes(kw)) return false;
+      // Konflikte prüfen
+      for(const [zutatKey, verboten] of Object.entries(KONFLIKTE)) {
+        if(n.includes(zutatKey) && verboten.some(v => ap.includes(v))) return false;
+      }
+      return true;
+    });
+    hits.push(...treffer);
   }
   const seen = new Set();
   hits = hits.filter(a => { if(seen.has(a.produkt)) return false; seen.add(a.produkt); return true; });
-  hits.sort((a,b) => (parseFloat(a.kg_preis)||999) - (parseFloat(b.kg_preis)||999));
+  // Sortiere: niedrigster kg-Preis, aber Frischprodukte mit 100g-Einheit erst nach Packware
+  hits.sort((a,b) => {
+    const ka = parseFloat(a.kg_preis)||999, kb = parseFloat(b.kg_preis)||999;
+    // 100g Einheit (Theke) = teurer in der Praxis, leicht benachteiligen
+    const penA = a.einheit && a.einheit.toLowerCase()==='100g' ? 2 : 0;
+    const penB = b.einheit && b.einheit.toLowerCase()==='100g' ? 2 : 0;
+    return (ka+penA) - (kb+penB);
+  });
   return hits[0] || null;
 }
 
@@ -428,9 +455,18 @@ function renderEinkauf() {
   const gueltig = (D.angebote||[]).filter(a => a.bis >= heute && a.relevant==='ok');
   const rmap = {}; (D.rezepte_main||[]).forEach(r => rmap[r.id]=r);
 
+  // Nur aktuelle Woche: höchste Woche aus neuestem Variante
+  const allWp = D.wochenplan||[];
+  const latestVariante = allWp.length
+    ? allWp.reduce((best, wp) => wp.woche > best.woche ? wp : best, allWp[0])
+    : null;
+  const currentWp = latestVariante
+    ? allWp.filter(wp => wp.variante === latestVariante.variante && wp.woche === latestVariante.woche)
+    : allWp;
+
   // SCHRITT 1: Alle Zutaten aggregieren (Gramm summieren)
   const aggr = {};
-  (D.wochenplan||[]).forEach(wp => {
+  currentWp.forEach(wp => {
     const r = rmap[wp.rezept_id];
     if(!r || !r.zutaten) return;
     r.zutaten.forEach(z => {

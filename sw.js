@@ -1,4 +1,4 @@
-const VERSION = 'kuechen-v5';
+const VERSION = 'kuechen-v6';
 const CACHE = VERSION;
 
 self.addEventListener('install', e => {

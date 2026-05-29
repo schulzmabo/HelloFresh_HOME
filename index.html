@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>Küchenwoche — Rike & Papa</title>
 <style>
 :root {
@@ -931,13 +934,23 @@ loadData();
 if('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('sw.js').then(reg => {
+      // Sofort nach Update suchen bei jedem Start
+      reg.update();
       reg.addEventListener('updatefound', () => {
         const w = reg.installing;
-        w.addEventListener('statechange', () => { if(w.state==='activated') window.location.reload(); });
+        w.addEventListener('statechange', () => {
+          if(w.state==='activated') window.location.reload();
+        });
       });
     });
   });
 }
+// Zusätzlich: bei jedem Fokus-Wechsel (App kommt in Vordergrund) SW updaten
+document.addEventListener('visibilitychange', () => {
+  if(document.visibilityState === 'visible' && navigator.serviceWorker.controller) {
+    navigator.serviceWorker.ready.then(reg => reg.update());
+  }
+});
 </script>
 </body>
 </html>
